@@ -1,0 +1,5 @@
+.sass-cache
+.bundle
+.config
+.yardoc
+Gemfile.lock
