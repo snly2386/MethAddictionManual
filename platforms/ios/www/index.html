@@ -28,17 +28,17 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+      <section class="container"> 
+            <div id="app">
+               
             </div>
-        </div>
+       </section>
+ 
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="assets/application.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            window._mobile_app = new GettingOff.Application({phonegap: true});
         </script>
     </body>
 </html>

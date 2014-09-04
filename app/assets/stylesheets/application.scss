@@ -1,3 +1,91 @@
 //= require_tree ./fonts
 //= require_tree ./plugins
 //= require_tree ./application
+
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}
+
+.font-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-marker{
+   font-family: 'Permanent Marker', cursive;
+}
+
+
+.grow {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.grow:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    /*background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );*/
+    background: url(./background.png) no-repeat;
+    background-attachment:fixed;
+    background-size: 100% 100%;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(./title.png) no-repeat center top;
+    position:absolute;
+    background-size: 16em 16em;
+    
+    top:30%;
+    left:50%;
+    height:50px;
+    width:50%;
+
+    margin: 0 auto;
+    text-align:center;
+    margin:-11.5% 0 0 -11.2%;
+    padding:36% 0 0; /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+      /* offset vertical: half of image height */
+    background-position: left top;  
+    background-size: 16em 16em;
+    }
+
+
+}

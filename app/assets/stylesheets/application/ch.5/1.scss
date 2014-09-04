@@ -1,0 +1,58 @@
+.ch5page-1 {
+  header {
+    max-width: 200px;
+    img { width:100%; }
+  }
+  .session {
+    font-family:'Open Sans', sans-serif;
+    margin-top: -20px;
+    font-size: 2em; color: rgb(39, 248, 11);
+    div { text-align: center}
+  }
+  .progress-bar {
+      margin-top: 10px;
+      max-width:400px;
+      .progress {
+        float: left; 
+        max-width: 9%;
+        img { width:100% }
+      }
+      .progress.first{
+        margin-left:10%;
+      }
+    }
+  .border-top{
+    max-width:100%;
+    img { width:100%; }
+  }
+  .paragraph{
+    padding: 0px 10px;
+    max-width: 85%;
+    color: white;
+    text-align: center;
+    height: 200px;
+    overflow-y: auto;
+    h1 { width: 100%; font-weight: bold; font-size: 2em;}
+    p { width: 100%; font-size: 1.2em; }
+  }
+  .border-bottom{
+    margin-top: -10px;
+    max-width: 100%;
+    img { width: 100%; }
+  }
+  .button{
+    max-width: 150px;
+    img { width: 100%; }
+  }
+  .icons-container{
+    max-width:370px; 
+    .icon-container{
+      width:20%;
+      float: left;
+      img{width:100%;}
+    }
+    .icon-container.pin{
+      margin-top: -8px;
+    }
+  }
+}

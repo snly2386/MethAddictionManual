@@ -1,0 +1,37 @@
+#new-user{
+    header{
+      max-width:250px;
+      img { width:100%; }
+    }
+    .terms-of-use { max-width:350px; margin-top: -20px;
+      img { width:100% }
+    }
+    .terms-paragraph {
+      max-width:500px;
+      padding:2%;
+      text-align:center;color: white;font-family: 'Open Sans', sans-serif;font-size: 1em;
+      p { width:100% }
+    }
+    .accept-terms {
+      max-width:250px; height: 50px;
+      margin-top:20px;
+        .accept {
+          float: left;
+          width:50%;
+          height:70px;  
+        }
+        .accept.n{margin-top:9px} 
+    }
+    .progress-bar {
+      max-width:700px;
+      margin-top:40px;
+      .progress {
+        float: left; 
+        max-width: 9%;
+        img { width:100% }
+      }
+      .progress.first{
+        margin-left:10%;
+      }
+    }
+}

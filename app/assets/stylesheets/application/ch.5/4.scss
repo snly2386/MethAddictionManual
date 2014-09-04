@@ -1,0 +1,184 @@
+.ch5page-4{
+  header{
+    max-width: 100%;color:white;
+    height:90px; 
+    .img {width: 90px; float: left; margin-left: 3%; margin-top:30px; img{ width:100%;}}
+    .points {
+      margin-right:4%;
+      margin-top: -40px;
+      float: right;
+      max-width: 200px;
+      font-family: 'Permanent Marker', cursive;
+      h2{font-size: 5em;}
+      div { 
+        margin-top: -65px;
+        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+        text-align: center;
+      }
+    }
+  }
+  .session {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 200px;
+    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
+  }
+  .progress-bar{
+    max-width: 350px;
+  }
+  .progress{
+    float: left;
+    max-width: 9%;
+    img { width:100%; }
+  }
+  .progress.first{
+    margin-left: 10%;
+  }
+  .border-top{
+    max-width: 100%;
+    img { width:100%; }
+  }
+  .web{
+    max-width: 100%;
+    height: 300px;
+    .me {
+      height:105px;
+      max-width: 90px;
+      img { width: 100%; margin-top:60px;}
+    }
+    .circle{
+      color: white;
+      font-size: 1.5em; font-weight: bold;
+      height:60px;
+      width:60px;
+      border-radius:30px;
+      background-color: rgb(90, 202, 90);
+      line-height:60px;
+      text-align: center;
+      border: 2px solid rgb(197, 255, 197);
+    }
+    .popup-menu{
+      display: none;
+      height:290px;
+      position: relative;
+      z-index: 9999;
+      background-color:rgb(250, 248, 248);
+      width:100%;
+      text-align: center;
+      font-size: 1.5em;
+      color: navy;
+      .input{
+        height:50px;
+        padding: 0px 5px;
+        margin-top: 15px;
+        background-color: rgba(255, 255, 255, 0.33);
+        max-width: 95%;
+        input {
+          width:81%; height:35px; 
+          border:8px solid white; 
+          float: left; margin-left:4%; 
+          background-color: rgb(209, 214, 218); color:white; font-size:1.5em;
+        }
+        .submit{
+          position: relative;
+          float: left;
+          max-width:10%;
+          margin-top: -0.5px;
+          img{width:100%;height:51px; z-index: 1000;}
+        }
+      }
+      .colors{
+        max-width:70%;
+        .top-colors{
+          max-width: 200px;
+          height:30px;
+          .each-color {
+            float: left;
+            margin: 0px 5px;
+            max-width: 11%;
+            img { width: 100%; height: 20px;}
+          }
+          .first.each-color{
+            margin-left:13%;
+          }
+        }
+        .bottom-colors{
+          max-width: 200px;
+          height:30px;
+          .each-color {
+            float: left;
+            margin: 0px 5px;
+            max-width: 11%;
+            img { width: 100%; height:20px;}
+          }
+          .first.each-color{
+             margin-left: 13%;
+          }
+        }
+      }  
+    }
+  }
+
+  .border-bottom{
+    max-width: 100%;
+    margin-top: -50px;
+    img { width: 100%; }
+    z-index: 1;
+  }
+  .button{
+    max-width: 120px;
+    z-index: 1;
+    img { width: 100%; }
+  }
+  .icons-container{
+    max-width:370px; 
+    z-index: 1;
+    .icon-container{
+      width:20%;
+      float: left;
+      img{width:100%;}
+    }
+    .icon-container.pin{
+      margin-top: -8px;
+    }
+  }
+  .float-shadow {
+  display: inline-block;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+  .float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    // background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+  }
+  .float-shadow-click {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    /* move the element up by 5px */
+  }
+  .float-shadow-click:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+  }
+}
