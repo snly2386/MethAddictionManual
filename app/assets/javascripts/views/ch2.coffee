@@ -13,12 +13,18 @@ class GettingOff.Ch2 extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     #@pages = [0..]
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     @month_index = @date.getMonth()
+    @month = months[@month_index]
     @year = @date.getFullYear()
 
     @render()
     @position()
     @set_date()
+    # @calendars = []
+    @practice = {}
+    @practice["#{@month}" + "#{@year}"] = @$('.calendar').html()
+    # @calendars.push $('.calendar').html()
     # @populate_calendar()
 
   events: 
@@ -26,6 +32,7 @@ class GettingOff.Ch2 extends GettingOff.View
     'click .finish-chapter' : 'ch3'
     'click .pins .pin'      : 'pin_color'
     'click .next'           : 'next_month'
+    'click .back'           : 'prev_month'
 
   next_month: ->
     if @month_index == 11
@@ -35,6 +42,31 @@ class GettingOff.Ch2 extends GettingOff.View
       @month_index += 1
     @set_month()
     @populate_calendar()
+
+  prev_month: ->
+    if @month_index == 0
+      @month_index = 11
+      @year -= 1
+    else
+      @month_index -=1
+    
+    @set_month()
+
+    if @month_index == 8 && @year == 2014
+      alert "FUCK OFF"
+    else 
+      @reverse_calendar()
+
+  reverse_calendar: ->
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    month = months[@month_index]
+    # index = @calendars.indexOf(@$('.calendar').html())
+    # console.log index
+    # @$('.calendar').html(@calendars[index-1])
+    if month is "September" && @year is 2014
+      alert "Can't go back any further"
+    else 
+      @$('.calendar').html(@practice["#{month}" + "#{@year}"])
 
   populate_calendar: ->
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -66,7 +98,6 @@ class GettingOff.Ch2 extends GettingOff.View
         if $(@).html() is ""
           new_array.push $(@).data('day')
         )
-    console.log new_array
 
     @$('.first').each( ->
         if $(@).data('day') == new_array[0]
@@ -85,6 +116,14 @@ class GettingOff.Ch2 extends GettingOff.View
     remaining_days = first_day.index() + number_of_days-1
     @$('.date')[remaining_days + 1..41].empty()
 
+    @practice["#{month}" + "#{@year}"] = @$('.calendar').html()
+    console.log @practice
+
+    # if @calendars.indexOf(@$('.calendar').html()) is -1
+    #     @calendars.push @$('.calendar').html()
+    # else
+    #     console.log 'already pushed that shit'
+    # console.log @calendars.length
 
   pin_color: (e) ->
      target = @$(e.currentTarget)
@@ -137,17 +176,22 @@ class GettingOff.Ch2 extends GettingOff.View
   update_calendar: (target) ->
     classname = target.data('tag')
     value = @$("#{classname}").html()
-    @$(".date.#{value}").addClass('red')
+    @$(".date").each( ->
+      if $(@).html() == value
+        $(@).addClass('red')
+      )
 
   clear_calendar: (target) ->
     classname = target.data('tag')
     value = @$("#{classname}").html()
-    @$(".date.#{value}").removeClass('red')
+    @$(".date").each( ->
+      if $(@).html() == value
+        $(@).removeClass('red')
+      )
 
   set_month: ->
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
     year = @year
-    console.log year + 1
     @$('header h1').html(months[@month_index] + " #{year}")
 
   set_date: ->
