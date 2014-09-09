@@ -23,6 +23,10 @@ class GettingOff.Application extends Backbone.Router
     'ch3/:page'    : 'ch3'
     'ch4/:page'    : 'ch4'
     'ch5/:page'    : 'ch5'
+    'ch6/:page'    : 'ch6'
+    'ch7/:page'    : 'ch7'
+    'ch8/:page'    : 'ch8'
+    'ch9/:page'    : 'ch9'
   
 
   index: ->
@@ -55,6 +59,18 @@ class GettingOff.Application extends Backbone.Router
   ch5_create_names: ->
     @names ||= new GettingOff.Names()
 
+  ch6_page2: ->
+    @ch6_p2 ||= new GettingOff.Ch6_Page2 "answer_1": "", "answer_2": "", "answer_3": "" 
+
+  ch6_page9: ->
+    @ch6_p9 ||= new GettingOff.Ch6_Page9 "question_1" : "", "question_2": "","question_3": "", "question_4": "", "question_5": ""
+
+  ch8_page6: ->
+    @ch8_p6 ||= new GettingOff.Ch8_Page6 "question_1" : "", "question_2" : "", "question_3": ""
+
+  ch9_page3: ->
+    @ch9_p3 ||= new GettingOff.Ch9_Page3 "question_1" : "", "question_2": "", "question_3": ""
+
   ch1: (page) ->
     view = new GettingOff.Ch1 app: @, page: page
 
@@ -72,6 +88,23 @@ class GettingOff.Application extends Backbone.Router
     @ch5_questions_save()
     @ch5_create_names()
     view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names
+
+  ch6: (page) ->
+    @ch6_page2()
+    @ch6_page9()
+    view = new GettingOff.Ch6 app: @, page: page, page2_model: @ch6_p2, page9_model: @ch6_p9
+
+  ch7: (page) ->
+    view = new GettingOff.Ch7 app: @, page: page
+
+  ch8: (page) ->
+    @ch8_page6()
+    view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6
+
+  ch9: (page) ->
+    @ch9_page3()
+    view = new GettingOff.Ch9 app: @, page: page, page3_model: @ch9_p3
+
 
 
 

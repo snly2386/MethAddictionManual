@@ -1,0 +1,119 @@
+.ch2page_2{
+  header{
+    max-width:50%;
+    color: white;
+    text-align: center;
+    h1{ width: 100%; font-size: 2.5em;}
+  }
+  .calendar{
+    margin-top: -10px;
+    max-width:100%;
+    .row{
+      padding: 0px 5px;
+      max-width:400px;
+      color: white;
+      text-align: center;
+      height:30px;
+      p{
+        float: left; width: 13%; 
+      }
+      p:first-child{
+        margin-left:17px;
+      }
+    }
+    .date-row{
+      padding: 0px 5px;
+      max-width: 400px;
+      color: white;
+      text-align: center;
+      height:30px;
+      p{ float: left; width:13%;}
+      p:first-child{
+        margin-left: 17px;
+      }
+    }
+  }
+  .bottom-menu{
+    margin-top:75px;
+    height:200px;
+    overflow-y: auto;
+    max-width:100%;
+    .top-container{
+      margin-top: 2px;
+      max-width:400px;
+      height:98px;
+      background-color: rgba(255, 255, 255, 0.33);
+      .day{
+        margin-left: 20px;
+        margin-top:5px;
+        height:80px;
+        color: white;
+        float: left;
+        p{font-size: 1.5em;}
+      }
+      .today{
+        padding-left: 10px;
+        height:80px;
+        width:100px;
+        margin-top: 10px;
+        text-align: center;
+        color: white;
+        margin-left: 80px;
+        float: left;
+        p{ font-size: 1.6em; height:25px; float: left; }
+      }
+      .block{
+        margin-top: 10px;
+        height:80px;
+        float: left;
+        width:50px;
+      }
+      .pins{
+        max-width:30px;
+        float: right;
+        background-color: rgba(255, 255, 255, 0.63);
+        .pin{
+          max-width:100%;
+          background-color: rgba(255, 255, 255, 0.63); 
+          img { width:100%; height:30px;}   
+        }
+      }
+    }
+  }
+  .border-bottom{
+    max-width:100%;
+    margin-top: -10px;
+    img { width:100%; }
+  }
+  .finish-chapter{
+    margin-top: 5px;
+    max-width:120px;
+    img{width:100%;}
+  }
+  .icons-container{
+    max-width:400px;
+    .icon-container{
+      width:20%;
+      float: left;
+      img { width:100%; }
+    }
+    .icon-container.pin{
+        img { margin-top:-8px }
+    }
+  }
+  .one{
+    
+  }
+  .blue{
+    color:rgb(0, 153, 255) !important;
+  }
+  .white{
+    background-color: white !important;
+  }
+  .red{
+    background-color: red !important;
+  }
+  .test{
+    
+  }
+}

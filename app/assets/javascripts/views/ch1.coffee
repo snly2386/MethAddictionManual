@@ -49,7 +49,7 @@ class GettingOff.Ch1 extends GettingOff.View
       alert 'You must enter a value'
 
   ch2: ->
-    @app.navigate "ch3/1", trigger: true
+    @app.navigate "ch2/1", trigger: true
 
   render: ->
     @$el.html @template()

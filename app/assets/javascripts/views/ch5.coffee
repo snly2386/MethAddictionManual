@@ -32,6 +32,7 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .me'                   : 'popup_menu'
     'click .submit'               : 'create_person'
     'click .float-shadow'         : 'float_effect'
+    'click .finish-chapter'       : 'ch6'
 
   float_effect: (e) ->
     target = @$(e.currentTarget)
@@ -56,7 +57,6 @@ class GettingOff.Ch5 extends GettingOff.View
     person = @$('.name').val()
     color_data = @$(".float-shadow-click").data('color')
     name = new GettingOff.Ch5_Name "name" : person, "color" : color_data
-    console.log "LOOK AT THIS SHIT" + person + "COLOR " + color_data
     @names.create(name)
     div = "<div class='circle font-sans' style='background-color:#{color_data}'>#{person}</div>"
     @append(div)
@@ -88,6 +88,9 @@ class GettingOff.Ch5 extends GettingOff.View
   navigate: ->
     next_page = @page + 1
     @app.navigate "ch5/#{next_page}", trigger: true
+
+  ch6: ->
+    @app.navigate "ch6/1", trigger: true
 
   render: ->
     @$el.html @template @model.toJSON()

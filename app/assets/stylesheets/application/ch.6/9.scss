@@ -1,0 +1,99 @@
+.ch6page-9{
+  header{
+    max-width: 100%;color:white;
+    height:90px; 
+    .img {width: 90px; float: left; margin-left: 3%; margin-top:30px; img{ width:100%;}}
+    .points {
+      margin-right:4%;
+      margin-top: -40px;
+      float: right;
+      max-width: 200px;
+      font-family: 'Permanent Marker', cursive;
+      h2{font-size: 5em;}
+      div { 
+        margin-top: -65px;
+        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+        text-align: center;
+      }
+    }
+  }
+  .session {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 200px;
+    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
+  }
+  .progress-bar{
+    max-width: 350px;
+  }
+  .progress{
+    float: left;
+    max-width: 9%;
+    img { width:100%; }
+  }
+  .progress.first{
+    margin-left: 10%;
+  }
+  .border-top{
+    max-width: 100%;
+    img { width:100%; }
+  }
+  .content{
+    max-width: 98%;
+    height:250px;
+    overflow-y: auto;
+    .title{
+      text-align: center;
+      max-width: 100%;
+      color: white;
+      h1 { width: 100%; font-size:1.3em; }
+    }
+    .paragraph{
+      padding: 0px 5px;
+      text-align: center;
+      max-width: 100%;
+      color: white;
+      p { width: 100%; font-size:1.1em; }
+    }
+    .subtitle{
+      max-width: 80%;
+      color: white;
+      text-align: center;
+      h1 { width: 100%; font-size: 1.6em; }
+    }
+    .textarea{
+      padding: 0px 10px;
+      max-width:100%;
+      textarea { 
+        color: white;
+        width: 95%;
+        height:70px;
+        border:8px solid white; 
+        background-color: #d1d6da;
+      }
+    }
+  }
+  .border-bottom{
+    max-width: 100%;
+    img { width: 100%; }
+  }
+   .page9-model{
+    max-width: 120px;
+    img { width: 100%; }
+  }
+  .icons-container{
+    max-width:370px; 
+    z-index: 1;
+    .icon-container{
+      width:20%;
+      float: left;
+      img{width:100%;}
+    }
+    .icon-container.pin{
+      margin-top: -8px;
+    }
+  }
+   .textarea-click{
+    background-color: #959697 !important;
+  }
+}

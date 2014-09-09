@@ -1,0 +1,133 @@
+.ch6page-8{
+  header{
+    max-width: 100%;color:white;
+    height:90px; 
+    .img {width: 90px; float: left; margin-left: 3%; margin-top:30px; img{ width:100%;}}
+    .points {
+      margin-right:4%;
+      margin-top: -40px;
+      float: right;
+      max-width: 200px;
+      font-family: 'Permanent Marker', cursive;
+      h2{font-size: 5em;}
+      div { 
+        margin-top: -65px;
+        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+        text-align: center;
+      }
+    }
+  }
+  .session {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 200px;
+    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
+  }
+  .progress-bar{
+    max-width: 350px;
+  }
+  .progress{
+    float: left;
+    max-width: 9%;
+    img { width:100%; }
+  }
+  .progress.first{
+    margin-left: 10%;
+  }
+  .border-top{
+    max-width: 100%;
+    img { width:100%; }
+  }
+  .content{
+    max-width: 98%;
+    height:250px;
+    overflow-y: auto;
+    padding: 0px 10px;
+    .top{
+      max-width:400px;
+      height:60px;
+      .stage{
+        float: left;
+        color: white;
+        h1{margin-top:2px; font-size:2em;}
+        p{margin-top: -20px; text-align: right; margin-right: 4px;}
+      }
+      .stage-name{
+        text-align: center;
+        width:170px;
+        float: right;
+        color: white;
+        margin-top: 6px;
+        background-color: rgba(255, 255, 255, 0.4);
+        height: 50px;
+        h1{margin-top:10px; font-size: 1.8em}
+      }
+    }
+    .line{
+      margin-top:5px;
+      max-width:400px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+    }
+    .middle{
+      max-width:400px;
+      padding: 0px 5px;
+      color: white;
+      font-size: 1.1em;
+      background-color: rgba(255, 255, 255, 0.4); 
+      p { width: 100%; }
+    }
+    .subtitles{
+      max-width:411px;
+      height:42px;
+      .title{
+        height: 40px;
+        width: 49.7%;
+        text-align: center;
+        float: left;
+        color: white;
+        font-size: 1.3em;
+        background-color: rgba(255, 255, 255, 0.4);
+        h1{ margin-top: 8px; font-weight: none}
+      }
+      .title.first{
+        margin-right:2px;
+      }
+    }
+    .paragraph{
+      text-align: left;
+      color: white;
+      max-width: 400px;
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 0px 5px;
+      .list-container{
+        padding: 1px 0px;
+        margin-left: -20px;
+        max-width: 100%;
+        li{ width: 100%;}  
+      }
+    }
+  }
+   .border-bottom{
+    max-width: 100%;
+    img { width: 100%; }
+  }
+   .button{
+    max-width: 120px;
+    img { width: 100%; }
+  }
+  .icons-container{
+    max-width:370px; 
+    z-index: 1;
+    .icon-container{
+      width:20%;
+      float: left;
+      img{width:100%;}
+    }
+    .icon-container.pin{
+      margin-top: -8px;
+    }
+  }
+  .title-clicked{
+    background-color: rgba(115, 242, 253, 0.4) !important;
+  }
+}

@@ -1,15 +1,21 @@
-<header class="centered">
-  <img src="assets/title.png"/>
+<header>
+  <div class="img">
+    <img src="assets/title.png"/>
+  </div>
+  <div class="points">
+    <h2>183</h2>
+    <div>POINTS</div>
+  </div>
 </header>
 
-<section class="session centered">
-  <div>Session 2</div>
+<section class="session centered font-sans">
+  <p>Session 6</p>
 </section>
 
 <section class="progress-bar centered"> 
   <div class="progress first"><img src="assets/progress_check.png"/></div>
   <div class="progress"><img src="assets/progress_line.png"/></div>
-  <div class="progress"><img src="assets/progress_x.png"/></div>
+  <div class="progress"><img src="assets/progress_check.png"/></div>
   <div class="progress"><img src="assets/progress_line.png"/></div>
   <div class="progress"><img src="assets/progress_x.png"/></div>
   <div class="progress"><img src="assets/progress_line.png"/></div>
@@ -18,18 +24,34 @@
   <div class="progress"><img src="assets/progress_x.png"/></div>
 </section>
 
-<div class="border-top centered">
+<div class="border-top">
   <img src="assets/text_border_top.png"/>
 </div>
 
-<section class="content centered">
-  <div class="paragraph centered font-sans">
-    <h1>Calendars and Dots around the Clock</h1>
-    <p>People with drug dependence often feel their behavior is “out of control.” Over time, this can lead to feelings of hopelessness about ever changing their behavior. However, change begins with a single step. Simply noticing your behavior can lead to changes in how you behave. In this session, we will start to work on noticing patterns of behavior.</p>
-    <p>On the next page is a calendar for a week. Think about the last time that you used crystal. Write in the date(s) for the day(s) of the week in which this occurred. This exercise is to provide an example for how to fill in the calendars; if you don’t remember the exact date(s), just number the day(s) from 1 to 7. Complete the calendar as follows:</p>
-    <p>1. Starting with the first day of this week, place a white pin on any day that you did not use any crystal.</p>
-    <p>2. On each of the days that you did use during this week, place a blue pin (for example, alcohol, crystal, poppers).</p>
-    <p>3. Place a red pin on the days that you had sex.</p>
+<section class="questions centered">
+  <p class="font-sans instructions">Write down some needs that you’re aware of in each of these three areas. Have you considered these needs to be part of your recovery from crystal?</p>
+  <div class="text centered">
+    <h1 class="font-sans">Physical:</h1>
+    <p class="font-sans example">Examples: aches, pains, nausea, insomnia</p>
+  </div>
+  <div class="textarea centered">
+    <textarea class="1"><%=answer_1%></textarea>
+  </div>
+
+  <div class="text centered">
+    <h1 class="font-sans">Emotional:</h1>
+    <p class="font-sans example">Examples: anger, sadness, short­temper</p>
+  </div>
+  <div class="textarea centered">
+    <textarea class="2"><%=answer_2%></textarea>
+  </div>
+
+  <div class="text centered">
+    <h1 class="font-sans">Spiritual:</h1>
+    <p class="font-sans example">Example: believing in a power or force greater than yourself</p>
+  </div>
+  <div class="textarea centered">
+    <textarea class="3"><%=answer_3%> </textarea>
   </div>
 </section>
 
@@ -37,7 +59,7 @@
   <img src="assets/text_border_bottom.png"/>
 </div>
 
-<div class="button centered">
+<div class="page2-model centered">
   <img src="assets/next_button.png"/>
 </div>
 
