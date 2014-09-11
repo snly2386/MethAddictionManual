@@ -12,6 +12,7 @@
   .name-container{
     max-width: 500px; margin: 20px auto 0 auto;
     text-align: center;
+    padding: 0px 10px;
     .title {
       margin: auto;
       font-size: 1.9em;
@@ -44,6 +45,7 @@
       font-family: 'Open Sans', sans-serif;
     }
   .theme-container{
+    padding:0px 10px;
     margin: auto;
     max-width: 500px;
     .twin-border{
@@ -91,6 +93,18 @@
       height: 60px;
       width: 100%;
       margin: auto;
+    }
+  }
+  .buttonn-container{
+    max-width:120px;
+    background-color: red;
+    border-radius: 10px;
+    height:43px;
+    .next{
+      height: 35px;
+      width:75%;
+      margin-top: 5px;
+      margin-left: 15px;
     }
   }
  .progress-bar {

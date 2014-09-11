@@ -52,6 +52,7 @@
     font-size: 3.5em;
     text-align: center;
     .list{
+      cursor: pointer;
       margin-top: -50px;
       float: left;
       width:50%;
@@ -106,5 +107,8 @@
   }
   .textarea-click{
     background-color: #959697 !important;
+  }
+  .list-handler{
+
   }
 }

@@ -12,7 +12,11 @@ class GettingOff.Ch2 extends GettingOff.View
 
   initialize: (options) ->
     @app = options.app
-    #@pages = [0..]
+    @table_of_contents = options.table_of_contents
+    @table_of_contents.fetch
+      success:(model, response, options) =>
+        @render_table_of_contents()
+
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     @month_index = @date.getMonth()
     @month = months[@month_index]
@@ -21,11 +25,10 @@ class GettingOff.Ch2 extends GettingOff.View
     @render()
     @position()
     @set_date()
-    # @calendars = []
+
+    @render_table_of_contents()
     @practice = {}
     @practice["#{@month}" + "#{@year}"] = @$('.calendar').html()
-    # @calendars.push $('.calendar').html()
-    # @populate_calendar()
 
   events: 
     'click .button'         : 'navigate'
@@ -33,6 +36,21 @@ class GettingOff.Ch2 extends GettingOff.View
     'click .pins .pin'      : 'pin_color'
     'click .next'           : 'next_month'
     'click .back'           : 'prev_month'
+    'click .finish-chapter' : 'ch3'
+
+  render_table_of_contents: ->
+    table_of_contents = @table_of_contents
+    @$('.chapter').each( ->
+      model = table_of_contents.findWhere({chapter: parseInt("#{$(@).data('chapter')}")})
+      percentage = model.percentage()
+      console.log percentage
+      if percentage is 100
+        $(@).append("<img src='assets/progress_check.png'/>")
+        $(@).addClass('session-complete')
+      else 
+        $(@).parent('.paragraph').append("<div class='progress #{$(@).data('chapter')}' style='width:0px'></div>")
+        $(".progress.#{$(@).data('chapter')}").animate({width: "#{percentage}%"}, 2000)
+      )
 
   next_month: ->
     if @month_index == 11
@@ -69,22 +87,34 @@ class GettingOff.Ch2 extends GettingOff.View
       @$('.calendar').html(@practice["#{month}" + "#{@year}"])
 
   populate_calendar: ->
+    year = @year
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month = months[@month_index]
     number_of_days = ""
-    number_of_days = switch month
-      when "January"  then  31
-      when "February" then  28
-      when "March"    then  31
-      when "April"    then  30
-      when "May"      then  31
-      when "June"     then  30
-      when "July"     then  31
-      when "August"   then  31
-      when "September"then  30
-      when "October"  then  31
-      when "November" then  30
-      when "December" then  31
+    for yearr in [2016..3000] by 4
+      if @year is year && month is "February"
+        number_of_days = 29
+      else
+        number_of_days = switch month
+          when "January"  then  31
+          when "February" then  28
+          when "March"    then  31
+          when "April"    then  30
+          when "May"      then  31
+          when "June"     then  30
+          when "July"     then  31
+          when "August"   then  31
+          when "September"then  30
+          when "October"  then  31
+          when "November" then  30
+          when "December" then  31
+
+    # if (@year is 2016 || @year is 2020 || @year is 2024 || @year is 2028) && month is "February" 
+    #   number_of_days = 29
+
+    console.log month  
+    console.log @year
+    console.log number_of_days
     first_day = ""
     new_array = []
     counter = 1
@@ -117,7 +147,6 @@ class GettingOff.Ch2 extends GettingOff.View
     @$('.date')[remaining_days + 1..41].empty()
 
     @practice["#{month}" + "#{@year}"] = @$('.calendar').html()
-    console.log @practice
 
     # if @calendars.indexOf(@$('.calendar').html()) is -1
     #     @calendars.push @$('.calendar').html()
@@ -128,49 +157,49 @@ class GettingOff.Ch2 extends GettingOff.View
   pin_color: (e) ->
      target = @$(e.currentTarget)
      if target.data('color') == "white" && target.hasClass('1terday')
-        @$(".today.1, .block.1").addClass("white")
-        @$(".today.1").addClass('blue')
+        @$(".block.11, .block.1").addClass("white")
+        # @$(".block.11").addClass('blue')
         @clear_calendar(target)
      else if target.data('color') == "white" && target.hasClass('2day')
-        @$(".today.2, .block.2").addClass("white")
-        @$(".today.2").addClass('blue')
+        @$(".block.22, .block.2").addClass("white")
+        @$(".block.22").addClass('blue')
         @clear_calendar(target)
      else if target.data('color') == "white" && target.hasClass('2morrow')
-        @$(".today.3, .block.3").addClass("white")
-        @$(".today.3").addClass("blue")
+        @$(".block.33, .block.3").addClass("white")
+        @$(".block.33").addClass("blue")
         @clear_calendar(target)
-     else if target.hasClass('1terday') && @$(".today.1").hasClass("one")
-        @$(".today.1, .block.1").removeClass("white")
-        @$(".today.1, .block.1").removeClass("blue")
+     else if target.hasClass('1terday') && @$(".block.11").hasClass("one")
+        @$(".block.11, .block.1").removeClass("white")
+        @$(".block.11, .block.1").removeClass("blue")
         @$(".block.1").css("background-color", "#{target.data('color')}")
         @update_calendar(target)
-     else if target.hasClass('2day') && @$(".today.2").hasClass("one")
-        @$(".today.2, .block.2").removeClass("white")
-        @$(".today.2, .block.2").removeClass("blue")
+     else if target.hasClass('2day') && @$(".block.22").hasClass("one")
+        @$(".block.22, .block.2").removeClass("white")
+        @$(".block.22, .block.2").removeClass("blue")
         @$(".block.2").css("background-color", "#{target.data('color')}")
         @update_calendar(target)
-     else if target.hasClass('2morrow') && @$(".today.3").hasClass("one")
-        @$(".today.3, .block.3").removeClass("white")
-        @$(".today.3, .block.3").removeClass("blue")
+     else if target.hasClass('2morrow') && @$(".block.33").hasClass("one")
+        @$(".block.33, .block.3").removeClass("white")
+        @$(".block.33, .block.3").removeClass("blue")
         @$(".block.3").css("background-color", "#{target.data('color')}")
         @update_calendar(target)
      else if target.hasClass("1terday")
-        @$(".today.1, .block.1").removeClass("white")
-        @$(".today.1, .block.1").removeClass("blue")
-        @$(".today.1").css("background-color", "#{target.data('color')}" )
-        @$(".today.1").addClass("one")
+        @$(".block.11, .block.1").removeClass("white")
+        @$(".block.11, .block.1").removeClass("blue")
+        @$(".block.11").css("background-color", "#{target.data('color')}" )
+        @$(".block.11").addClass("one")
         @update_calendar(target)
      else if target.hasClass("2day")
-        @$(".today.2, .block.2").removeClass("white")
-        @$(".today.2, .block.2").removeClass("blue")
-        @$(".today.2").css("background-color", "#{target.data('color')}" )
-        @$(".today.2").addClass("one")
+        @$(".block.22, .block.2").removeClass("white")
+        @$(".block.22, .block.2").removeClass("blue")
+        @$(".block.22").css("background-color", "#{target.data('color')}" )
+        @$(".block.22").addClass("one")
         @update_calendar(target)
      else if target.hasClass("2morrow")
-        @$(".today.3, .block.3").removeClass("white")
-        @$(".today.3, .block.3").removeClass("blue")
-        @$(".today.3").css("background-color", "#{target.data('color')}" )
-        @$(".today.3").addClass("one")
+        @$(".block.33, .block.3").removeClass("white")
+        @$(".block.33, .block.3").removeClass("blue")
+        @$(".block.33").css("background-color", "#{target.data('color')}" )
+        @$(".block.33").addClass("one")
         @update_calendar(target)
 
   update_calendar: (target) ->

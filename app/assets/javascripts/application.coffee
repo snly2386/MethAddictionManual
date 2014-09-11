@@ -53,6 +53,23 @@ class GettingOff.Application extends Backbone.Router
   answers_create: ->
     @relapse_questions ||= new GettingOff.Relapse_Questions "answer_1": "", "answer_2":"","answer_3":"","answer_4":"","answer_5":"","answer_6":""
 
+  table_of_contents: ->
+    @table_contents ||= new GettingOff.Table_Contents()
+
+  create_chapters: ->
+    @table_of_contents()
+    chapter_3 = new GettingOff.Chapter chapter: 3, total_pages: 5, page: 3
+    chapter_4 = new GettingOff.Chapter chapter: 4, total_pages: 2, page: 2
+    chapter_5 = new GettingOff.Chapter chapter: 5, total_pages: 5, page: 5
+    chapter_6 = new GettingOff.Chapter chapter: 6, total_pages: 9, page: 7
+    chapter_7 = new GettingOff.Chapter chapter: 7, total_pages: 3, page: 1
+    chapter_8 = new GettingOff.Chapter chapter: 8, total_pages: 6, page: 4
+    chapter_9 = new GettingOff.Chapter chapter: 9, total_pages: 3, page: 2
+    table_of_contents = [chapter_3, chapter_4, chapter_5, chapter_6, chapter_7, chapter_8, chapter_9]
+    for chapter in table_of_contents
+      @table_contents.create(chapter)
+
+
   ch5_questions_save: ->
     @ch5_questions ||= new GettingOff.Ch5_Questions "answer_1": "", "answer_2": "", "answer_3": "", "answer_4": "", "answer_5": ""
 
@@ -75,35 +92,43 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.Ch1 app: @, page: page
 
   ch2: (page) ->
-    view = new GettingOff.Ch2 app: @, page: page
+    @create_chapters()
+    view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents
 
   ch3: (page) ->
-    view = new GettingOff.Ch3 app: @, page: page
+    @table_of_contents()
+    view = new GettingOff.Ch3 app: @, page: page, table_of_contents: @table_contents
 
   ch4: (page) ->
+    @table_of_contents()
     @answers_create()
-    view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions
+    view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions, table_of_contents: @table_contents
 
   ch5: (page) ->
+    @table_of_contents()
     @ch5_questions_save()
     @ch5_create_names()
-    view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names
+    view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names, table_of_contents: @table_contents
 
   ch6: (page) ->
+    @table_of_contents()
     @ch6_page2()
     @ch6_page9()
-    view = new GettingOff.Ch6 app: @, page: page, page2_model: @ch6_p2, page9_model: @ch6_p9
+    view = new GettingOff.Ch6 app: @, page: page, page2_model: @ch6_p2, page9_model: @ch6_p9, table_of_contents: @table_contents
 
   ch7: (page) ->
-    view = new GettingOff.Ch7 app: @, page: page
+    @table_of_contents()
+    view = new GettingOff.Ch7 app: @, page: page, table_of_contents: @table_contents
 
   ch8: (page) ->
+    @table_of_contents()
     @ch8_page6()
-    view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6
+    view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6, table_of_contents: @table_contents
 
   ch9: (page) ->
+    @table_of_contents()
     @ch9_page3()
-    view = new GettingOff.Ch9 app: @, page: page, page3_model: @ch9_p3
+    view = new GettingOff.Ch9 app: @, page: page, page3_model: @ch9_p3, table_of_contents: @table_contents
 
 
 

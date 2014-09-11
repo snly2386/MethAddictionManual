@@ -11,6 +11,11 @@ class GettingOff.Ch7 extends GettingOff.View
 
   initialize: (options) ->
     @app = options.app
+    @table_of_contents = options.table_of_contents
+
+    @table_of_contents.fetch
+      success:(model, response, options) =>
+        @update_table_of_contents()
 
     @render()
     @position()
@@ -18,6 +23,11 @@ class GettingOff.Ch7 extends GettingOff.View
   events: 
     'click .button'         : 'navigate'
     'click .finish-chapter' : 'ch8'
+
+  update_table_of_contents: ->
+    model = @table_of_contents.findWhere({chapter: 7})
+    model.set('page', @page)
+    model.save()
 
   ch8: ->
     @app.navigate "ch8/1", trigger: true

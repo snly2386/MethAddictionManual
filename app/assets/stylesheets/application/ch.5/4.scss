@@ -48,6 +48,8 @@
     }
     .circle{
       color: white;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 1.5em; font-weight: bold;
       height:60px;
       width:60px;
@@ -59,7 +61,7 @@
     }
     .popup-menu{
       display: none;
-      height:290px;
+      height:330px;
       position: relative;
       z-index: 9999;
       background-color:rgb(250, 248, 248);

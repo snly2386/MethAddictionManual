@@ -12,9 +12,17 @@ class GettingOff.Ch8 extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @page6_model = options.page6_model
+    @table_of_contents = options.table_of_contents
+
     @page6_model.fetch
       success:(model, response, options) =>
         @page6_model.set model.attributes[0]
+
+
+    @table_of_contents.fetch
+      success:(model, response, options) =>
+        @update_table_of_contents()
+
 
     @render()
     @position()
@@ -23,6 +31,12 @@ class GettingOff.Ch8 extends GettingOff.View
     'click .button'         : 'navigate'
     'click .list p'         : 'add_check'
     'click .finish-chapter' : 'page6_save'
+
+  update_table_of_contents: ->
+    model = @table_of_contents.findWhere({chapter: 8})
+    model.set('page', @page)
+    model.save()
+
 
   add_check: (e) ->
     target = @$(e.currentTarget)

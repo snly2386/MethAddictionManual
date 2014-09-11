@@ -11,6 +11,12 @@ class GettingOff.Ch3 extends GettingOff.View
 
   initialize: (options) ->
     @app = options.app
+    @table_of_contents = options.table_of_contents
+
+    @table_of_contents.fetch
+      success:(model, response, options) =>
+        @update_table_of_contents()
+
     @crystal_array = ["Never Use", "Sometimes Use", "Always Use"]
     @crystal_counter = 0
     @crystal_hash = {"Never Use": [], "Sometimes Use": [], "Always Use" : []}
@@ -34,6 +40,10 @@ class GettingOff.Ch3 extends GettingOff.View
     'focus .textarea textarea'          : 'textarea_handler'
     'focusout .textarea textarea'       : 'textarea_out_handler'
 
+  update_table_of_contents: ->
+    model = @table_of_contents.findWhere({chapter: 3})
+    model.set('page', @page)
+    model.save()
 
   add_trigger_crystal: -> 
     input = @display_trigger()
@@ -120,7 +130,8 @@ class GettingOff.Ch3 extends GettingOff.View
 
   list_handler: (e)-> 
     target = $(e.currentTarget)
-    target.css('text-decoration')
+    target.siblings().removeClass('grown')
+    target.addClass('grown')
 
 
   focus_handler: ->

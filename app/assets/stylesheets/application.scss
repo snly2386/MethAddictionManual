@@ -27,7 +27,12 @@
   transform: translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
-.grow:hover, .grow:focus, .grow:active {
+// .grow:hover, .grow:focus, .grow:active {
+//   -webkit-transform: scale(1.1);
+//   transform: scale(1.1);
+// }
+
+.grown{
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }

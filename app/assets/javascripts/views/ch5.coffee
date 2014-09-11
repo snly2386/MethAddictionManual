@@ -12,6 +12,12 @@ class GettingOff.Ch5 extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @names = options.names
+
+    @table_of_contents = options.table_of_contents
+
+    @table_of_contents.fetch
+      success:(model, response, options) =>
+        @update_table_of_contents()
     
     @model.fetch
       success: (model, response, options) =>
@@ -33,6 +39,11 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .submit'               : 'create_person'
     'click .float-shadow'         : 'float_effect'
     'click .finish-chapter'       : 'ch6'
+
+   update_table_of_contents: ->
+    model = @table_of_contents.findWhere({chapter: 5})
+    model.set('page', @page)
+    model.save()
 
   float_effect: (e) ->
     target = @$(e.currentTarget)

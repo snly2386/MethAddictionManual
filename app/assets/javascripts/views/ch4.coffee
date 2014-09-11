@@ -14,6 +14,12 @@ class GettingOff.Ch4 extends GettingOff.View
     @answers = false
     # console.log "model: " + @model
     # console.log @model
+    @table_of_contents = options.table_of_contents
+
+    @table_of_contents.fetch
+      success:(model, response, options) =>
+        @update_table_of_contents()
+
     @model.fetch
       success: (model, response, options) =>
         @model.set model.attributes[0]
@@ -25,6 +31,11 @@ class GettingOff.Ch4 extends GettingOff.View
     'focus .textarea textarea'    : 'focus_handler'
     'focusout .textarea textarea' : 'focusout_handler'
     'click .finish-chapter'       : 'ch5'
+
+   update_table_of_contents: ->
+    model = @table_of_contents.findWhere({chapter: 4})
+    model.set('page', @page)
+    model.save()
 
   focus_handler: (e) ->
     target = @$(e.currentTarget)

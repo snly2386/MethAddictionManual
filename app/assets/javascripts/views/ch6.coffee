@@ -13,7 +13,11 @@ class GettingOff.Ch6 extends GettingOff.View
     @app = options.app
     @page2_model = options.page2_model
     @page9_model = options.page9_model
-    console.log @page9_model
+    @table_of_contents = options.table_of_contents
+
+    @table_of_contents.fetch
+      success:(model, response, options) =>
+        @update_table_of_contents()
 
     @page2_model.fetch
       success:(model, response, options) =>
@@ -36,6 +40,11 @@ class GettingOff.Ch6 extends GettingOff.View
     'click .title.second'         : 'show_what_do'
     'focus .textarea textarea'    : 'focus_handler'
     'focusout .textarea textarea' : 'focusout_handler'
+
+   update_table_of_contents: ->
+    model = @table_of_contents.findWhere({chapter: 6})
+    model.set('page', @page)
+    model.save()
 
   focus_handler: (e) ->
     target = @$(e.currentTarget)
