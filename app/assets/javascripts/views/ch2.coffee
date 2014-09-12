@@ -13,6 +13,7 @@ class GettingOff.Ch2 extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @table_of_contents = options.table_of_contents
+    @button = options.button
     @table_of_contents.fetch
       success:(model, response, options) =>
         @render_table_of_contents()
@@ -23,6 +24,13 @@ class GettingOff.Ch2 extends GettingOff.View
     @year = @date.getFullYear()
 
     @render()
+
+    @get_calendar()
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
     @position()
     @set_date()
 
@@ -37,6 +45,35 @@ class GettingOff.Ch2 extends GettingOff.View
     'click .next'           : 'next_month'
     'click .back'           : 'prev_month'
     'click .finish-chapter' : 'ch3'
+
+  get_calendar: ->
+    date = new Date()
+    first_day = new Date(date.getFullYear(), date.getMonth(), 1)
+    day_index = first_day.getDay()
+    days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    day = days[day_index]
+
+    counter = 1
+    day_html = ""
+    number_of_days = new Date(@year, @month_index, 0).getDate()
+
+    @$('.first').each(->
+      if $(@).data('day') is day
+        day_html = $(@)
+      )
+
+    console.log "DAY_HTML: #{day_html}"
+
+    @$('.date')[day_html.index()..(day_html.index() + number_of_days-1)].each( ->
+        $(@).html(counter)
+        counter++
+      )
+
+
+
+  render_button: ->
+    @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}")   
 
   render_table_of_contents: ->
     table_of_contents = @table_of_contents
@@ -69,52 +106,116 @@ class GettingOff.Ch2 extends GettingOff.View
       @month_index -=1
     
     @set_month()
-
-    if @month_index == 8 && @year == 2014
-      alert "FUCK OFF"
-    else 
-      @reverse_calendar()
+    @reverse_calendar()
 
   reverse_calendar: ->
+    year = @year
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month = months[@month_index]
-    # index = @calendars.indexOf(@$('.calendar').html())
-    # console.log index
-    # @$('.calendar').html(@calendars[index-1])
-    if month is "September" && @year is 2014
-      alert "Can't go back any further"
+    number_of_days = ""
+    
+    number_of_days = switch month
+      when "January"  then  31
+      when "February" then  28
+      when "March"    then  31
+      when "April"    then  30
+      when "May"      then  31
+      when "June"     then  30
+      when "July"     then  31
+      when "August"   then  31
+      when "September"then  30
+      when "October"  then  31
+      when "November" then  30
+      when "December" then  31
+
+    for yearr in [2000..3000] by 4
+      if year is yearr && month is "February"
+        number_of_days = 29
+
+    # @$('.calendar').html(@practice["#{month}" + "#{@year}"])
+    empty_slots = []
+    results = []
+    last_day = ""
+    @$('.first').each( ->
+      if $(@).html() is ""
+        empty_slots.push $(@).data('day')
+      )
+
+    if empty_slots.length is 0
+      last_day = "sunday"
     else 
-      @$('.calendar').html(@practice["#{month}" + "#{@year}"])
+      last_day = empty_slots[empty_slots.length-1]
+
+
+    days = ["monday","tuesday","wednesday","thursday","friday","saturday", "sunday","monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+    
+    i = 0
+    while i < days.length
+      results.push i  if days[i] is last_day
+      i++
+
+    day_index = results[1] 
+    first_day_remainder = (((number_of_days-1) / 7) % 1).toPrecision(4)
+
+    first_day_subtract = switch first_day_remainder
+      when '0.000'  then 0 
+      when '0.1429' then 1 
+      when '0.2857' then 2
+      when '0.4286' then 3
+      when '0.5714' then 4
+      when '0.7143' then 5
+      when '0.8571' then 6
+    console.log "FIRST_DAY_SUBTRACT: #{first_day_subtract}"
+    first_day_index = day_index - first_day_subtract
+    first_day = days[first_day_index]
+    console.log "FIRST_DAY: #{first_day}"
+    first_day_html = ""
+    counter = 1
+
+    @$('.first').each( ->
+      if $(@).data('day') is first_day
+        first_day_html = $(@)
+      )
+  
+
+    @$('.date')[first_day_html.index()..(first_day_html.index() + number_of_days-1)].each( ->
+        $(@).html(counter)
+        counter++
+        )
+
+    @$('.date')[0...first_day_html.index()].each( ->
+        $(@).empty()
+        )
+
+    remaining_days = first_day_html.index() + number_of_days-1
+    @$('.date')[remaining_days + 1..41].empty()
 
   populate_calendar: ->
     year = @year
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month = months[@month_index]
     number_of_days = ""
-    for yearr in [2016..3000] by 4
-      if @year is year && month is "February"
+  
+    number_of_days = switch month
+      when "January"  then  31
+      when "February" then  28
+      when "March"    then  31
+      when "April"    then  30
+      when "May"      then  31
+      when "June"     then  30
+      when "July"     then  31
+      when "August"   then  31
+      when "September"then  30
+      when "October"  then  31
+      when "November" then  30
+      when "December" then  31
+
+    for yearr in [2000..3000] by 4
+      if @year is yearr && month is "February"
         number_of_days = 29
-      else
-        number_of_days = switch month
-          when "January"  then  31
-          when "February" then  28
-          when "March"    then  31
-          when "April"    then  30
-          when "May"      then  31
-          when "June"     then  30
-          when "July"     then  31
-          when "August"   then  31
-          when "September"then  30
-          when "October"  then  31
-          when "November" then  30
-          when "December" then  31
+        console.log yearr
+        console.log 'WTFFF'
 
-    # if (@year is 2016 || @year is 2020 || @year is 2024 || @year is 2028) && month is "February" 
-    #   number_of_days = 29
-
-    console.log month  
-    console.log @year
-    console.log number_of_days
     first_day = ""
     new_array = []
     counter = 1
@@ -148,11 +249,6 @@ class GettingOff.Ch2 extends GettingOff.View
 
     @practice["#{month}" + "#{@year}"] = @$('.calendar').html()
 
-    # if @calendars.indexOf(@$('.calendar').html()) is -1
-    #     @calendars.push @$('.calendar').html()
-    # else
-    #     console.log 'already pushed that shit'
-    # console.log @calendars.length
 
   pin_color: (e) ->
      target = @$(e.currentTarget)

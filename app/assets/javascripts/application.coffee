@@ -35,9 +35,13 @@ class GettingOff.Application extends Backbone.Router
   new_user: -> 
     view = new GettingOff.New_User app: @
 
+  render_button: ->
+    @button ||= new GettingOff.Button "color": "", "background" :""
+
   new_theme: ->
+    @render_button()
     @user_create() 
-    view = new GettingOff.New_Theme app: @, model: @user
+    view = new GettingOff.New_Theme app: @, model: @user, button: @button
 
   finish_setup: ->
     @user_create()
@@ -89,46 +93,55 @@ class GettingOff.Application extends Backbone.Router
     @ch9_p3 ||= new GettingOff.Ch9_Page3 "question_1" : "", "question_2": "", "question_3": ""
 
   ch1: (page) ->
-    view = new GettingOff.Ch1 app: @, page: page
+    @render_button()
+    view = new GettingOff.Ch1 app: @, page: page, button: @button
 
   ch2: (page) ->
+    @render_button()
     @create_chapters()
-    view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents
+    view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents, button: @button
 
   ch3: (page) ->
+    @render_button()
     @table_of_contents()
-    view = new GettingOff.Ch3 app: @, page: page, table_of_contents: @table_contents
+    view = new GettingOff.Ch3 app: @, page: page, table_of_contents: @table_contents, button: @button
 
   ch4: (page) ->
+    @render_button()
     @table_of_contents()
     @answers_create()
-    view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions, table_of_contents: @table_contents
+    view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions, table_of_contents: @table_contents, button: @button
 
   ch5: (page) ->
+    @render_button()
     @table_of_contents()
     @ch5_questions_save()
     @ch5_create_names()
-    view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names, table_of_contents: @table_contents
+    view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names, table_of_contents: @table_contents, button: @button
 
   ch6: (page) ->
+    @render_button()
     @table_of_contents()
     @ch6_page2()
     @ch6_page9()
-    view = new GettingOff.Ch6 app: @, page: page, page2_model: @ch6_p2, page9_model: @ch6_p9, table_of_contents: @table_contents
+    view = new GettingOff.Ch6 app: @, page: page, page2_model: @ch6_p2, page9_model: @ch6_p9, table_of_contents: @table_contents, button: @button
 
   ch7: (page) ->
+    @render_button()
     @table_of_contents()
-    view = new GettingOff.Ch7 app: @, page: page, table_of_contents: @table_contents
+    view = new GettingOff.Ch7 app: @, page: page, table_of_contents: @table_contents, button: @button
 
   ch8: (page) ->
+    @render_button()
     @table_of_contents()
     @ch8_page6()
-    view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6, table_of_contents: @table_contents
+    view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6, table_of_contents: @table_contents, button: @button
 
   ch9: (page) ->
+    @render_button()
     @table_of_contents()
     @ch9_page3()
-    view = new GettingOff.Ch9 app: @, page: page, page3_model: @ch9_p3, table_of_contents: @table_contents
+    view = new GettingOff.Ch9 app: @, page: page, page3_model: @ch9_p3, table_of_contents: @table_contents, button: @button
 
 
 

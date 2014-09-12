@@ -14,6 +14,7 @@ class GettingOff.Ch6 extends GettingOff.View
     @page2_model = options.page2_model
     @page9_model = options.page9_model
     @table_of_contents = options.table_of_contents
+    @button = options.button
 
     @table_of_contents.fetch
       success:(model, response, options) =>
@@ -26,10 +27,17 @@ class GettingOff.Ch6 extends GettingOff.View
     @page9_model.fetch
       success:(model, response, options) =>
         @page9_model.set model.attributes[0]
+
     if @page == 9
       @render_9()
     else    
       @render()
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
     @position()
 
   events: 
@@ -40,6 +48,10 @@ class GettingOff.Ch6 extends GettingOff.View
     'click .title.second'         : 'show_what_do'
     'focus .textarea textarea'    : 'focus_handler'
     'focusout .textarea textarea' : 'focusout_handler'
+
+  render_button: ->
+    @$('.button, .finish-chapter, .page2-model, .page9-model').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}")
 
    update_table_of_contents: ->
     model = @table_of_contents.findWhere({chapter: 6})

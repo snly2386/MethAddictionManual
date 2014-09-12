@@ -12,9 +12,9 @@ class GettingOff.Ch4 extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @answers = false
-    # console.log "model: " + @model
-    # console.log @model
+   
     @table_of_contents = options.table_of_contents
+    @button = options.button
 
     @table_of_contents.fetch
       success:(model, response, options) =>
@@ -24,13 +24,23 @@ class GettingOff.Ch4 extends GettingOff.View
       success: (model, response, options) =>
         @model.set model.attributes[0]
         @render()
-        @position()
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
+    @position()
 
   events: 
     'click .button'               : 'navigate'
     'focus .textarea textarea'    : 'focus_handler'
     'focusout .textarea textarea' : 'focusout_handler'
     'click .finish-chapter'       : 'ch5'
+
+  render_button: ->
+    @$('.button, .finish-chapter, .save-answers').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}") 
 
    update_table_of_contents: ->
     model = @table_of_contents.findWhere({chapter: 4})

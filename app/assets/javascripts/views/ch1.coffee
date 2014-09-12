@@ -13,17 +13,31 @@ class GettingOff.Ch1 extends GettingOff.View
 
   initialize: (options) ->
     @app = options.app
+    @button = options.button
+
+
     @validation = false
 
     @chapters = [0..13]
 
     @render()
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
     @position()
 
   events: 
     'click .rating'           : 'rate_question'
-    'click .button-container' : 'navigate'
+    'click .button'           : 'navigate'
     'click .ch1-finish-button': 'ch2'
+
+  render_button: ->
+    @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}")   
+    console.log @button.get('color')
 
   rate_question: (e)->
     target = $(e.currentTarget)

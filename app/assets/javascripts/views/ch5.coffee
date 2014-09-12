@@ -12,6 +12,7 @@ class GettingOff.Ch5 extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @names = options.names
+    @button = options.button
 
     @table_of_contents = options.table_of_contents
 
@@ -28,6 +29,12 @@ class GettingOff.Ch5 extends GettingOff.View
     @names.fetch
       success:(model, response, options) =>
         @render_names()
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
     @make_draggable()
 
   events: ->
@@ -40,7 +47,11 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .float-shadow'         : 'float_effect'
     'click .finish-chapter'       : 'ch6'
 
-   update_table_of_contents: ->
+  render_button: ->
+    @$('.button, .finish-chapter, .save-answers').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}")
+
+  update_table_of_contents: ->
     model = @table_of_contents.findWhere({chapter: 5})
     model.set('page', @page)
     model.save()

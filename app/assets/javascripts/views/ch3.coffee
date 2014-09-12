@@ -12,6 +12,7 @@ class GettingOff.Ch3 extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @table_of_contents = options.table_of_contents
+    @button = options.button
 
     @table_of_contents.fetch
       success:(model, response, options) =>
@@ -24,6 +25,12 @@ class GettingOff.Ch3 extends GettingOff.View
     @sex_counter = 0
     @sex_hash = {"Never High-Risk": [], "Some High-Risk": [], "Always High-Risk": []}
     @render()
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
     @position()
 
   events:
@@ -40,6 +47,10 @@ class GettingOff.Ch3 extends GettingOff.View
     'focus .textarea textarea'          : 'textarea_handler'
     'focusout .textarea textarea'       : 'textarea_out_handler'
 
+  render_button: ->
+    @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}") 
+     
   update_table_of_contents: ->
     model = @table_of_contents.findWhere({chapter: 3})
     model.set('page', @page)

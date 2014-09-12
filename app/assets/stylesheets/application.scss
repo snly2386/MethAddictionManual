@@ -1,7 +1,91 @@
 //= require_tree ./fonts
 //= require_tree ./plugins
 //= require_tree ./application
+.red{
+  background-color:#F88282;
+}
+.original{
+   background-color:rgb(102, 211, 97);
+}
+.pink{
+   background-color:#FD8AE6;
+}
+.blue{
+   background-color:#8A98FD;
+}
+.orange{
+   background-color:#F7CD85;
+}
+  
+// body.button {
+//   &.blue {
+//     .button { background-color: blue; }
+//   }
+// }
 
+
+.page9-model{
+  max-width:130px;
+  background-color: rgb(102, 211, 97);
+  border-radius: 10px;
+  height:43px;
+  img{
+    height: 35px;
+    width:70%;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+}
+.page2-model{
+  max-width:130px;
+  background-color: rgb(102, 211, 97);
+  border-radius: 10px;
+  height:43px;
+  img{
+    height: 35px;
+    width:70%;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+}
+.save-answers{
+  max-width:130px;
+  background-color: rgb(102, 211, 97);
+  border-radius: 10px;
+  height:43px;
+  img{
+    height: 35px;
+    width:70%;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+}
+.button{
+  max-width:130px;
+  background-color: rgb(102, 211, 97);
+  border-radius: 10px;
+  height:43px;
+  img{
+    height: 35px;
+    width:70%;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+}
+
+.finish-chapter{
+  margin-top: 5px;
+  max-width:130px;
+  background-color: rgb(102, 211, 97);
+  border-radius: 10px;
+  height:43px;
+  img{
+    height: 35px;
+    width:70%;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+}
 
 .centered {
   display: block;

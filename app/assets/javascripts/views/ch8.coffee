@@ -13,6 +13,7 @@ class GettingOff.Ch8 extends GettingOff.View
     @app = options.app
     @page6_model = options.page6_model
     @table_of_contents = options.table_of_contents
+    @button = options.button
 
     @page6_model.fetch
       success:(model, response, options) =>
@@ -23,8 +24,13 @@ class GettingOff.Ch8 extends GettingOff.View
       success:(model, response, options) =>
         @update_table_of_contents()
 
-
     @render()
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+        
     @position()
 
   events: 
@@ -32,6 +38,10 @@ class GettingOff.Ch8 extends GettingOff.View
     'click .list p'         : 'add_check'
     'click .finish-chapter' : 'page6_save'
 
+  render_button: ->
+    @$('.button, .finish-chapter, .page2-model, .page9-model').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}")
+  
   update_table_of_contents: ->
     model = @table_of_contents.findWhere({chapter: 8})
     model.set('page', @page)
