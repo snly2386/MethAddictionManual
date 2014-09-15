@@ -1,6 +1,6 @@
 .ch2page_2{
   header{
-    max-width:50%;
+    max-width:70%;
     color: white;
     text-align: center;
     h1{ width: 100%; font-size: 2.5em;}
@@ -37,7 +37,7 @@
     }
   }
   .bottom-menu{
-    margin-top:75px;
+    margin-top:20%;
     height:200px;
     overflow-y: auto;
     max-width:100%;
@@ -101,20 +101,22 @@
       img { width:100%; }
     }
     .icon-container.pin{
-        img { margin-top:-8px }
+        img { margin-top:-11%; }
     }
   }
   .one{
     
   }
-  .blue{
-    color:rgb(0, 153, 255) !important;
+  .blue-color{
+    border-top: 3px solid rgb(0, 153, 255) !important;
+    border-left: 3px solid rgb(0, 153, 255) !important;
   }
-  .white{
-    background-color: white !important;
+  .white-color{
+    border: 3px solid white !important;
   }
-  .red{
-    background-color: red !important;
+  .red-color{
+    border-bottom: 3px solid red !important;
+    border-right: 3px solid red !important;
   }
   .test{
 

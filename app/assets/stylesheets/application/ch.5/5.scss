@@ -53,10 +53,10 @@
     img { width: 100%; }
   }
   .finish-chapter{
-  
+    margin-top: 15%;
   }
    .icons-container{
-    max-width:370px; 
+    max-width:600px; 
     z-index: 1;
     .icon-container{
       width:20%;
@@ -64,7 +64,7 @@
       img{width:100%;}
     }
     .icon-container.pin{
-      margin-top: -8px;
+      margin-top: -2%;
     }
   }
 }

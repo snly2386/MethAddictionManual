@@ -3,12 +3,23 @@ class GettingOff.Index extends Backbone.View
   template: JST['templates/index']
 
   events:
-    'click .newuser' : 'new_user'
+    'click .newuser'     : 'new_user'
+    'mousedown .newuser' : 'mousedown_effect'
+    'mouseup  .newuser'  : 'mouseup_effect'
 
   initialize: (options) ->
     @app = options.app
     @render()
     @position()
+
+  mousedown_effect: ->
+    @$('.newuser').addClass('shrunk') 
+
+  mouseup_effect: ->
+    @$('.newuser').removeClass('shrunk')
+
+  new_user: ->
+    @app.navigate 'new', trigger: true
 
   render: ->
     console.log @template()
@@ -17,6 +28,3 @@ class GettingOff.Index extends Backbone.View
   position: ->
     $('#app').html @$el
 
-  new_user: ->
-    @app.navigate 'new', trigger: true
-    console.log 'its working'

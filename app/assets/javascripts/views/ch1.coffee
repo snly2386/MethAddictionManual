@@ -20,6 +20,7 @@ class GettingOff.Ch1 extends GettingOff.View
 
     @chapters = [0..13]
 
+    @load_page()
     @render()
 
     @button.fetch
@@ -30,9 +31,22 @@ class GettingOff.Ch1 extends GettingOff.View
     @position()
 
   events: 
-    'click .rating'           : 'rate_question'
-    'click .button'           : 'navigate'
-    'click .ch1-finish-button': 'ch2'
+    'click .rating'                       : 'rate_question'
+    'click .button'                       : 'navigate'
+    'click .ch1-finish-button'            : 'ch2'
+    'mousedown .button, .finish-chapter'  : 'mousedown_effect'
+    'mouseup .button'                     : 'mouseup_effect'
+
+  
+  load_page: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(1000)
+
+  mousedown_effect: ->
+    @$('.button, .finish-chapter').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button').removeClass('shrunk')
 
   render_button: ->
     @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")

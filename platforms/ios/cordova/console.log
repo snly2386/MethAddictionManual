@@ -386,3 +386,14 @@ Your application might rejected by Apple if you store too much data.
 For more information please read "iOS Data Storage Guidelines"
 You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
 
+2014-09-12 15:02:33.638 GettingOff[42701:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-12 15:02:33.662 GettingOff[42701:70b] Unlimited access to network resources
+2014-09-12 15:02:33.669 GettingOff[42701:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-09-12 15:02:34.004 GettingOff[42701:70b] Resetting plugins due to page load.
+2014-09-12 15:02:34.205 GettingOff[42701:70b] Finished load of: file:///Users/chrispalmer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/68DB9E7F-4FA1-452D-8BFF-EA7B836CBAAD/GettingOff.app/www/index.html

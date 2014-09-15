@@ -23,6 +23,14 @@ class GettingOff.New_Theme extends Backbone.View
     'focusout .name '   : 'focusout_handler'
     'click .twin'       : 'change_theme'
     'click .button'     : 'create_user'
+    'mousedown .button' : 'mousedown_effect'
+    'mouseup .button'   : 'mouseup_effect'
+
+  mousedown_effect: ->
+    @$('.button').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button').removeClass('shrunk')
 
   render_button: ->
     @$('.button').css('background-color',"#{@button.get('color')}")
@@ -56,7 +64,7 @@ class GettingOff.New_Theme extends Backbone.View
     @navigate()
 
   navigate: ->
-    @app.navigate 'finish_setup', trigger: true 
+    @app.navigate 'pinboard', trigger: true 
    
   render: ->
     @$el.html @template()

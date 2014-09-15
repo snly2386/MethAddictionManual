@@ -16,7 +16,7 @@
   .content{
     max-width:100%;
     margin-top: -10px;
-    height:200px;
+    height:40%;
     overflow-y: auto;
     .paragraph { 
       height:40px;
@@ -43,7 +43,7 @@
         margin-top: -25px;
         height: 15px;
         width: 90%;
-        background-color: pink;
+        background-color: rgb(102, 211, 97);
       }
     }
     .first{
@@ -59,17 +59,17 @@
     img { width:100%; }
   }
   .finish-chapter{
-    margin-top:5px;
+    margin-top:5%;
   }
   .icons-container{
-    max-width:400px;
+    max-width:600px;
     .icon-container{
       width:20%;
       float: left;
       img { width:100%; }
     }
     .icon-container.pin{
-        img { margin-top:-8px }
+        img { margin-top:-11%; }
     }
   }
 }

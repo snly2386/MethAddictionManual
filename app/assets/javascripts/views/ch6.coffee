@@ -41,13 +41,21 @@ class GettingOff.Ch6 extends GettingOff.View
     @position()
 
   events: 
-    'click .button'               : 'navigate'
-    'click .page2-model'          : 'page2_save'
-    'click .page9-model'          : 'page9_save'
-    'click .title.first'          : 'show_problems'
-    'click .title.second'         : 'show_what_do'
-    'focus .textarea textarea'    : 'focus_handler'
-    'focusout .textarea textarea' : 'focusout_handler'
+    'click .button'                                                 : 'navigate'
+    'click .page2-model'                                            : 'page2_save'
+    'click .page9-model'                                            : 'page9_save'
+    'click .title.first'                                            : 'show_problems'
+    'click .title.second'                                           : 'show_what_do'
+    'focus .textarea textarea'                                      : 'focus_handler'
+    'focusout .textarea textarea'                                   : 'focusout_handler'
+    'mousedown .button, .finish-chapter, .page2-model, .page9-model': 'mousedown_effect'
+    'mouseup .button, .finish-chapter, .page2-model, .page9-model'  : 'mouseup_effect'
+
+  mousedown_effect: ->
+    @$('.button, .finish-chapter, .page2-model, .page9-model').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button, .finish-chapter, .page2-model, .page9-model').removeClass('shrunk')
 
   render_button: ->
     @$('.button, .finish-chapter, .page2-model, .page9-model').css('background-color',"#{@button.get('color')}")

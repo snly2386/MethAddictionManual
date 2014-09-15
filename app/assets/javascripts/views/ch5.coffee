@@ -38,14 +38,22 @@ class GettingOff.Ch5 extends GettingOff.View
     @make_draggable()
 
   events: ->
-    'click .button'               : 'navigate'
-    'focus .textarea textarea'    : 'focus_handler'
-    'focusout .textarea textarea' : 'focusout_handler'
-    'click .save-answers'         : 'save_answers'
-    'click .me'                   : 'popup_menu'
-    'click .submit'               : 'create_person'
-    'click .float-shadow'         : 'float_effect'
-    'click .finish-chapter'       : 'ch6'
+    'click .button'                                    : 'navigate'
+    'focus .textarea textarea'                         : 'focus_handler'
+    'focusout .textarea textarea'                      : 'focusout_handler'
+    'click .save-answers'                              : 'save_answers'
+    'click .me'                                        : 'popup_menu'
+    'click .submit'                                    : 'create_person'
+    'click .float-shadow'                              : 'float_effect'
+    'click .finish-chapter'                            : 'ch6'
+    'mousedown .button, .finish-chapter, .save-answers': 'mousedown_effect'
+    'mouseup .button, .finish-chapter, .save-answers'  : 'mouseup_effect'
+
+  mousedown_effect: ->
+    @$('.button, .finish-chapter, .save-answers').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button, .finish-chapter, .save-answers').removeClass('shrunk')
 
   render_button: ->
     @$('.button, .finish-chapter, .save-answers').css('background-color',"#{@button.get('color')}")
@@ -89,12 +97,8 @@ class GettingOff.Ch5 extends GettingOff.View
     $('.web .me').append(div)
 
   render_names: ->
-    console.log 'rendering shit'
-    console.log @names
     margin = 0
     @names.each (model) ->
-      console.log @$('.web')
-      console.log "<div class='circle font-sans'>#{model.get('name')}</div>"
       $('.web .me').append("<div class='circle font-sans' style='background-color: #{model.get('color')}; margin-left: #{margin}px'>#{model.get('name')}</div>")
       margin+=20
     

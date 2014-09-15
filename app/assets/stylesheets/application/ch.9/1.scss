@@ -27,7 +27,7 @@
   }
   .content{
     max-width: 95%;
-    height:250px;
+    height:300px;
     overflow-y: auto;
     .title{
       margin-top: -20px;
@@ -62,17 +62,17 @@
     img { width: 100%; }
   }
   .button{
-   
+    margin-top: 5%;
   }
   .icons-container{
-    max-width:370px; 
+    max-width:600px; 
     .icon-container{
       width:20%;
       float: left;
       img{width:100%;}
     }
     .icon-container.pin{
-      margin-top: -8px;
+      margin-top: -2%;
     }
   }
 }

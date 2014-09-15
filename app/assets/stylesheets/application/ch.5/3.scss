@@ -39,7 +39,7 @@
     img { width:100%; }
   }
   .questions{
-    height: 250px;
+    height: 300px;
     padding: 0px 5px;
     overflow-y: auto;
     max-width: 85%;
@@ -57,18 +57,18 @@
     img { width: 100%; }
   }
   .save-answers{
-    
+    margin-top: 20%;
   }
   .icons-container{
     margin-top: 5px;
-    max-width:370px; 
+    max-width:600px; 
     .icon-container{
       width:20%;
       float: left;
       img{width:100%;}
     }
     .icon-container.pin{
-      margin-top: -8px;
+      margin-top: -2%;
     }
   }
   .textarea-click{

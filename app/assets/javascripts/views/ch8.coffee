@@ -34,9 +34,17 @@ class GettingOff.Ch8 extends GettingOff.View
     @position()
 
   events: 
-    'click .button'         : 'navigate'
-    'click .list p'         : 'add_check'
-    'click .finish-chapter' : 'page6_save'
+    'click .button'                      : 'navigate'
+    'click .list p'                      : 'add_check'
+    'click .finish-chapter'              : 'page6_save'
+    'mousedown .button, .finish-chapter' : 'mousedown_effect'
+    'mouseup .button, .finish-chapter'   : 'mouseup_effect'
+
+  mousedown_effect: ->
+    @$('.button, .finish-chapter').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button, .finish-chapter').removeClass('shrunk')
 
   render_button: ->
     @$('.button, .finish-chapter, .page2-model, .page9-model').css('background-color',"#{@button.get('color')}")

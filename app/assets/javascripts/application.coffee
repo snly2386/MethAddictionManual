@@ -17,6 +17,7 @@ class GettingOff.Application extends Backbone.Router
     ''             : 'index'
     'new'          : 'new_user'
     'new_theme'    : 'new_theme'
+    'pinboard'     : 'pinboard'
     'finish_setup' : 'finish_setup'
     'ch1/:page'    : 'ch1'
     'ch2/:page'    : 'ch2'
@@ -28,6 +29,12 @@ class GettingOff.Application extends Backbone.Router
     'ch8/:page'    : 'ch8'
     'ch9/:page'    : 'ch9'
   
+  create_photos: ->
+    @photos ||= new GettingOff.Photos()
+
+  pinboard: ->
+    @create_photos()
+    view = new GettingOff.Pinboard app: @, photos: @photos
 
   index: ->
     view = new GettingOff.Index app: @

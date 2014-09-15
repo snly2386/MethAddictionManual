@@ -23,9 +23,11 @@ class GettingOff.Ch2 extends GettingOff.View
     @month = months[@month_index]
     @year = @date.getFullYear()
 
+    @load_page()
     @render()
-
-    @get_calendar()
+    if @page is 2
+      @get_calendar()
+      
     @button.fetch
       success:(model, response, options) =>
         @button.set model.attributes[0]
@@ -39,18 +41,42 @@ class GettingOff.Ch2 extends GettingOff.View
     @practice["#{@month}" + "#{@year}"] = @$('.calendar').html()
 
   events: 
-    'click .button'         : 'navigate'
-    'click .finish-chapter' : 'ch3'
-    'click .pins .pin'      : 'pin_color'
-    'click .next'           : 'next_month'
-    'click .back'           : 'prev_month'
-    'click .finish-chapter' : 'ch3'
+    'click .button'                      : 'navigate'
+    'click .finish-chapter'              : 'ch3'
+    'click .pins .pin'                   : 'pin_color'
+    'click .next'                        : 'next_month'
+    'click .back'                        : 'prev_month'
+    'click .finish-chapter'              : 'ch3'
+    'mousedown .button, .finish-chapter' : 'mousedown_effect'
+    'click .user'                        : 'finish_setup'
+    'click .table'                       : 'go_to_table_of_contents'
+    'click .calendar'                    : 'calendar'
+    # 'click h1'                           : 'load_page'
+
+  load_page: ->
+        @$el.addClass('animated')
+        @$el.addClass('lightSpeedIn')
+
+  calendar: ->
+    @app.navigate 'ch2/2', trigger: true
+
+  go_to_table_of_contents: ->
+    @app.navigate 'ch2/3', trigger: true
+
+  finish_setup: ->
+    @app.navigate 'finish_setup', trigger: true
+
+  mousedown_effect: ->
+    @$('.button, .finish-chapter').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button, .finish-chapter').removeClass('shrunk')
 
   get_calendar: ->
     date = new Date()
     first_day = new Date(date.getFullYear(), date.getMonth(), 1)
     day_index = first_day.getDay()
-    days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
     day = days[day_index]
 
     counter = 1
@@ -62,14 +88,10 @@ class GettingOff.Ch2 extends GettingOff.View
         day_html = $(@)
       )
 
-    console.log "DAY_HTML: #{day_html}"
-
     @$('.date')[day_html.index()..(day_html.index() + number_of_days-1)].each( ->
         $(@).html(counter)
         counter++
       )
-
-
 
   render_button: ->
     @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
@@ -253,50 +275,42 @@ class GettingOff.Ch2 extends GettingOff.View
   pin_color: (e) ->
      target = @$(e.currentTarget)
      if target.data('color') == "white" && target.hasClass('1terday')
-        @$(".block.11, .block.1").addClass("white")
-        # @$(".block.11").addClass('blue')
+        # @$(".block.11, .block.1").addClass("white")
+        @$('.top-container.15').addClass("white-color")
+        @$('.top-container.15').removeClass("red-color")
+        @$('.top-container.15').removeClass("blue-color")
         @clear_calendar(target)
      else if target.data('color') == "white" && target.hasClass('2day')
-        @$(".block.22, .block.2").addClass("white")
-        @$(".block.22").addClass('blue')
+        # @$(".block.22, .block.2").addClass("white")
+        @$(".top-container.16").addClass("white-color")
+        @$('.top-container.16').removeClass("red-color")
+        @$('.top-container.16').removeClass("blue-color")
         @clear_calendar(target)
      else if target.data('color') == "white" && target.hasClass('2morrow')
-        @$(".block.33, .block.3").addClass("white")
-        @$(".block.33").addClass("blue")
+        # @$(".block.33, .block.3").addClass("white")
+        @$(".top-container.17").addClass("white-color")
+        @$('.top-container.17').removeClass("red-color")
+        @$('.top-container.17').removeClass("blue-color")
         @clear_calendar(target)
-     else if target.hasClass('1terday') && @$(".block.11").hasClass("one")
-        @$(".block.11, .block.1").removeClass("white")
-        @$(".block.11, .block.1").removeClass("blue")
-        @$(".block.1").css("background-color", "#{target.data('color')}")
+     else if target.hasClass('1terday') && target.data('color') is 'blue'
+        @$(".top-container.15").removeClass("white-color")
+        @$(".top-container.15").addClass("blue-color")
         @update_calendar(target)
-     else if target.hasClass('2day') && @$(".block.22").hasClass("one")
-        @$(".block.22, .block.2").removeClass("white")
-        @$(".block.22, .block.2").removeClass("blue")
-        @$(".block.2").css("background-color", "#{target.data('color')}")
+     else if target.hasClass('2day') && target.data('color') is 'blue'
+        @$(".top-container.16").removeClass("white-color")
+        @$(".top-container.16").addClass("blue-color") 
         @update_calendar(target)
-     else if target.hasClass('2morrow') && @$(".block.33").hasClass("one")
-        @$(".block.33, .block.3").removeClass("white")
-        @$(".block.33, .block.3").removeClass("blue")
-        @$(".block.3").css("background-color", "#{target.data('color')}")
+     else if target.hasClass('2morrow') && target.data('color') is 'blue'
+        @$(".top-container.17").removeClass("white-color")
+        @$(".top-container.17").addClass("blue-color")
         @update_calendar(target)
-     else if target.hasClass("1terday")
-        @$(".block.11, .block.1").removeClass("white")
-        @$(".block.11, .block.1").removeClass("blue")
-        @$(".block.11").css("background-color", "#{target.data('color')}" )
-        @$(".block.11").addClass("one")
-        @update_calendar(target)
-     else if target.hasClass("2day")
-        @$(".block.22, .block.2").removeClass("white")
-        @$(".block.22, .block.2").removeClass("blue")
-        @$(".block.22").css("background-color", "#{target.data('color')}" )
-        @$(".block.22").addClass("one")
-        @update_calendar(target)
-     else if target.hasClass("2morrow")
-        @$(".block.33, .block.3").removeClass("white")
-        @$(".block.33, .block.3").removeClass("blue")
-        @$(".block.33").css("background-color", "#{target.data('color')}" )
-        @$(".block.33").addClass("one")
-        @update_calendar(target)
+     else if target.hasClass('1terday') && target.data('color') is 'red'
+        @$(".top-container.15").removeClass('white-color').addClass('red-color')
+     else if target.hasClass('2day') && target.data('color') is 'red'
+        @$(".top-container.16").removeClass('white-color').addClass('red-color')
+     else if target.hasClass('2morrow') && target.data('color') is 'red'
+        @$(".top-container.17").removeClass('white-color').addClass('red-color')
+
 
   update_calendar: (target) ->
     classname = target.data('tag')

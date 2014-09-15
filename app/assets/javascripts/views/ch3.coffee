@@ -46,6 +46,13 @@ class GettingOff.Ch3 extends GettingOff.View
     'focusout .input-value'             : 'focusout_handler'
     'focus .textarea textarea'          : 'textarea_handler'
     'focusout .textarea textarea'       : 'textarea_out_handler'
+    'mousedown .button, .finish-chapter': 'mousedown_effect'
+
+  mousedown_effect: ->
+    @$('.button, .finish-chapter').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button, .finish-chapter').addClass('shrunk')
 
   render_button: ->
     @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")

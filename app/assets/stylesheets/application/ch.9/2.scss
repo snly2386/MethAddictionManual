@@ -40,7 +40,7 @@
   }
   .content{
     max-width: 97%;
-    height:250px;
+    height:300px;
     overflow-y: auto;
     .paragraph{
       padding: 0px 5px;
@@ -78,10 +78,10 @@
     img { width: 100%; }
   }
    .button{
-
+      margin-top: 18%;
   }
   .icons-container{
-    max-width:370px; 
+    max-width:600px; 
     z-index: 1;
     .icon-container{
       width:20%;
@@ -89,7 +89,7 @@
       img{width:100%;}
     }
     .icon-container.pin{
-      margin-top: -8px;
+      margin-top: -2%;
     }
   }
   .border{

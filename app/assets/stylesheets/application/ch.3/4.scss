@@ -56,7 +56,7 @@
   }
   .trigger-list{
     max-width: 100%;
-    height:170px;
+    height:200px;
     overflow-y: auto;
     text-align: center;
     color: white;
@@ -72,17 +72,17 @@
     img { width: 100%; height: 50px; }
   }
   .button{
-    margin-top: 5px;
+    margin-top: 9%;
   }
   .icons-container{
-    max-width:370px; 
+    max-width:600px; 
     .icon-container{
       width:20%;
       float: left;
       img{width:100%;}
     }
     .icon-container.pin{
-      margin-top: -8px;
+      margin-top: -2%;
     }
   }
 }

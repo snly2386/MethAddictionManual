@@ -61,8 +61,8 @@
     }
     .popup-menu{
       display: none;
-      height:330px;
-      position: relative;
+      height:100%;
+      position: fixed;
       z-index: 9999;
       background-color:rgb(250, 248, 248);
       width:100%;
@@ -129,9 +129,10 @@
   }
   .button{
     z-index: 1;
+    margin-top: 30%;
   }
   .icons-container{
-    max-width:370px; 
+    max-width:600px; 
     z-index: 1;
     .icon-container{
       width:20%;
@@ -139,7 +140,7 @@
       img{width:100%;}
     }
     .icon-container.pin{
-      margin-top: -8px;
+      margin-top: -2%;
     }
   }
   .float-shadow {

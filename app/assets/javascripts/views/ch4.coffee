@@ -33,10 +33,18 @@ class GettingOff.Ch4 extends GettingOff.View
     @position()
 
   events: 
-    'click .button'               : 'navigate'
-    'focus .textarea textarea'    : 'focus_handler'
-    'focusout .textarea textarea' : 'focusout_handler'
-    'click .finish-chapter'       : 'ch5'
+    'click .button'                      : 'navigate'
+    'focus .textarea textarea'           : 'focus_handler'
+    'focusout .textarea textarea'        : 'focusout_handler'
+    'click .finish-chapter'              : 'ch5'
+    'mousedown .button, .finish-chapter' : 'mousedown_effect'
+    'mouseup .button, .finish-chapter'   : 'mouseup_effect'
+
+  mousedown_effect: ->
+    @$('.button, .finish-chapter').addClass('shrunk')
+
+  mouseup_effect: ->
+    @$('.button, .finish-chapter').removeClass('shrunk')
 
   render_button: ->
     @$('.button, .finish-chapter, .save-answers').css('background-color',"#{@button.get('color')}")

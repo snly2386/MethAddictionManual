@@ -30,7 +30,7 @@
     max-width: 85%;
     color: white;
     text-align: center;
-    height: 200px;
+    height: 250px;
     overflow-y: auto;
     h1 { width: 100%; font-weight: bold; font-size: 2em;}
     p { width: 100%; font-size: 1.2em; }
@@ -41,17 +41,17 @@
     img { width: 100%; }
   }
   .button{
-   
+    margin-top: 20%;
   }
   .icons-container{
-    max-width:370px; 
+    max-width:600px; 
     .icon-container{
       width:20%;
       float: left;
       img{width:100%;}
     }
     .icon-container.pin{
-      margin-top: -8px;
+      margin-top: -2%;
     }
   }
 }
