@@ -14,6 +14,8 @@ class GettingOff.Ch5 extends GettingOff.View
     @names = options.names
     @button = options.button
 
+    @page_animation()
+
     @table_of_contents = options.table_of_contents
 
     @table_of_contents.fetch
@@ -42,12 +44,37 @@ class GettingOff.Ch5 extends GettingOff.View
     'focus .textarea textarea'                         : 'focus_handler'
     'focusout .textarea textarea'                      : 'focusout_handler'
     'click .save-answers'                              : 'save_answers'
-    'click .me'                                        : 'popup_menu'
+    'click .add-name'                                        : 'popup_menu'
     'click .submit'                                    : 'create_person'
     'click .float-shadow'                              : 'float_effect'
     'click .finish-chapter'                            : 'ch6'
     'mousedown .button, .finish-chapter, .save-answers': 'mousedown_effect'
     'mouseup .button, .finish-chapter, .save-answers'  : 'mouseup_effect'
+    'click .calendar'                                  : 'calendar'
+    'click .table'                                     : 'go_to_table_of_contents'
+    'click .user'                                      : 'user'
+    'click .pin'                                       : 'pinboard'
+    'mousedown .circle'                                : 'bring_to_front'
+    'click .previous'                                  : 'previous'
+
+  previous: ->
+    window.history.go(-1)
+
+  user: ->
+    @app.navigate 'finish_setup', trigger: true
+
+  go_to_table_of_contents: ->
+    @app.navigate 'ch2/3', trigger: true
+
+  pinboard: ->
+    @app.navigate 'pinboard', trigger: true
+
+  calendar: ->
+    @app.navigate 'ch2/2', trigger: true
+
+  page_animation: ->
+    $('body').css('display','none')
+    $('body').fadeIn(2000)
 
   mousedown_effect: ->
     @$('.button, .finish-chapter, .save-answers').addClass('shrunk')
@@ -83,6 +110,9 @@ class GettingOff.Ch5 extends GettingOff.View
   make_draggable: ->
     @$('.circle').draggable({containment: '.web'})
 
+  remove_float: ->
+    @$('.float-shadow').removeClass('float-shadow-click')
+    
   create_person: ->
     person = @$('.name').val()
     color_data = @$(".float-shadow-click").data('color')
@@ -90,17 +120,25 @@ class GettingOff.Ch5 extends GettingOff.View
     @names.create(name)
     div = "<div class='circle font-sans' style='background-color:#{color_data}'>#{person}</div>"
     @append(div)
-    @make_draggable()
     @$(".popup-menu").hide 'slide', {direction: 'down'}, 1000
+    @remove_float()
+    @make_draggable()
 
   append: (div)->
     $('.web .me').append(div)
 
+  bring_to_front: (e) ->
+    target = $(e.currentTarget)
+    $('.circle').removeClass('border-effect')
+    $('.circle').css({'z-index':'0', 'opacity' : '0.5'})
+    target.css({'z-index': '100', 'opacity' : '1'})
+    target.addClass('border-effect')
+
   render_names: ->
-    margin = 0
     @names.each (model) ->
-      $('.web .me').append("<div class='circle font-sans' style='background-color: #{model.get('color')}; margin-left: #{margin}px'>#{model.get('name')}</div>")
-      margin+=20
+      random = Math.floor((Math.random() * 7) + 1)
+      random_80 = Math.floor((Math.random() * 80) + 1) 
+      $('.web .me').append("<div class='circle font-sans' style='background-color: #{model.get('color')}; margin-top: -#{random}%; left: #{random_80}%;'>#{model.get('name')}</div>")
     
   save_answers: ->
     counter = 1

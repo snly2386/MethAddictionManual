@@ -12,31 +12,67 @@ class GettingOff.Pinboard extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @photos = options.photos
-    @counter = 30
+    @color = "black"
+    @counter = 5
 
-    
+    @page_animation()
+
     @photos.fetch
       success:(model, response, options) =>
         @render()
         @position()
         @populate_photos()
+    
+    @$('.canvas').sketch(defaultColor: "#{@color}")
 
 
   events: ->
     'click .add-photo'       : 'select_photo'
     'click .submit'          : 'save_photo'
     'change .photo'          : 'save_url'
-    'click .pinboard-photos' : 'bring_to_front'
+    'click .photo-container' : 'bring_to_front'
+    'click .next'            : 'navigate'
+    'mousedown .shrink'      : 'button_effect'
+    'mouseup .shrink'        : 'remove_button_effect'
+    'click .table'           : 'table_of_contents'
+    'click .calendar'        : 'calendar'
+    'click .user'            : 'user'
+    'click .button'          : 'navigate'
+    'click .previous'        : 'previous'
 
 
+  previous: ->
+    window.history.go(-1)
+
+  page_animation: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
+
+  pinboard: ->
+    @app.navigate 'pinboard', trigger: true
+
+  user: ->
+    @app.navigate 'finish_setup', trigger: true
+
+  table_of_contents: ->
+    @app.navigate 'ch2/3', trigger: true
+
+  calendar: ->
+    @app.navigate 'ch2/2', trigger: true
+
+  remove_button_effect: ->
+    @$('.shrink').removeClass('shrunk')
+
+  button_effect: ->
+    @$('.shrink').addClass('shrunk')
 
   save_url: (e) ->
     # temp_url = URL.createObjectURL(e.target.files[0])
     reader = new FileReader()
-    console.log '1'
     reader.onload = (e) => 
-      $('.content').append("<img src='#{e.target.result}' class='pinboard-photos' style='left: #{@counter}%'/>").hide().fadeIn(2000)      
-      # @make_draggable()
+      random = Math.floor((Math.random() * 360) + 1)
+      $('.photos-container').append("<div class='photo-container' style='transform:rotate(#{random}deg)'><img src='#{e.target.result}' class='pinboard-photos' style='left: #{@counter}%'/></div>").hide().fadeIn(2000)      
+      $('.pinboard-photos').css('border', '5 px solid rgba(255, 255, 255, 0.38)')
       @save_photo(e.target.result)
       console.log '4'
 
@@ -45,51 +81,33 @@ class GettingOff.Pinboard extends GettingOff.View
     console.log '5'
 
   save_photo: (url) ->
-     # image = document.getElementById("#{@counter}")
-     # image_data = @get_base64_image(image)
 
-     # photo = new GettingOff.Photo("file" : "data:image/png;base64," + "#{image_data}", 'id' : "#{@counter}" )
      photo = new GettingOff.Photo("file" : "#{url}")
      @photos.create(photo)
-     @counter += 1
-     console.log '3'
-
-  make_draggable: ->
-    # @$('.pinboard-photos').draggable()
-    console.log 'fuck'
+     @counter += 10
 
 
-  get_base64_image: (image) ->
-    canvas = document.createElement('canvas')
-    canvas.width = image.width
-    canvas.height = image.height
-
-    ctx = canvas.getContext('2d')
-    ctx.drawImage(image, 0, 0, image.width, image.height)
-
-    dataURL = canvas.toDataURL("image/png")
-    console.log dataURL
-    dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
-  
+  # create_canvas:  ->
+  #     @$('#drawing-board').sketch()
 
   populate_photos: ->
-    counter = 20
+    counter = 5
     @photos.each (model) ->
-      @$('.content').append("<img src='#{model.get('file')}' class='pinboard-photos' style='left: #{counter}%;'/>")
-      counter+=5
+      @$('.photos-container').append("<div class='photo-container' style='left:#{counter}%'><img src='#{model.get('file')}' class='pinboard-photos'/></div>")
+        # @$('.photos-container').append("<canvas class='photo-container' style='background:url(#{model.get('file')}) no-repeat;'</canvas>")
+      counter+=10
     @transform()
 
   transform: ->
-    @$('.pinboard-photos').each( ->
-      random = Math.floor((Math.random() * 45) + 1)
+    @$('.photo-container').each( ->
+      random = Math.floor((Math.random() * 360) + 1)
       $(@).css('transform', "rotate(#{random}deg)")
-      console.log 'fucking work'
       )
 
   bring_to_front: (e)->
-    $('.pinboard-photos').removeClass('animated')
-    $('.pinboard-photos').removeClass('rotateIn')
-    $('.pinboard-photos').css("z-index", "0")
+    $('.photo-container').removeClass('animated')
+    $('.photo-container').removeClass('rotateIn')
+    $('.photo-container').css("z-index", "0")
     @$(e.currentTarget).addClass('animated')
     @$(e.currentTarget).addClass('rotateIn')
     @$(e.currentTarget).css("z-index", "5")
@@ -97,5 +115,9 @@ class GettingOff.Pinboard extends GettingOff.View
   select_photo: ->
     @$('.photo').click()
 
+  navigate: ->
+    @app.navigate 'avatar', trigger: true
+
   render: ->
     @$el.html @template()
+

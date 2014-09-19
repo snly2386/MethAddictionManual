@@ -5,12 +5,12 @@
   }
   .session {
     font-family:'Open Sans', sans-serif;
-    margin-top: -20px;
+    margin-top: -1.5em;
     font-size: 2em; color: rgb(39, 248, 11);
     div { text-align: center}
   }
   .progress-bar {
-      margin-top: 10px;
+      margin-top: 1em;
       max-width:400px;
       .progress {
         float: left; 
@@ -18,7 +18,7 @@
         img { width:100% }
       }
       .progress.first{
-        margin-left:10%;
+        margin-left:9%;
       }
     }
   .border-top{
@@ -27,10 +27,10 @@
   }
   .content{
     max-width: 95%;
-    height:300px;
+    height:23em;
     overflow-y: auto;
     .title{
-      margin-top: -20px;
+      margin-top: -1.5em;
       width: 100%;
       color: white;
       text-align: center;
@@ -57,12 +57,12 @@
     }
   }
   .border-bottom{
-    margin-top: -10px;
+    margin-top: -1em;
     max-width: 100%;
     img { width: 100%; }
   }
   .button{
-    margin-top: 5%;
+    margin-top: 2em;
   }
   .icons-container{
     max-width:600px; 

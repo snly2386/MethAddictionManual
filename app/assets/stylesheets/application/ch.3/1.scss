@@ -5,12 +5,12 @@
   }
   .session {
     font-family:'Open Sans', sans-serif;
-    margin-top: -20px;
+    margin-top: -2em;
     font-size: 2em; color: rgb(39, 248, 11);
     div { text-align: center}
   }
   .progress-bar {
-      margin-top: 10px;
+      margin-top: 1em;
       max-width:400px;
       .progress {
         float: left; 
@@ -18,7 +18,7 @@
         img { width:100% }
       }
       .progress.first{
-        margin-left:10%;
+        margin-left:9%;
       }
     }
   .border-top{
@@ -26,8 +26,8 @@
     img { width:100%; }
   }
   .paragraph {
-    margin-top: -15px;
-    height: 300px;
+    margin-top: -1em;
+    height: 23em;
     text-align:center;
     overflow-y: auto;
     font-family: 'Open Sans', sans-serif; 
@@ -38,15 +38,19 @@
     padding: 3%;
     h2 { font-weight: bold; width:100%;font-size:2.5em;}
     p { width:100%; }
-    .list { float: left; width:50% }
+    .list { 
+      float: left; 
+      width:45%;
+      ul{ list-style-type: none;} 
+    }
   }
   .border-bottom{
     max-width:100%;
-    margin-top: -10px;
+    margin-top: -1em;
     img { width:100%; }
   }
   .button{
-   margin-top: 5%;
+   margin-top: 1.5em;
   }
   .icons-container{
     max-width:600px;

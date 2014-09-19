@@ -7,10 +7,17 @@ class GettingOff.Index extends Backbone.View
     'mousedown .newuser' : 'mousedown_effect'
     'mouseup  .newuser'  : 'mouseup_effect'
 
+
   initialize: (options) ->
     @app = options.app
+
+    @page_animation()
     @render()
     @position()
+
+  page_animation: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
 
   mousedown_effect: ->
     @$('.newuser').addClass('shrunk') 

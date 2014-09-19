@@ -17,6 +17,46 @@
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
 }
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+            transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+}
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+            transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+}
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+          animation-name: rollOut;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
 
 @-webkit-keyframes rotateIn {
   0% {
@@ -230,7 +270,7 @@
 
 
 .page9-model{
-  max-width:130px;
+  max-width:10em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
   height:43px;
@@ -242,7 +282,7 @@
   }
 }
 .page2-model{
-  max-width:130px;
+  max-width:10em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
   height:43px;
@@ -254,7 +294,7 @@
   }
 }
 .save-answers{
-  max-width:130px;
+  max-width:10em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
   height:43px;
@@ -266,7 +306,7 @@
   }
 }
 .button{
-  max-width:130px;
+  max-width:11em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
   height:43px;
@@ -280,7 +320,7 @@
 
 .finish-chapter{
   margin-top: 5px;
-  max-width:130px;
+  max-width:11em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
   height:43px;

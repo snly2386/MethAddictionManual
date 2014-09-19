@@ -12,18 +12,17 @@
     p { width:100%; }
   }
   .finish-chapter{
-    margin-top: 20%;
+    margin-top: 2em;
   }
-  .progress-bar {
-      
-      margin-top:30%;
+  .progress-bar {    
+      margin-top:3em;
       .progress {
         float: left; 
         max-width: 9%;
         img { width:100% }
       }
       .progress.first{
-        margin-left:10%;
+        margin-left:1em;
       }
     }
 }

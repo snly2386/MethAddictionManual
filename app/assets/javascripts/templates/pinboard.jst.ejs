@@ -2,12 +2,14 @@
   <img src="assets/title.png"/>
 </header>
 
-<div class="title centered font-marker" id="fuck">
-  <p> Pinboard </p>
+<div class="title centered font-marker">
+  <p class="pinstuff"> Pinboard </p>
 </div>
 
+
 <div class="centered content">
-  
+  <div class="photos-container centered">
+  </div>
 </div>
 <!-- 
 <form class="centered"> -->
@@ -16,17 +18,26 @@
 <!-- </form> -->
 
 <div class="add-photo centered">
-  <img src="assets/add_button.png"/>
+  <img src="assets/add_button.png" class="shrink"/>
 </div>
 
 <div class="border-bottom">
   <img src="assets/text_border_bottom.png"/>
 </div>
 
+<div class="button centered">
+  <img src="assets/next.png" class="shrink"/>
+</div>
+
 <div class="icons-container centered">
-  <div class="icon-container" data-id="menu" id="icon-menu"><img src="assets/menu-options.png" class="icon"/></div>
-  <div class="icon-container" data-id="scheduler" id="icon-scheduler"><img src="assets/menu-scheduler.png" class="icon"/></div>
-  <div class="icon-container" data-id="calendar" id="icon-calendar"><img src="assets/menu-calendar.png" class="icon"/></div>
+  <div class="icon-container user" data-id="menu" id="icon-menu"><img src="assets/menu-options.png" class="icon"/></div>
+  <div class="icon-container table" data-id="scheduler" id="icon-scheduler"><img src="assets/menu-scheduler.png" class="icon"/></div>
+  <div class="icon-container calendar" data-id="calendar" id="icon-calendar"><img src="assets/menu-calendar.png" class="icon"/></div>
   <div class="icon-container pin" data-id="pin" id="icon-pin"><img src="assets/menu-pin.png" class="icon"/></div>
-  <div class="icon-container" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
+  <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
+</div>
+
+<canvas class='canvas' height='295'> </canvas>
+<div class="paintbrush">
+
 </div>

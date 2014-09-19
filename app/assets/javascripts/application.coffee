@@ -19,6 +19,7 @@ class GettingOff.Application extends Backbone.Router
     'new_theme'    : 'new_theme'
     'pinboard'     : 'pinboard'
     'finish_setup' : 'finish_setup'
+    'avatar'       : 'avatar'
     'ch1/:page'    : 'ch1'
     'ch2/:page'    : 'ch2'
     'ch3/:page'    : 'ch3'
@@ -28,9 +29,19 @@ class GettingOff.Application extends Backbone.Router
     'ch7/:page'    : 'ch7'
     'ch8/:page'    : 'ch8'
     'ch9/:page'    : 'ch9'
+
+  create_calendar: ->
+    @calendar_collection ||= new GettingOff.Calendar()
+
+  create_avatar: ->
+    @avatar_model ||= new GettingOff.Avatar_Model "image": "", id : 1
   
   create_photos: ->
     @photos ||= new GettingOff.Photos()
+
+  avatar: ->
+    @create_avatar()
+    view = new GettingOff.Avatar app: @, avatar: @avatar_model
 
   pinboard: ->
     @create_photos()
@@ -43,7 +54,7 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.New_User app: @
 
   render_button: ->
-    @button ||= new GettingOff.Button "color": "", "background" :""
+    @button ||= new GettingOff.Button "color": "", "background" :"", id: 1
 
   new_theme: ->
     @render_button()
@@ -51,8 +62,9 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.New_Theme app: @, model: @user, button: @button
 
   finish_setup: ->
+    @create_avatar()
     @user_create()
-    view = new GettingOff.Finish_Setup app: @, model: @user
+    view = new GettingOff.Finish_Setup app: @, model: @user, avatar: @avatar_model
 
   new_user2: (id) ->
     view = new GettingOff.New_User app: @, id: id
@@ -104,9 +116,10 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.Ch1 app: @, page: page, button: @button
 
   ch2: (page) ->
+    @create_calendar()
     @render_button()
     @create_chapters()
-    view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents, button: @button, calendar_collection: @calendar_collection
 
   ch3: (page) ->
     @render_button()

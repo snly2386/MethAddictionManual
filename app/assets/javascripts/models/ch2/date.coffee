@@ -1,0 +1,1 @@
+class GettingOff.Date extends Backbone.Model

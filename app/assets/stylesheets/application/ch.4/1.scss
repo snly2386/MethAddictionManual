@@ -10,7 +10,7 @@
     div { text-align: center}
   }
   .progress-bar {
-      margin-top: 10px;
+      margin-top: 1em;
       max-width:400px;
       .progress {
         float: left; 
@@ -18,7 +18,7 @@
         img { width:100% }
       }
       .progress.first{
-        margin-left:10%;
+        margin-left:9%;
       }
     }
   .border-top{
@@ -29,7 +29,7 @@
     padding: 0px 10px;
     text-align: center;
     max-width: 80%;
-    height: 300px;
+    height: 22em;
     color: white;
     overflow-y: auto;
     h1 { width: 100%; font-size: 2em}
@@ -38,11 +38,11 @@
   }
   .border-bottom{
     max-width: 100%;
-    margin-top: -10px;
+    margin-top: -1em;
     img { width: 100%;}
   }
   .button{
-    margin-top: 5%;
+    margin-top: 1em;
   }
   .icons-container{
     max-width:600px; 

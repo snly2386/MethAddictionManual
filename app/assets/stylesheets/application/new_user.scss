@@ -3,7 +3,7 @@
       max-width:250px;
       img { width:100%; }
     }
-    .terms-of-use { max-width:350px; margin-top: -20px;
+    .terms-of-use { max-width:350px; margin-top: -4em;
       img { width:100% }
     }
     .terms-paragraph {
@@ -13,17 +13,17 @@
       p { width:100% }
     }
     .accept-terms {
-      max-width:250px; height: 50px;
+      max-width:250px; height: 2em;
       margin-top:20px;
         .accept {
           float: left;
           width:50%;
-          height:70px;  
+          height:7em;  
         }
         .accept.n{margin-top:9px} 
     }
     .progress-bar {
-      margin-top: 28%;
+      margin-top: 9em;
       max-width:700px;
       .progress {
         float: left; 

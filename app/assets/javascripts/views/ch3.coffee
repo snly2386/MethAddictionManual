@@ -13,6 +13,7 @@ class GettingOff.Ch3 extends GettingOff.View
     @app = options.app
     @table_of_contents = options.table_of_contents
     @button = options.button
+    @page_animation()
 
     @table_of_contents.fetch
       success:(model, response, options) =>
@@ -25,6 +26,9 @@ class GettingOff.Ch3 extends GettingOff.View
     @sex_counter = 0
     @sex_hash = {"Never High-Risk": [], "Some High-Risk": [], "Always High-Risk": []}
     @render()
+
+    if @page is 6
+      @page6_animation()
 
     @button.fetch
       success:(model, response, options) =>
@@ -47,6 +51,79 @@ class GettingOff.Ch3 extends GettingOff.View
     'focus .textarea textarea'          : 'textarea_handler'
     'focusout .textarea textarea'       : 'textarea_out_handler'
     'mousedown .button, .finish-chapter': 'mousedown_effect'
+    'click .calendar'                   : 'calendar'
+    'click .table'                      : 'go_to_table_of_contents'
+    'click .user'                       : 'user'
+    'click .pin'                        : 'pinboard'
+    'click .previous'                   : 'previous'
+
+  previous: ->
+    window.history.go(-1)
+
+  page6_animation: ->
+    window.setTimeout (->
+     $(".overlay").fadeIn(1000)
+     $(".points-container").jrumble x: 10, y: 10, rotation: 4
+     $(".points-container").trigger("startRumble")
+     return
+  ), 2000
+
+    window.setTimeout (->
+     $('.score').animate({'color':'red'}, 3000)
+     $('.points').animate({'color':'red'}, 3000)
+     return 
+  ), 3000
+
+    window.setTimeout (->
+     $(".points-container").trigger("stopRumble")
+     $(".points-container").addClass('hung')
+     $('.score').animate({'color':'rgb(0, 143, 255)'}, 2000)
+     $('.points').animate({'color':'rgb(0, 143, 255)'}, 2000) 
+     return
+  ), 6000
+
+    window.setTimeout (->
+     $('.points-container p').addClass('animated')
+     $('.points-container p').addClass('rollOut')
+     return
+  ), 10000
+
+    window.setTimeout (-> 
+     $('.overlay').animate({'background-color': 'white', "opacity":"1"},3000)
+     $('.overlay').css('z-index', '1000')
+     $('.score').css('color', 'white')
+     $('.points').css({'color': 'white', 'z-index' : '0'})
+     $('.points-container').removeClass('hung')
+     return
+  ), 11000
+
+    window.setTimeout (->
+     $('.points-container p').removeClass('animated')
+     $('.points-container p').removeClass('rollOut')
+     $(".score").html("600")
+     $(".points").css('color', 'rgb(39, 248, 11)')
+     $(".points-container").fadeIn(4000)
+     $(".overlay").fadeOut(1000)
+     return
+  ), 15000
+   
+
+  user: ->
+    @app.navigate 'new', trigger: true
+
+  go_to_table_of_contents: ->
+    @app.navigate 'ch2/3', trigger: true
+    console.log 'work?'
+
+  pinboard: ->
+    @app.navigate 'pinboard', trigger: true
+
+  calendar: ->
+    @app.navigate 'ch2/2', trigger: true
+
+  page_animation: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
 
   mousedown_effect: ->
     @$('.button, .finish-chapter').addClass('shrunk')
@@ -149,8 +226,10 @@ class GettingOff.Ch3 extends GettingOff.View
   list_handler: (e)-> 
     target = $(e.currentTarget)
     target.siblings().removeClass('grown')
+    target.siblings().removeClass('green')
     target.addClass('grown')
-
+    target.addClass('green')
+    target.find('span').css('color','white')
 
   focus_handler: ->
     @$('.input-value').addClass('textarea-click')

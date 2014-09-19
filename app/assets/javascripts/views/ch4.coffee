@@ -16,6 +16,8 @@ class GettingOff.Ch4 extends GettingOff.View
     @table_of_contents = options.table_of_contents
     @button = options.button
 
+    @page_animation()
+
     @table_of_contents.fetch
       success:(model, response, options) =>
         @update_table_of_contents()
@@ -39,6 +41,31 @@ class GettingOff.Ch4 extends GettingOff.View
     'click .finish-chapter'              : 'ch5'
     'mousedown .button, .finish-chapter' : 'mousedown_effect'
     'mouseup .button, .finish-chapter'   : 'mouseup_effect'
+    'click .calendar'                    : 'calendar'
+    'click .table'                       : 'go_to_table_of_contents'
+    'click .user'                        : 'user'
+    'click .pin'                         : 'pinboard'
+    'click .previous'                    : 'previous'
+
+  previous: ->
+    window.history.go(-1)
+
+  user: ->
+    @app.navigate 'finish_setup', trigger: true
+
+  go_to_table_of_contents: ->
+    @app.navigate 'ch2/3', trigger: true
+
+  pinboard: ->
+    @app.navigate 'pinboard', trigger: true
+
+  calendar: ->
+    @app.navigate 'ch2/2', trigger: true
+
+
+  page_animation: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
 
   mousedown_effect: ->
     @$('.button, .finish-chapter').addClass('shrunk')

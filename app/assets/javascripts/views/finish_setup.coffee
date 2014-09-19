@@ -6,15 +6,52 @@ class GettingOff.Finish_Setup extends Backbone.View
 
   initialize: (options) -> 
     @app = options.app
-    @render()
-    @position()
+    @avatar = options.avatar
+    @page_animation()
+
+    @avatar.fetch
+      success: (model, response, options) =>
+        @avatar.set model.attributes[0]
+        @render()
+        @position()
+        @render_avatar()
+
 
 
 
   events: 
-      'click #icon-exit'  :  'navigate'
+    'click #icon-exit'  : 'navigate'
+    'click .calendar'   : 'calendar'
+    'click .table'      : 'go_to_table_of_contents'
+    'click .user'       : 'user'
+    'click .pin'        : 'pinboard'
+    'click .button'     : 'navigate'
+    'click .previous'   : 'previous'
 
+  previous: ->
+    window.history.go(-1)
+
+  user: ->
+    @app.navigate 'finish_setup', trigger: true
+
+  go_to_table_of_contents: ->
+    @app.navigate 'ch2/3', trigger: true 
+
+  pinboard: ->
+    @app.navigate 'pinboard', trigger: true
+
+  calendar: ->
+    @app.navigate 'ch2/2', trigger: true
+
+  render_avatar: ->
+    console.log @avatar.get('image')
+    console.log @avatar
+    @$('.avatar-container img').attr('src', "#{@avatar.get('image')}")
   
+  page_animation: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
+    
   navigate:  ->
     console.log 'working'
     @app.navigate 'ch1/1', trigger: true

@@ -1,24 +1,24 @@
 .ch9page-2{
   header{
     max-width: 100%;color:white;
-    height:90px; 
-    .img {width: 90px; float: left; margin-left: 3%; margin-top:30px; img{ width:100%;}}
+    height:5em; 
+    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
     .points {
       margin-right:4%;
-      margin-top: -40px;
+      margin-top: -3em;
       float: right;
       max-width: 200px;
       font-family: 'Permanent Marker', cursive;
       h2{font-size: 5em;}
       div { 
-        margin-top: -65px;
+        margin-top: -3.7em;
         font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
         text-align: center;
       }
     }
   }
   .session {
-    margin-top: 20px;
+    margin-top: 5em;
     text-align: center;
     max-width: 200px;
     p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
@@ -32,7 +32,7 @@
     img { width:100%; }
   }
   .progress.first{
-    margin-left: 10%;
+    margin-left: 9%;
   }
   .border-top{
     max-width: 100%;
@@ -40,7 +40,7 @@
   }
   .content{
     max-width: 97%;
-    height:300px;
+    height:23em;
     overflow-y: auto;
     .paragraph{
       padding: 0px 5px;
@@ -49,28 +49,28 @@
       color: white;
     }
     .subtitle{
-      margin-top: 20px;
+      margin-top: 1.5em;
       max-width: 100%;
       color: white;
       text-align: center;
       h1 { font-size: 1.2em; }
     }
     .rating{
-      margin-top:-10px;
+      margin-top:-1em;
       color: white;
       max-width: 100%;
-      height:30px;
+      height:2em;
       .sub-rating{
         text-align:center;
         max-width:315px;
-        p{ float: left; width: 31px; font-size: 1.1em;}
+        p{ float: left; width: 2.3em; font-size: 1.1em;}
         .first-rating{
         }
       }
     }
     .bottom-line{
       max-width:500px;
-      img{ width: 100%; margin-top: -10px;}
+      img{ width: 100%; margin-top: -1em;}
     }
   }
   .border-bottom{
@@ -78,7 +78,7 @@
     img { width: 100%; }
   }
    .button{
-      margin-top: 18%;
+      margin-top: 3em;
   }
   .icons-container{
     max-width:600px; 

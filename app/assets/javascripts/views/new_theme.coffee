@@ -7,14 +7,14 @@ class GettingOff.New_Theme extends Backbone.View
   initialize: (options) ->
     @app = options.app
     @button = options.button
-
+    @page_animation()
 
     @button.fetch
       success:(model, response, options) =>
-        @render()
         @button.set model.attributes[0]
         @render_button()
 
+    @render()
     @position()
 
 
@@ -25,6 +25,10 @@ class GettingOff.New_Theme extends Backbone.View
     'click .button'     : 'create_user'
     'mousedown .button' : 'mousedown_effect'
     'mouseup .button'   : 'mouseup_effect'
+
+  page_animation: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
 
   mousedown_effect: ->
     @$('.button').addClass('shrunk')

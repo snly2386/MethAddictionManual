@@ -1,24 +1,24 @@
 .ch9page-3{
   header{
     max-width: 100%;color:white;
-    height:90px; 
-    .img {width: 90px; float: left; margin-left: 3%; margin-top:30px; img{ width:100%;}}
+    height:5em; 
+    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
     .points {
       margin-right:4%;
-      margin-top: -40px;
+      margin-top: -3em;
       float: right;
       max-width: 200px;
       font-family: 'Permanent Marker', cursive;
       h2{font-size: 5em;}
       div { 
-        margin-top: -65px;
+        margin-top: -3.7em;
         font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
         text-align: center;
       }
     }
   }
   .session {
-    margin-top: 20px;
+    margin-top: 5em;
     text-align: center;
     max-width: 200px;
     p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
@@ -32,7 +32,7 @@
     img { width:100%; }
   }
   .progress.first{
-    margin-left: 10%;
+    margin-left: 9%;
   }
   .border-top{
     max-width: 100%;
@@ -40,7 +40,7 @@
   }
   .content{
     max-width:98%;
-    height:300px;
+    height:23em;
     overflow-y: auto;
     .paragraph{
       max-width:95%;
@@ -60,7 +60,7 @@
       textarea { 
         color: white;
         width: 95%;
-        height:70px;
+        height:7em;
         border:8px solid white; 
         background-color: #d1d6da;
       }
@@ -70,8 +70,8 @@
     max-width: 100%;
     img { width: 100%; }
   }
-   .finish-chapter{
-      margin-top: 18%;
+   .button{
+      margin-top: 3em;
   }
   .icons-container{
     max-width:800px; 

@@ -2,23 +2,23 @@
   header{
     max-width: 100%;color:white;
     height:90px; 
-    .img {width: 90px; float: left; margin-left: 3%; margin-top:30px; img{ width:100%;}}
+    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
     .points {
       margin-right:4%;
-      margin-top: -40px;
+      margin-top: -3em;
       float: right;
       max-width: 200px;
       font-family: 'Permanent Marker', cursive;
       h2{font-size: 5em;}
       div { 
-        margin-top: -65px;
+        margin-top: -3.7em;
         font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
         text-align: center;
       }
     }
   }
   .session {
-    margin-top: 20px;
+    margin-top: 1em;
     text-align: center;
     max-width: 200px;
     p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
@@ -32,7 +32,7 @@
     img { width:100%; }
   }
   .progress.first{
-    margin-left: 10%;
+    margin-left: 9%;
   }
   .border-top{
     max-width: 100%;
@@ -40,29 +40,33 @@
   }
   .web{
     max-width: 100%;
-    height: 300px;
+    height: 27em;
     .me {
-      height:105px;
+      height:3em;
       max-width: 90px;
-      img { width: 100%; margin-top:60px;}
+      img { width: 100%; margin-top:7em;}
     }
     .circle{
+      position: absolute;
       color: white;
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: 1.5em; font-weight: bold;
-      height:60px;
-      width:60px;
-      border-radius:30px;
+      height:4em;
+      width:4em;
+      opacity: 0.5;
+      border-radius:4em;
       background-color: rgb(90, 202, 90);
-      line-height:60px;
+      line-height:4em;
       text-align: center;
       border: 2px solid rgb(197, 255, 197);
     }
     .popup-menu{
       display: none;
       height:100%;
-      position: fixed;
+      // position: fixed;
+      height: 24em;
+      position: relative;
       z-index: 9999;
       background-color:rgb(250, 248, 248);
       width:100%;
@@ -70,13 +74,13 @@
       font-size: 1.5em;
       color: navy;
       .input{
-        height:50px;
+        height:2em;
         padding: 0px 5px;
-        margin-top: 15px;
+        margin-top: 1em;
         background-color: rgba(255, 255, 255, 0.33);
         max-width: 95%;
         input {
-          width:81%; height:35px; 
+          width:81%; height:1.2em; 
           border:8px solid white; 
           float: left; margin-left:4%; 
           background-color: rgb(209, 214, 218); color:white; font-size:1.5em;
@@ -85,20 +89,20 @@
           position: relative;
           float: left;
           max-width:10%;
-          margin-top: -0.5px;
-          img{width:100%;height:51px; z-index: 1000;}
+          margin-top: -0.05em;
+          img{width:100%;height:2.8em; z-index: 1000;}
         }
       }
       .colors{
         max-width:70%;
         .top-colors{
           max-width: 200px;
-          height:30px;
+          height:2em;
           .each-color {
             float: left;
-            margin: 0px 5px;
+            margin: 0px 0.3em;
             max-width: 11%;
-            img { width: 100%; height: 20px;}
+            img { width: 100%; height: 1.1em;}
           }
           .first.each-color{
             margin-left:13%;
@@ -109,9 +113,9 @@
           height:30px;
           .each-color {
             float: left;
-            margin: 0px 5px;
+            margin: 0px 0.3em;
             max-width: 11%;
-            img { width: 100%; height:20px;}
+            img { width: 100%; height:1.1em;}
           }
           .first.each-color{
              margin-left: 13%;
@@ -129,7 +133,7 @@
   }
   .button{
     z-index: 1;
-    margin-top: 30%;
+    margin-top: 3.5em;
   }
   .icons-container{
     max-width:600px; 
@@ -181,5 +185,8 @@
     -webkit-transform: translateY(5px);
     transform: translateY(5px);
     /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+  }
+  .border-effect {
+    border: 2px solid rgb(134, 224, 241) !important;
   }
 }

@@ -14,19 +14,26 @@ class GettingOff.Ch2 extends GettingOff.View
     @app = options.app
     @table_of_contents = options.table_of_contents
     @button = options.button
+    @calendar_collection = options.calendar_collection
     @table_of_contents.fetch
       success:(model, response, options) =>
         @render_table_of_contents()
+    @calendar_collection.fetch
+
+      
 
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     @month_index = @date.getMonth()
     @month = months[@month_index]
     @year = @date.getFullYear()
+    @render()
 
     @load_page()
-    @render()
     if @page is 2
       @get_calendar()
+      @position()
+      @set_date()
+    
       
     @button.fetch
       success:(model, response, options) =>
@@ -34,8 +41,6 @@ class GettingOff.Ch2 extends GettingOff.View
         @render_button()
 
     @position()
-    @set_date()
-
     @render_table_of_contents()
     @practice = {}
     @practice["#{@month}" + "#{@year}"] = @$('.calendar').html()
@@ -50,12 +55,60 @@ class GettingOff.Ch2 extends GettingOff.View
     'mousedown .button, .finish-chapter' : 'mousedown_effect'
     'click .user'                        : 'finish_setup'
     'click .table'                       : 'go_to_table_of_contents'
-    'click .calendar'                    : 'calendar'
-    # 'click h1'                           : 'load_page'
+    'click .calendarr'                   : 'calendar'
+    'click .pinn'                        : 'pinboard'
+    'click .chapter'                     : 'go_to_chapter'
+    'click .tooltip'                     : 'show_tooltip'
+    'click .speech-bubble'                   : 'close_tooltip'
+
+  close_tooltip: ->
+    @$('.tool-overlay').fadeOut(1000)
+    @$(".speech-bubble").transition({maxWidth: '0px'}, 1000)
+
+  show_tooltip: ->
+    @$('.tool-overlay').fadeIn(1000)
+    @tooltip = true
+    @show_speech_bubble()
+
+  show_speech_bubble: ->
+    @$(".speech-bubble").transition({maxWidth:'300px'},1000)
+
+  go_to_chapter: (e)->
+    chapter = $(e.currentTarget).data('chapter')
+    @app.navigate "ch#{chapter}/1", trigger: true
+
+  render_calendar: ->
+    month = $('header h1').html().split(" ")[0]
+    year = $('header h1').html().split(" ")[1]
+    @calendar_collection.each (model) ->
+      if model.get('month') is month && model.get('year') is parseInt(year)
+        console.log model.get('month')
+        console.log year
+        $('.date').each( ->
+          console.log $(@).html()
+          if $(@).html() is model.get('day')
+            $(@).addClass('red')
+            console.log $(@).html()
+            console.log model.get('day')
+        )
+  
+  create_date: (day) ->
+    date = new GettingOff.Date("month" : @month, "day" : "#{day}", "year" : @year )
+    console.log date.get('year')
+    console.log parseInt($('header h1').html().split(" ")[1])
+    @calendar_collection.create(date)
+
+  remove_date: (day) ->
+    month = $('header h1')
+    date = @calendar_collection.findWhere "month" : @month, "day" : "#{day}", "year" : @year
+    date.destroy()
+
+  pinboard: ->
+    @app.navigate 'pinboard', trigger: true
 
   load_page: ->
-        @$el.addClass('animated')
-        @$el.addClass('lightSpeedIn')
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
 
   calendar: ->
     @app.navigate 'ch2/2', trigger: true
@@ -81,7 +134,7 @@ class GettingOff.Ch2 extends GettingOff.View
 
     counter = 1
     day_html = ""
-    number_of_days = new Date(@year, @month_index, 0).getDate()
+    number_of_days = new Date(@year, @month_index+1, 0).getDate()
 
     @$('.first').each(->
       if $(@).data('day') is day
@@ -117,8 +170,8 @@ class GettingOff.Ch2 extends GettingOff.View
       @year += 1
     else
       @month_index += 1
-    @set_month()
     @populate_calendar()
+    @set_month()
 
   prev_month: ->
     if @month_index == 0
@@ -127,8 +180,8 @@ class GettingOff.Ch2 extends GettingOff.View
     else
       @month_index -=1
     
-    @set_month()
     @reverse_calendar()
+    @set_month()
 
   reverse_calendar: ->
     year = @year
@@ -187,10 +240,8 @@ class GettingOff.Ch2 extends GettingOff.View
       when '0.5714' then 4
       when '0.7143' then 5
       when '0.8571' then 6
-    console.log "FIRST_DAY_SUBTRACT: #{first_day_subtract}"
     first_day_index = day_index - first_day_subtract
     first_day = days[first_day_index]
-    console.log "FIRST_DAY: #{first_day}"
     first_day_html = ""
     counter = 1
 
@@ -235,8 +286,6 @@ class GettingOff.Ch2 extends GettingOff.View
     for yearr in [2000..3000] by 4
       if @year is yearr && month is "February"
         number_of_days = 29
-        console.log yearr
-        console.log 'WTFFF'
 
     first_day = ""
     new_array = []
@@ -273,21 +322,20 @@ class GettingOff.Ch2 extends GettingOff.View
 
 
   pin_color: (e) ->
+     month = @month
      target = @$(e.currentTarget)
+
      if target.data('color') == "white" && target.hasClass('1terday')
-        # @$(".block.11, .block.1").addClass("white")
         @$('.top-container.15').addClass("white-color")
         @$('.top-container.15').removeClass("red-color")
         @$('.top-container.15').removeClass("blue-color")
         @clear_calendar(target)
      else if target.data('color') == "white" && target.hasClass('2day')
-        # @$(".block.22, .block.2").addClass("white")
         @$(".top-container.16").addClass("white-color")
         @$('.top-container.16').removeClass("red-color")
         @$('.top-container.16').removeClass("blue-color")
         @clear_calendar(target)
      else if target.data('color') == "white" && target.hasClass('2morrow')
-        # @$(".block.33, .block.3").addClass("white")
         @$(".top-container.17").addClass("white-color")
         @$('.top-container.17').removeClass("red-color")
         @$('.top-container.17').removeClass("blue-color")
@@ -306,40 +354,53 @@ class GettingOff.Ch2 extends GettingOff.View
         @update_calendar(target)
      else if target.hasClass('1terday') && target.data('color') is 'red'
         @$(".top-container.15").removeClass('white-color').addClass('red-color')
+        @update_calendar(target)
      else if target.hasClass('2day') && target.data('color') is 'red'
         @$(".top-container.16").removeClass('white-color').addClass('red-color')
+        @update_calendar(target)
      else if target.hasClass('2morrow') && target.data('color') is 'red'
         @$(".top-container.17").removeClass('white-color').addClass('red-color')
+        @update_calendar(target)
 
 
   update_calendar: (target) ->
     classname = target.data('tag')
     value = @$("#{classname}").html()
+    month = @month
+    @create_date(value)
+
     @$(".date").each( ->
-      if $(@).html() == value
+      if $(@).html() == value && $('header h1').html().split(" ")[0] is month
         $(@).addClass('red')
       )
 
   clear_calendar: (target) ->
     classname = target.data('tag')
     value = @$("#{classname}").html()
+    @remove_date(value)
     @$(".date").each( ->
       if $(@).html() == value
         $(@).removeClass('red')
       )
 
   set_month: ->
+    month = @month
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
     year = @year
     @$('header h1').html(months[@month_index] + " #{year}")
+    if $('header h1').html().split(" ")[0] isnt month 
+      @$(".date").each ( ->
+        $(@).removeClass('red')
+        )
+    @render_calendar()
 
   set_date: ->
     date = @date.getDate()
     @$(".day .num.todayy").html(date)
     @$(".day .num.yesterday").html(date - 1)
     @$(".day .num.tomorrow").html(date + 1)
-    # @set_day()
     @set_month()
+    @set_day()
 
   set_day: ->
     days = ["", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]

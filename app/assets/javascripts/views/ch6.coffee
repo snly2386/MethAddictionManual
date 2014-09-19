@@ -15,6 +15,7 @@ class GettingOff.Ch6 extends GettingOff.View
     @page9_model = options.page9_model
     @table_of_contents = options.table_of_contents
     @button = options.button
+    @page_animation()
 
     @table_of_contents.fetch
       success:(model, response, options) =>
@@ -50,6 +51,30 @@ class GettingOff.Ch6 extends GettingOff.View
     'focusout .textarea textarea'                                   : 'focusout_handler'
     'mousedown .button, .finish-chapter, .page2-model, .page9-model': 'mousedown_effect'
     'mouseup .button, .finish-chapter, .page2-model, .page9-model'  : 'mouseup_effect'
+    'click .calendar'                                               : 'calendar'
+    'click .table'                                                  : 'go_to_table_of_contents'
+    'click .user'                                                   : 'user'
+    'click .pin'                                                    : 'pinboard'
+    'click .previous'                                               : 'previous'
+
+  previous: ->
+    window.history.go(-1)
+
+  user: ->
+    @app.navigate 'finish_setup', trigger: true
+
+  go_to_table_of_contents: ->
+    @app.navigate 'ch2/3', trigger: true 
+
+  pinboard: ->
+    @app.navigate 'pinboard', trigger: true
+
+  calendar: ->
+    @app.navigate 'ch2/2', trigger: true
+
+  page_animation: ->
+    $('body').css('display', 'none')
+    $('body').fadeIn(2000)
 
   mousedown_effect: ->
     @$('.button, .finish-chapter, .page2-model, .page9-model').addClass('shrunk')
@@ -61,7 +86,7 @@ class GettingOff.Ch6 extends GettingOff.View
     @$('.button, .finish-chapter, .page2-model, .page9-model').css('background-color',"#{@button.get('color')}")
     $('body').css("background-image", "#{@button.get('background')}")
 
-   update_table_of_contents: ->
+  update_table_of_contents: ->
     model = @table_of_contents.findWhere({chapter: 6})
     model.set('page', @page)
     model.save()
