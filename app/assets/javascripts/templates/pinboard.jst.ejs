@@ -1,3 +1,7 @@
+<div class="tooltip">
+    <img src="assets/tooltip.png"/>
+  </div>
+
 <header class="centered">
   <img src="assets/title.png"/>
 </header>
@@ -16,9 +20,14 @@
   <input type="file" class="photo centered" style="display: none"/>
   <!-- <input type="submit" class="centered submit"> -->
 <!-- </form> -->
+<div class= "utility-container centered">
+  <div class="add-photo">
+    <img src="assets/add_button.png" class="shrink"/>
+  </div>
 
-<div class="add-photo centered">
-  <img src="assets/add_button.png" class="shrink"/>
+  <div class="start-drawing">
+    <i class="fa fa-pencil fa-4x shrink"></i>
+  </div>
 </div>
 
 <div class="border-bottom">
@@ -37,7 +46,23 @@
   <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
 </div>
 
-<canvas class='canvas' height='295'> </canvas>
-<div class="paintbrush">
+<canvas class='canvas' id='canvas' height='295'> </canvas>
+<div class="paint-tools">
+  <div class='colors'>
+    <a href="#canvas" data-color="rgb(113, 113, 252)"><div class="color" style="background-color: rgb(113, 113, 252)" data-color="rgb(113, 113, 252)"></div></a>
+    <div class="close">CLOSE</div>
+    <a href="#canvas" data-color="rgb(255, 139, 159)"><div class="color" style="background-color: rgb(255, 139, 159)" data-color="rgb(255, 139, 159)"></div></a>
+    <a href="#canvas" data-color="rgb(255, 255, 87)"><div class="color" style="background-color: rgb(255, 255, 87)" data-color="rgb(255, 255, 87)"></div></a>
+    <a href="#canvas" data-color="rgb(62, 246, 217)"><div class="color" style="background-color: rgb(62, 246, 217)" data-color="rgb(62, 246, 217)"></div></a>
+    <a href="#canvas" data-color="rgb(252, 75, 75)"><div class="color" style="background-color: rgb(252, 75, 75)" data-color="rgb(252, 75, 75)"></div></a>
+  </div>
+</div>
 
+<div class="tool-overlay"></div>
+<div class="photo-speech-bubble">
+  <img src="assets/photo_speech_bubble.png"/>
+</div>
+
+<div class="sketch-speech-bubble">
+  <img src="assets/sketch_speech_bubble.png"/>
 </div>

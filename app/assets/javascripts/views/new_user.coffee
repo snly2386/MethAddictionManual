@@ -2,7 +2,14 @@ class GettingOff.New_User extends Backbone.View
   
   template: JST["templates/new_user"]
 
-  id: 'new-user'
+  id: -> "#{@stylesheet}"
+
+  constructor: (options) ->
+     if options.cordova is true
+        @stylesheet = 'cordova-new-user'
+      else
+        @stylesheet = 'new-user'
+     super
 
   initialize: (options) -> 
     @app = options.app

@@ -1,12 +1,16 @@
 class GettingOff.Ch1 extends GettingOff.View
 
-  id: 'ch1'
+  id: -> "#{@stylesheet}"
   
   className: ->
     "page_#{@page}"
 
   constructor: (options) ->
     @page = parseInt options.page
+    if options.cordova is true
+        @stylesheet = 'cordova-ch1'
+    else
+        @stylesheet = 'ch1'
     super
 
   template: -> JST["templates/ch1/#{@page}"] 
@@ -72,8 +76,10 @@ class GettingOff.Ch1 extends GettingOff.View
       @app.navigate "ch3/1", trigger: true
     else if @validation == true
       @app.navigate "ch1/#{next_chapter}", trigger: true
-    else 
+    else if @cordova is true
       # validation failed
+      notification.alert 'You must enter a value'
+    else
       alert 'You must enter a value'
 
   ch2: ->

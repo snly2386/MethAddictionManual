@@ -4,7 +4,7 @@
     img{width:100%;}
   }
   .paragraph{
-    padding: 0px 15px;
+    padding: 0em 1em;
     max-width: 400px;
     font-size: 2em;
     color: white;
@@ -13,6 +13,13 @@
   }
   .finish-chapter{
     margin-top: 2em;
+    height: 2em;
+    max-width: 120px;
+    img{
+      margin-top: 0.1em;
+      margin-left: 0.8em;
+      height: 2em;
+    }
   }
   .progress-bar {    
       margin-top:3em;

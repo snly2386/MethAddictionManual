@@ -1,10 +1,14 @@
 class GettingOff.Pinboard extends GettingOff.View
 
   className: ->
-    "pinboard"
+    "#{@stylesheet}"
 
   constructor: (options) ->
      @page = parseInt options.page
+     if options.cordova is true
+        @stylesheet = 'cordova-pinboard'
+      else
+        @stylesheet = 'pinboard'
      super
 
   template: (attributes) -> JST["templates/pinboard"](attributes)
@@ -12,9 +16,12 @@ class GettingOff.Pinboard extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @photos = options.photos
+    @cordova = options.cordova
     @color = "black"
     @counter = 5
+   
 
+  
     @page_animation()
 
     @photos.fetch
@@ -23,23 +30,72 @@ class GettingOff.Pinboard extends GettingOff.View
         @position()
         @populate_photos()
     
-    @$('.canvas').sketch(defaultColor: "#{@color}")
+    @$('.canvas').sketch(color: "red")
 
 
   events: ->
-    'click .add-photo'       : 'select_photo'
-    'click .submit'          : 'save_photo'
-    'change .photo'          : 'save_url'
-    'click .photo-container' : 'bring_to_front'
-    'click .next'            : 'navigate'
-    'mousedown .shrink'      : 'button_effect'
-    'mouseup .shrink'        : 'remove_button_effect'
-    'click .table'           : 'table_of_contents'
-    'click .calendar'        : 'calendar'
-    'click .user'            : 'user'
-    'click .button'          : 'navigate'
-    'click .previous'        : 'previous'
+    'click .add-photo'            : 'select_photo'
+    'click .submit'               : 'save_photo'
+    'change .photo'               : 'save_url'
+    'click .photo-container'      : 'bring_to_front'
+    'click .next'                 : 'navigate'
+    'mousedown .add-photo'        : 'button_effect'
+    'mousedown .start-drawing'    : 'button_effect'
+    'mouseup .add-photo'          : 'remove_button_effect'
+    'mouseup .start-drawing'      : 'remove_button_effect'
+    'click .table'                : 'table_of_contents'
+    'click .calendar'             : 'calendar'
+    'click .user'                 : 'user'
+    'click .button'               : 'navigate'
+    'click .previous'             : 'previous'
+    'click .color'                : 'choose_color'
+    'click .start-drawing'        : 'paint_tools'
+    'click .close'                : 'close_canvas'
+    'click .tooltip'              : 'show_tooltip'
+    'click .sketch-speech-bubble' : 'close_tooltip' 
+    'click .photo-speech-bubble'  : 'close_tooltip' 
 
+  close_tooltip: ->
+    if @cordova is true
+      @$('.sketch-speech-bubble, .photo-speech-bubble').fadeOut(2000)
+    else
+      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({maxWidth: '0px'},1000)
+    @$('.tool-overlay').fadeOut(2000)
+
+  show_tooltip: ->
+    @$('.tool-overlay').fadeIn(2000)
+    if @cordova is true
+      @$('.sketch-speech-bubble, .photo-speech-bubble').fadeIn(2000)
+    else
+      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({maxWidth: '200px'}, 1000)
+
+  close_canvas: ->
+    @$('.canvas').hide('slide',{direction: 'left'}, 1000)
+    @$('.paint-tools').fadeOut(1000)
+
+  show_canvas: ->
+    @$('.canvas').show('slide',{direction: 'left'}, 1000)
+    if @cordova is true
+      @$('.canvas').attr('height', '160')
+
+  paint_tools: ->
+    @$(".paint-tools").fadeIn(1000)
+    @show_canvas()
+
+  create_canvas: ->
+    @$('.canvas').sketch(defaultColor: "#{@color}")
+
+  choose_color: (e) ->
+    $('.color').each( ->
+      if $(@).hasClass('transitioned')
+        $(@).transition({width: '30%'})
+        $(@).removeClass('transitioned')
+        $(@).removeClass('opaque')
+      )
+    target = $(e.currentTarget)
+    target.addClass('transitioned')
+    target.addClass('opaque')
+    target.transition({width: '330px'}, 2000)
 
   previous: ->
     window.history.go(-1)
@@ -60,11 +116,11 @@ class GettingOff.Pinboard extends GettingOff.View
   calendar: ->
     @app.navigate 'ch2/2', trigger: true
 
-  remove_button_effect: ->
-    @$('.shrink').removeClass('shrunk')
+  remove_button_effect: (e) ->
+    $(e.currentTarget).removeClass('shrunk')
 
-  button_effect: ->
-    @$('.shrink').addClass('shrunk')
+  button_effect: (e) ->
+    $(e.currentTarget).addClass('shrunk')
 
   save_url: (e) ->
     # temp_url = URL.createObjectURL(e.target.files[0])

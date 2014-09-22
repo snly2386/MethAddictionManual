@@ -1,17 +1,15 @@
 .avatar{
   header {
-    width:200px;
+    max-width: 200px;
     img { width: 100%;}
   }
   .title{
     text-align: center;
-    // height:50px;
     color: #8EE28E;
     font-size: 3em;
     margin-top: -2em;
     z-index: -99999;
     position: relative;
-    // border: 2px solid pink;
   }
   .selected-avatar{
     border: 2px solid rgba(134, 192, 255, 0.61);
@@ -19,7 +17,10 @@
     background-color: white;
     margin-top: -2.2em;
     max-width: 90px;
-    img { width: 100%; height:9em; }
+    img { 
+      width: 100%; 
+      height:9em; 
+    }
   }
   .content{
     border: 1px solid rgba(134, 192, 255, 0.61);
@@ -39,7 +40,7 @@
           img { width: 100%; height: 5em; opacity: 0.5; }
         }
         .avatar.first{
-          img{opacity: 1}
+          img{opacity: 1;}
         }
       }
     }
@@ -49,7 +50,7 @@
     img { width: 100%; margin-top:-15px;}
   }
   .button{
-    margin-top:1em;
+    margin-top:3em;
   }
   .icons-container{
     margin-top:3%;

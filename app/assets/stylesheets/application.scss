@@ -270,65 +270,64 @@
 
 
 .page9-model{
-  max-width:10em;
+  max-width:11em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
-  height:43px;
+  height:3.5em;
   img{
-    height: 35px;
+    height: 3em;
     width:70%;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: 0.3em;
+    margin-left: 1.6em;
   }
 }
 .page2-model{
-  max-width:10em;
+  max-width:11em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
-  height:43px;
+  height:3.5em;
   img{
-    height: 35px;
+    height: 3em;
     width:70%;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: 0.3em;
+    margin-left: 1.6em;
   }
 }
 .save-answers{
-  max-width:10em;
+  max-width:11em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
-  height:43px;
+  height:3.5em;
   img{
-    height: 35px;
+    height: 3em;
     width:70%;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: 0.3em;
+    margin-left: 1.6em;
   }
 }
 .button{
   max-width:11em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
-  height:43px;
+  height:3.5em;
   img{
-    height: 35px;
+    height: 3em;
     width:70%;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: 0.3em;
+    margin-left: 1.6em;
   }
 }
 
 .finish-chapter{
-  margin-top: 5px;
   max-width:11em;
   background-color: rgb(102, 211, 97);
   border-radius: 10px;
-  height:43px;
+  height:3.5em;
   img{
-    height: 35px;
+    height: 3em;
     width:70%;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: 0.3em;
+    margin-left: 1.6em;
   }
 }
 
@@ -404,7 +403,8 @@ body {
     
     top:30%;
     left:50%;
-    height:1000px;
+    // height:1000px;
+    height: 100%;
     width:50%;
 
     margin: 0 auto;

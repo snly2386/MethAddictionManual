@@ -1,8 +1,15 @@
 class GettingOff.Finish_Setup extends Backbone.View
 
-  id: 'finish-setup'
+  id: -> "#{@stylesheet}"
 
   template: JST['templates/finish_setup']
+  
+  constructor: (options) ->
+     if options.cordova is true
+        @stylesheet = 'cordova-finish-setup'
+      else
+        @stylesheet = 'finish-setup'
+     super
 
   initialize: (options) -> 
     @app = options.app

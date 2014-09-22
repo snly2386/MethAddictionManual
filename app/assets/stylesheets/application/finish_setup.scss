@@ -6,14 +6,20 @@
   .points-container{
     max-width: 160px;
     margin-top: -2.5em;
-    img { width: 100%; height: 6em; }
+    img { 
+      width: 100%; 
+      height: 6em; 
+    }
   }
   .avatar-container{
     border-radius:10px;
     background-color:white;
     border: 1em solid rgb(139, 222, 255);
     max-width: 150px;
-    img{ width: 100%; height: 15em;}
+    img{ 
+      width: 100%; 
+      height: 15em;
+    }
   }
   .username{
     max-width:200px;

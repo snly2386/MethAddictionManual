@@ -1,11 +1,15 @@
 class GettingOff.Ch2 extends GettingOff.View
 
   className: ->
-    "ch2page_#{@page}"
+    "#{@stylesheet}"
 
   constructor: (options) ->
     @page = parseInt options.page
     @date = new Date()
+    if options.cordova is true
+        @stylesheet = "cordova-ch2page_#{@page}"
+      else
+        @stylesheet = "ch2page_#{@page}"
     super
 
   template: -> JST["templates/ch2/#{@page}"]
@@ -63,7 +67,10 @@ class GettingOff.Ch2 extends GettingOff.View
 
   close_tooltip: ->
     @$('.tool-overlay').fadeOut(1000)
-    @$(".speech-bubble").transition({maxWidth: '0px'}, 1000)
+    if @cordova is true
+      @$('.speech-bubble').fadeOut(1000)
+    else
+      @$(".speech-bubble").transition({maxWidth: '0px'}, 1000)
 
   show_tooltip: ->
     @$('.tool-overlay').fadeIn(1000)
@@ -71,7 +78,10 @@ class GettingOff.Ch2 extends GettingOff.View
     @show_speech_bubble()
 
   show_speech_bubble: ->
-    @$(".speech-bubble").transition({maxWidth:'300px'},1000)
+    if @cordova is true
+      @$('.speech-bubble').fadeIn(1000)
+    else
+      @$(".speech-bubble").transition({maxWidth:'300px'},1000)
 
   go_to_chapter: (e)->
     chapter = $(e.currentTarget).data('chapter')
@@ -156,7 +166,7 @@ class GettingOff.Ch2 extends GettingOff.View
       model = table_of_contents.findWhere({chapter: parseInt("#{$(@).data('chapter')}")})
       percentage = model.percentage()
       console.log percentage
-      if percentage is 100
+      if percentage >= 100
         $(@).append("<img src='assets/progress_check.png'/>")
         $(@).addClass('session-complete')
       else 

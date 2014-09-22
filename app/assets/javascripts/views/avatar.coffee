@@ -1,10 +1,14 @@
 class GettingOff.Avatar extends GettingOff.View
 
   className: ->
-    "avatar"
+    "#{@stylesheet}"
 
   constructor: (options) ->
      @page = parseInt options.page
+     if options.cordova is true
+        @stylesheet = 'cordova-avatar'
+      else
+        @stylesheet = 'avatar'     
      super
 
   template: (attributes) -> JST["templates/avatar"](attributes)

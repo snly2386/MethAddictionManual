@@ -30,6 +30,10 @@ class GettingOff.Application extends Backbone.Router
     'ch8/:page'    : 'ch8'
     'ch9/:page'    : 'ch9'
 
+  
+  set_cordova: ->
+    @cordova = false
+
   create_calendar: ->
     @calendar_collection ||= new GettingOff.Calendar()
 
@@ -40,31 +44,36 @@ class GettingOff.Application extends Backbone.Router
     @photos ||= new GettingOff.Photos()
 
   avatar: ->
+    @set_cordova()
     @create_avatar()
-    view = new GettingOff.Avatar app: @, avatar: @avatar_model
+    view = new GettingOff.Avatar app: @, avatar: @avatar_model, cordova : @cordova
 
   pinboard: ->
+    @set_cordova()
     @create_photos()
-    view = new GettingOff.Pinboard app: @, photos: @photos
+    view = new GettingOff.Pinboard app: @, photos: @photos, cordova: @cordova
 
   index: ->
     view = new GettingOff.Index app: @
 
   new_user: -> 
-    view = new GettingOff.New_User app: @
+    @set_cordova()
+    view = new GettingOff.New_User app: @, cordova: @cordova
 
   render_button: ->
     @button ||= new GettingOff.Button "color": "", "background" :"", id: 1
 
   new_theme: ->
+    @set_cordova()
     @render_button()
     @user_create() 
-    view = new GettingOff.New_Theme app: @, model: @user, button: @button
+    view = new GettingOff.New_Theme app: @, model: @user, button: @button, cordova: @cordova
 
   finish_setup: ->
+    @set_cordova()
     @create_avatar()
     @user_create()
-    view = new GettingOff.Finish_Setup app: @, model: @user, avatar: @avatar_model
+    view = new GettingOff.Finish_Setup app: @, model: @user, avatar: @avatar_model, cordova: @cordova
 
   new_user2: (id) ->
     view = new GettingOff.New_User app: @, id: id
@@ -112,14 +121,16 @@ class GettingOff.Application extends Backbone.Router
     @ch9_p3 ||= new GettingOff.Ch9_Page3 "question_1" : "", "question_2": "", "question_3": ""
 
   ch1: (page) ->
+    @set_cordova()
     @render_button()
-    view = new GettingOff.Ch1 app: @, page: page, button: @button
+    view = new GettingOff.Ch1 app: @, page: page, button: @button, cordova: @cordova
 
   ch2: (page) ->
+    @set_cordova()
     @create_calendar()
     @render_button()
     @create_chapters()
-    view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents, button: @button, calendar_collection: @calendar_collection
+    view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents, button: @button, calendar_collection: @calendar_collection, cordova : @cordova
 
   ch3: (page) ->
     @render_button()
