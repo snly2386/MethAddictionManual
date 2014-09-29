@@ -1,65 +1,81 @@
 .ch8page-1{
-  header {
-    max-width: 200px;
-    img { width:100%; }
-  }
-  .session {
-    font-family:'Open Sans', sans-serif;
-    margin-top: -1.5em;
-    font-size: 2em; color: rgb(39, 248, 11);
-    div { text-align: center}
-  }
-  .progress-bar {
-      margin-top: 10px;
-      max-width:400px;
-      .progress {
-        float: left; 
-        max-width: 9%;
-        img { width:100% }
-      }
-      .progress.first{
-        margin-left:9%;
-      }
+  .header{
+    height: 250px;
+    header {
+      max-width: 200px;
+      img { width:100%; }
     }
-  .border-top{
-    max-width:100%;
-    img { width:100%; }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -40px;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+    .progress-bar {
+        margin-top: 1em;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
+    .border-top{
+      max-width:100%;
+      img { width:100%; }
+    }
   }
-  .content{
-    max-width:85%;
-    height:23em;
+  .middle-container{
+    position: absolute;
+    top: 250px;
+    bottom: 120px;
+    width: 100%;
     overflow-y: auto;
-    .title{
-      margin-top: -2em;
-      max-width:90%;
-      color: white;
-      text-align: center;
-      h1{ width:100%; font-size: 2em; }
+    .content{
+      max-width:85%;
+      height:23em;
+      // overflow-y: auto;
+      .title{
+        margin-top: -2em;
+        max-width:90%;
+        color: white;
+        text-align: center;
+        h1{ width:100%; font-size: 2em; }
+      }
+      .paragraph{
+        max-width: 100%;
+        color: white;
+        text-align: center;
+        p { width: 100%;}
+      }
     }
-    .paragraph{
+  }
+  footer{
+    height: 140px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .border-bottom{
+      margin-top: 20px;
       max-width: 100%;
-      color: white;
-      text-align: center;
-      p { width: 100%;}
+      img { width: 100%; }
     }
-  }
-  .border-bottom{
-    margin-top: -1em;
-    max-width: 100%;
-    img { width: 100%; }
-  }
-  .button{
-    margin-top: 5%;
-  }
-  .icons-container{
-    max-width:600px; 
-    .icon-container{
-      width:20%;
-      float: left;
-      img{width:100%;}
+    .button{
+      margin-top: 2px;
     }
-    .icon-container.pin{
-      margin-top: -2%;
+    .icons-container{
+      max-width:600px; 
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
     }
   }
 }

@@ -13,6 +13,7 @@ class GettingOff.Ch3 extends GettingOff.View
     @app = options.app
     @table_of_contents = options.table_of_contents
     @button = options.button
+    @validated = false
     @page_animation()
 
     @table_of_contents.fetch
@@ -22,9 +23,9 @@ class GettingOff.Ch3 extends GettingOff.View
     @crystal_array = ["Never Use", "Sometimes Use", "Always Use"]
     @crystal_counter = 0
     @crystal_hash = {"Never Use": [], "Sometimes Use": [], "Always Use" : []}
-    @sex_array =["Never High-Risk", "Some High-Risk", "Always High-Risk"]
+    @sex_array =["Never Risk", "Some Risk", "Always Risk"]
     @sex_counter = 0
-    @sex_hash = {"Never High-Risk": [], "Some High-Risk": [], "Always High-Risk": []}
+    @sex_hash = {"Never Risk": [], "Some Risk": [], "Always Risk": []}
     @render()
 
     if @page is 6
@@ -48,7 +49,7 @@ class GettingOff.Ch3 extends GettingOff.View
     'click .list'                       : 'list_handler'
     'focus .input-value'                : 'focus_handler'
     'focusout .input-value'             : 'focusout_handler'
-    'focus .textarea textarea'          : 'textarea_handler'
+    'focus .textarea textarea'          : 'check_validation'
     'focusout .textarea textarea'       : 'textarea_out_handler'
     'mousedown .button, .finish-chapter': 'mousedown_effect'
     'click .calendar'                   : 'calendar'
@@ -56,6 +57,22 @@ class GettingOff.Ch3 extends GettingOff.View
     'click .user'                       : 'user'
     'click .pin'                        : 'pinboard'
     'click .previous'                   : 'previous'
+    'click .list.y'                     : 'validate'
+    'click .list.n'                     : 'invalidate'
+
+  invalidate: ->
+    @validation = false
+
+  check_validation: (e) ->
+    target = $(e.currentTarget)
+    if @validated is true
+      @textarea_handler()
+    else
+      target.blur()
+      alert "You must select YES"
+
+  validate: ->
+    @validated = true
 
   previous: ->
     window.history.go(-1)
@@ -63,50 +80,32 @@ class GettingOff.Ch3 extends GettingOff.View
   page6_animation: ->
     window.setTimeout (->
      $(".overlay").fadeIn(1000)
-     $(".points-container").jrumble x: 10, y: 10, rotation: 4
-     $(".points-container").trigger("startRumble")
+     # $(".points-container").jrumble x: 10, y: 10, rotation: 4
+     # $(".points-container").trigger("startRumble")
      return
   ), 2000
 
     window.setTimeout (->
-     $('.score').animate({'color':'red'}, 3000)
-     $('.points').animate({'color':'red'}, 3000)
+     # $('.score').animate({'color':'red'}, 3000)
+     # $('.points').animate({'color':'red'}, 3000)
+     $('.points-container').addClass('animated')
+     $('.points-container').addClass('rollOut')
      return 
   ), 3000
 
     window.setTimeout (->
-     $(".points-container").trigger("stopRumble")
-     $(".points-container").addClass('hung')
-     $('.score').animate({'color':'rgb(0, 143, 255)'}, 2000)
-     $('.points').animate({'color':'rgb(0, 143, 255)'}, 2000) 
-     return
-  ), 6000
+     # $('.points-container').hide()
+     $('.score').text('600')
+     return 
+  ), 4000
 
     window.setTimeout (->
-     $('.points-container p').addClass('animated')
-     $('.points-container p').addClass('rollOut')
-     return
-  ), 10000
-
-    window.setTimeout (-> 
-     $('.overlay').animate({'background-color': 'white', "opacity":"1"},3000)
-     $('.overlay').css('z-index', '1000')
-     $('.score').css('color', 'white')
-     $('.points').css({'color': 'white', 'z-index' : '0'})
-     $('.points-container').removeClass('hung')
-     return
-  ), 11000
-
-    window.setTimeout (->
-     $('.points-container p').removeClass('animated')
-     $('.points-container p').removeClass('rollOut')
-     $(".score").html("600")
-     $(".points").css('color', 'rgb(39, 248, 11)')
-     $(".points-container").fadeIn(4000)
-     $(".overlay").fadeOut(1000)
-     return
-  ), 15000
-   
+     # $('.points-container').show()
+     $('.points-container').removeClass('rollOut')
+     $('.points-container').addClass('bounceInDown')
+     $('.overlay').fadeOut(3000)
+     return 
+  ), 5000
 
   user: ->
     @app.navigate 'new', trigger: true
@@ -168,6 +167,7 @@ class GettingOff.Ch3 extends GettingOff.View
     return input
 
   validation: ->
+    console.log 'fuck'
     if @$('.input-value').val() == "" 
       alert 'You must enter a value!'
     else if @page == 2

@@ -4,117 +4,141 @@
     float: right;
     img { height: 3em;}
   }
-  header {
-    width:200px;
-    img { width: 100%;}
-  }
-  .title{
-    text-align: center;
-    color: #8EE28E;
-    font-size: 3em;
-    margin-top: -2em;
-    z-index: -99999;
-    position: relative;
-  }
-  .content{
-    padding: 5% 5%;
-    max-width: 100%;
-    height: 19em;
-    overflow-x:  hidden;
-    .photos-container{
+  .header{
+    height: 200px;
+    header {
+      width:200px;
+      img { width: 100%;}
+    }
+    .title{
+      text-align: center;
+      color: #8EE28E;
+      font-size: 3em;
+      margin-top: -2em;
+      z-index: -99999;
       position: relative;
-      max-width: 60%;
-      .photo-container{
-        margin-top:1%;
-        max-width: 145px;
-        position: absolute;
-        .pinboard-photos{
-          border: 5px solid rgba(255, 255, 255, 0.38);
-          margin-top: 7%;
-          margin-left: auto;
-          margin-right: auto;
-          height: 16em;
-          width:100%;
-
+    }
+  }
+  .middle-container{
+    top: 205px;
+    bottom: 140px;
+    width: 100%;
+    position: absolute;
+    overflow-y: auto;
+    .content{
+      padding: 5% 5%;
+      max-width: 100%;
+      height: 19em;
+      overflow-x:  hidden;
+      .photos-container{
+        position: relative;
+        max-width: 60%;
+        .photo-container{
+          margin-top:1%;
+          max-width: 80px;
+          position: absolute;
+          .pinboard-photos{
+            border: 5px solid rgba(255, 255, 255, 0.38);
+            margin-top: 7%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 10em;
+            width:100%;
+          }
         }
       }
     }
-  }
 
-  .utility-container{
-    max-width: 104px;
-    .add-photo{
-      float: left;
-      max-width:50%;
-      img{
-        width: 100%; 
-        height: 4em;
+    .utility-container{
+      max-width: 85px;
+      .add-photo{
+        float: left;
+        max-width:48%;
+        img{
+          width: 100%; 
+          height: 3em;
+        }
+      }
+      .start-drawing{
+        margin-left: 1px;
+        float: left;
+        max-width: 48%;
+        img{ width: 100%; height: 3em; margin-top: -0.01px;}
       }
     }
-    .start-drawing{
-      padding: 0px 4px;
-      background-color: rgb(182, 241, 174);
-      float: left;
-      max-width: 50%;
-      i{ width: 100%;}
-    }
   }
-  .border-bottom{
-    max-width: 100%;
-    img { width: 100%; margin-top:-2em;}
-  }
-  .button{
-    margin-top: 1em;
-  }
-  .icons-container{
-    margin-top:1em;
-    max-width:600px; 
-    z-index: 1;
-    .icon-container{
-      width:20%;
-      float: left;
-      img{
-        width:100%;
-      }
-    }
-    .icon-container.pin{
-      margin-top: -2%;
-
-    }
-  }
-  .canvas{
-    display: none;
-    width:100%;
+  footer{
+    height:140px;
     position: absolute;
-    top: 17em;
-    background-color: white;
-    opacity: 0.5;
-    height: 24.9em;
-    z-index: 100;
+    bottom: 0;
+    width: 100%;
+    .border-bottom{
+      max-width: 100%;
+      img { width: 100%; margin-top:-2em;}
+    }
+    .button{
+      margin-top: 1em;
+    }
+    .icons-container{
+      margin-top:1em;
+      max-width:600px; 
+      z-index: 1;
+      .icon-container{
+        width:20%;
+        float: left;
+        img{
+          width:100%;
+        }
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
+    }
+  }
+  .canvas-container{
+    display: none;
+    position: absolute;
+    overflow-y: auto;
+    top: 205px;
+    bottom: 155px;
+    width:100%;
+    .canvas{
+      // display: none;
+      height: 19.7em;
+      width:100%;
+      background-color: white;
+      opacity: 0.5;
+      z-index: 100;
+    }
   }
   .paint-tools{
     display: none;
     width:100%;
-    position: relative;
+    position: absolute;
+    bottom: 0;
     z-index: 100;
-    height:12.8em;
+    height:150px;
     background-color: black;
-    margin-top: -6em;
     .colors{
       position: relative;
       max-width: 100%;
       z-index: 100;
       .color{
         opacity: 0.6;
-        height: 2em;
-        margin-top: 0.7em;
+        height: 2.5em;
         width: 30%;
       }
       .close{
+        width:40px;
+        position: relative;
+        z-index: 9999;
         margin-left: 85%;;
         margin-top: -1.2em;
         color: white;
         cursor: pointer;
+      }
+      .work{
+        img{ width: 100%;}
       }
     }
   }
@@ -122,31 +146,43 @@
     opacity: 1 !important;
   }
    .tool-overlay{
+    border: 1px solid pink;
     display: none;
-    height: 60em;
     width: 100%;
     background-color: rgb(31, 86, 204);
     position: absolute;
     top: 0;
+    bottom: 0;
     z-index: 100;
     opacity:0.7;
   }
   .photo-speech-bubble{
-    max-width: 0px;
+    width: 0px;
     z-index: 1000;
     left: 1em;
-    top: 20em;
+    bottom: 210px;
     position: absolute;
     img{ width: 100%; }
   }
   .sketch-speech-bubble{
+    width: 0px;
     z-index: 1000;
     float: right;
-    top: 36em;
-    left: 16em;
+    bottom: 160px;
+    left: 40%;
     position: absolute;
-    max-width: 0px;
     img { width: 100%;}
+  }
+  .work-container{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 200px;
+    font-size: 2em;
+    .work{
+      text-align: center;
+      z-index: 2000;
+    }
   }
    @media screen and (min-width:420px) {
     .photo-speech-bubble {
@@ -156,15 +192,13 @@
       left: 20em;
     }
   }
+
    @media screen and (min-width:500px) {
     .photo-speech-bubble {
       left: 4em;
     }
      .sketch-speech-bubble{
       left: 24em;
-    }
-    .tool-overlay{
-      height: 63em;
     }
   }
    @media screen and (min-width:600px) {
@@ -173,9 +207,6 @@
     }
     .sketch-speech-bubble{
       left: 30em;
-    }
-     .tool-overlay{
-      height: 65em;
     }
   }
   @media screen and (min-width:700px) {
@@ -193,9 +224,6 @@
      .sketch-speech-bubble{
       left: 41em;
     }
-     .tool-overlay{
-      height: 68em;
-    }
   }
    @media screen and (min-width:900px) {
     .photo-speech-bubble {
@@ -211,9 +239,6 @@
     }
      .sketch-speech-bubble{
       left: 52em;
-    }
-     .tool-overlay{
-      height: 71em;
     }
   }
   @media screen and (min-width:1100px) {
@@ -231,8 +256,46 @@
      .sketch-speech-bubble{
       left: 65em;
     }
-     .tool-overlay{
-      height: 73em;
-    }
   }
+    @media screen and (min-width:768px) {
+      .content{
+        height: 45em !important;
+      }
+      .paint-tools{
+        height: 170px !important;
+      }
+      .color{
+        height: 2.85em !important;
+      }
+      footer{
+        height: 160px !important;
+      }
+      .middle-container{
+        bottom: 160px !important;
+      }
+      .canvas{
+        height: 51.2em !important;
+      }
+      .tool-overlay{
+        top: 0 !important;
+        bottom: 0 !important;
+      }
+      .photo-speech-bubble{
+        width: 0px;
+        z-index: 1000;
+        left: 1em;
+        bottom: 230px;
+        position: absolute;
+        img{ width: 100%; }
+      }
+      .sketch-speech-bubble{
+        width: 0px;
+        z-index: 1000;
+        float: right;
+        bottom: 180px;
+        left: 50% !important;
+        position: absolute;
+        img { width: 100%;}
+      }
+    }
 }

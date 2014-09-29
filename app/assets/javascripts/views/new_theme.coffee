@@ -1,16 +1,9 @@
 class GettingOff.New_Theme extends Backbone.View
 
-  id: -> "#{@stylesheet}"
+  id: -> "new-theme"
 
   template: JST["templates/new_theme"]
   
-  constructor: (options) ->
-     if options.cordova is true
-        @stylesheet = 'cordova-new-theme'
-      else
-        @stylesheet = 'new-theme'
-     super
-
   initialize: (options) ->
     @app = options.app
     @button = options.button

@@ -1,132 +1,153 @@
 .ch3page-3{
-  header{
-    max-width: 100%;color:white;
-    height:5em; 
-    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
-    .points {
-      margin-right:4%;
-      margin-top: -3em;
-      float: right;
-      max-width: 200px;
-      font-family: 'Permanent Marker', cursive;
-      h2{font-size: 5em;}
-      div { 
-        margin-top: -3.7em;
-        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+  .header{
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
+        }
+      }
+    }
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
+    }
+    .progress{
+      float: left;
+      max-width: 9%;
+      img { width:100%; }
+    }
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
+    }
+  }
+  .middle-container{
+    position: absolute;
+    top: 185px;
+    bottom: 120px;
+    overflow-y: auto;
+    width:100%;
+    .topic{
+      margin-top: -10px;
+      max-width: 80%;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      p{width:100%;}
+    }
+    .text-border{
+      margin-top: -1em;
+      max-width: 300px;
+      img { width: 100%; }
+    }
+      .frequency-text{
+        max-width:250px;
+        font-size: 2.5em;
+        margin-top: -1.3em;
         text-align: center;
+        color: white;
+        p{width:100%;}
+      }
+    .frequency{
+      max-width:90%;
+      margin-top: -7.3em;
+      height:5em;
+      .arrow{
+        max-width:10%;
+        height: 100%;
+        img{width: 100%; height: 7em;}
+      }
+      .arrow:first-child{
+        margin-right: 1%;
+        float: left;
+      }
+      .arrow:last-child{
+        float: right;
+      }
+    }
+    .text-border.bottom{
+         margin-top: 0.5em;
+    }
+    .triggers-display{
+      max-width: 100%;
+      font-size: 2em;
+      color: white;
+      list-style: none;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.33);
+      height:6em;
+      overflow-y: auto;
+      p{max-width: 100%; overflow-y: auto}
+    }
+    .input{
+      margin-left: -3px;
+      padding: 0px 2%;
+      margin-top: 1em;
+      background-color: rgba(255, 255, 255, 0.33);
+      width: 98%;
+      input{
+        -webkit-appearance: none;
+        border-radius: 0px;
+        width:75%; height:40px; 
+        border:8px solid white; 
+        float: left; margin-left:4%; 
+        background-color: rgb(209, 214, 218); color:white; font-size:1.5em;}
+      .submit{
+        position: relative;
+        float: left;
+        max-width:10%;
+        margin-top: -0.08em;
+        img{width:100%;height:64px; z-index: 1000;}
       }
     }
   }
-  .session {
-    margin-top: 2em;
-    text-align: center;
-    max-width: 200px;
-    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
-  }
-  .progress-bar{
-    max-width: 350px;
-  }
-  .progress{
-    float: left;
-    max-width: 9%;
-    img { width:100%; }
-  }
-  .progress.first{
-    margin-left: 10%;
-  }
-  .border-top{
-    max-width: 100%;
-    img { width:100%; }
-  }
-  .topic{
-    max-width: 80%;
-    color: white;
-    font-size: 2em;
-    text-align: center;
-    margin-top: -1.3em;
-    p{width:100%;}
-  }
-  .text-border{
-    margin-top: -1em;
-    max-width: 300px;
-    img { width: 100%; }
-  }
-    .frequency-text{
-      max-width:280px;
-      font-size: 2.5em;
-      margin-top: -1.3em;
-      text-align: center;
-      color: white;
-      p{width:100%;}
+  footer{
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      img{ width: 100%; }
     }
-  .frequency{
-    max-width:90%;
-    margin-top: -7.3em;
-    height:5em;
-    .arrow{
-      max-width:10%;
-      height: 100%;
-      img{width: 100%; height: 7em;}
+    .button{
+      margin-top: 2px;
     }
-    .arrow:first-child{
-      margin-right: 1%;
-      float: left;
+    .icons-container{
+      max-width:600px; 
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
     }
-    .arrow:last-child{
-      float: right;
+    .textarea-click{
+      background-color: #959697 !important;
     }
   }
-  .text-border.bottom{
-       margin-top: 0.5em;
-  }
-  .triggers-display{
-    max-width: 100%;
-    font-size: 2em;
-    color: white;
-    list-style: none;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.33);
-    height:6em;
-    overflow-y: auto;
-    p{max-width: 100%; overflow-y: auto}
-  }
-  .input{
-    padding: 0px 10px;
-    margin-top: 1em;
-    background-color: rgba(255, 255, 255, 0.33);
-    max-width: 98%;
-    input{
-      width:81%; height:2em; 
-      border:8px solid white; 
-      float: left; margin-left:4%; 
-      background-color: rgb(209, 214, 218); color:white; font-size:1.5em;}
-    .submit{
-      position: relative;
-      float: left;
-      max-width:10%;
-      margin-top: -0.05em;
-      img{width:100%;height:4.55em; z-index: 1000;}
+   @media screen and (min-width:768px) {
+    .topic{ 
+      margin-top: 6em !important;
+      p{ font-size: 2em !important;}
     }
-  }
-  .border-bottom{
-    max-width: 100%;
-    img{ width: 100%; }
-  }
-  .button{
-    margin-top: 1em;
-  }
-  .icons-container{
-    max-width:600px; 
-    .icon-container{
-      width:20%;
-      float: left;
-      img{width:100%;}
-    }
-    .icon-container.pin{
-      margin-top: -2%;
-    }
-  }
-  .textarea-click{
-    background-color: #959697 !important;
-  }
+   }
 }

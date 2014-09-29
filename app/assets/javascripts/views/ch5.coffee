@@ -32,6 +32,9 @@ class GettingOff.Ch5 extends GettingOff.View
       success:(model, response, options) =>
         @render_names()
 
+    if @page is 6
+      @point_animation()
+
     @button.fetch
       success:(model, response, options) =>
         @button.set model.attributes[0]
@@ -44,7 +47,7 @@ class GettingOff.Ch5 extends GettingOff.View
     'focus .textarea textarea'                         : 'focus_handler'
     'focusout .textarea textarea'                      : 'focusout_handler'
     'click .save-answers'                              : 'save_answers'
-    'click .add-name'                                        : 'popup_menu'
+    'click .add-name'                                  : 'popup_menu'
     'click .submit'                                    : 'create_person'
     'click .float-shadow'                              : 'float_effect'
     'click .finish-chapter'                            : 'ch6'
@@ -56,6 +59,47 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .pin'                                       : 'pinboard'
     'mousedown .circle'                                : 'bring_to_front'
     'click .previous'                                  : 'previous'
+    'click .tooltip'                                   : 'open_tooltip'
+    'click .speech-container'                          : 'close_tooltip'
+
+  close_tooltip: ->
+    @$('.overlay').fadeOut(1000)
+    @$('.speech-bubble').transition({width: '0px'})
+
+  open_tooltip: ->
+    console.log 'fuck'
+    @$('.overlay').fadeIn(1000)
+    @$('.speech-bubble').transition({width: '50%'}, 1000)
+
+  point_animation: ->
+    window.setTimeout (->
+     $(".overlay").fadeIn(1000)
+     # $(".points-container").jrumble x: 10, y: 10, rotation: 4
+     # $(".points-container").trigger("startRumble")
+     return
+  ), 2000
+
+    window.setTimeout (->
+     # $('.score').animate({'color':'red'}, 3000)
+     # $('.points').animate({'color':'red'}, 3000)
+     $('.points-container').addClass('animated')
+     $('.points-container').addClass('rollOut')
+     return 
+  ), 3000
+
+    window.setTimeout (->
+     # $('.points-container').hide()
+     $('.score').text('1000')
+     return 
+  ), 4000
+
+    window.setTimeout (->
+     # $('.points-container').show()
+     $('.points-container').removeClass('rollOut')
+     $('.points-container').addClass('bounceInDown')
+     $('.overlay').fadeOut(3000)
+     return 
+  ), 5000
 
   previous: ->
     window.history.go(-1)

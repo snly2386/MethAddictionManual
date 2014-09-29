@@ -1,71 +1,88 @@
 .ch5page-5{
-  header{
-    max-width: 100%;color:white;
-    height:5em; 
-    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
-    .points {
-      margin-right:4%;
-      margin-top: -3em;
-      float: right;
-      max-width: 200px;
-      font-family: 'Permanent Marker', cursive;
-      h2{font-size: 5em;}
-      div { 
-        margin-top: -3.7em;
-        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
-        text-align: center;
+  .header{
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
+        }
+      }
+    }
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
+    }
+    .progress{
+      float: left;
+      max-width: 9%;
+      img { width:100%; }
+    }
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
+    }
+  }
+  .middle-container{
+    position: absolute;
+    top: 180px;
+    bottom: 120px;
+    width: 100%;
+    overflow-y: auto;
+    .paragraph{
+      border-radius: 5%;
+      // margin-top: -1em;
+      max-width: 70%;
+      text-align: center;
+      color: white;
+      h1 { font-size: 3em; width: 100%;}
+      p { width: 100%; font-size:1.5em;}
+    }
+  }
+  footer{
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      img { width: 100%; }
+    }
+    .finish-chapter{
+      margin-top: 2px;
+    }
+     .icons-container{
+      max-width:600px; 
+      z-index: 1;
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
       }
     }
   }
-  .session {
-    margin-top: 4em;
-    text-align: center;
-    max-width: 200px;
-    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
-  }
-  .progress-bar{
-    max-width: 350px;
-  }
-  .progress{
-    float: left;
-    max-width: 9%;
-    img { width:100%; }
-  }
-  .progress.first{
-    margin-left: 9%;
-  }
-  .border-top{
-    max-width: 100%;
-    img { width:100%; }
-  }
-  .paragraph{
-    border-radius: 5%;
-    // margin-top: -1em;
-    border: 10px solid pink;
-    max-width: 70%;
-    text-align: center;
-    color: white;
-    h1 { font-size: 3em; width: 100%;}
-    p { width: 100%; font-size:1.5em;}
-  }
-  .border-bottom{
-    margin-top: 1em;
-    max-width: 100%;
-    img { width: 100%; }
-  }
-  .finish-chapter{
-    margin-top: 1em;
-  }
-   .icons-container{
-    max-width:600px; 
-    z-index: 1;
-    .icon-container{
-      width:20%;
-      float: left;
-      img{width:100%;}
-    }
-    .icon-container.pin{
-      margin-top: -2%;
+  @media screen and (min-width:768px){
+    .paragraph{
+      margin-top: 4em;
+      h1{ font-size: 3.5em !important;}
+      p{ font-size: 2em !important;}
     }
   }
 }

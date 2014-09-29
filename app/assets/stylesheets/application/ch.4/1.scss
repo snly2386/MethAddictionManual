@@ -1,58 +1,83 @@
 .ch4page-1 {
-  header {
-    max-width: 200px;
-    img { width:100%; }
-  }
-  .session {
-    font-family:'Open Sans', sans-serif;
-    margin-top: -20px;
-    font-size: 2em; color: rgb(39, 248, 11);
-    div { text-align: center}
-  }
-  .progress-bar {
-      margin-top: 1em;
-      max-width:400px;
-      .progress {
-        float: left; 
-        max-width: 9%;
-        img { width:100% }
-      }
-      .progress.first{
-        margin-left:9%;
-      }
+  .header{
+    height: 250px;
+    header {
+      max-width: 200px;
+      img { width:100%; }
     }
-  .border-top{
-    max-width:100%;
-    img { width:100%; }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -40px;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+    .progress-bar {
+        margin-top: 1em;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
+    .border-top{
+      max-width:100%;
+      img { width:100%; }
+    }
   }
-  .paragraph{
-    padding: 0px 10px;
-    text-align: center;
-    max-width: 80%;
-    height: 22em;
-    color: white;
+  .middle-container{
+    position: absolute;
+    top: 250px;
+    bottom: 120px;
     overflow-y: auto;
-    h1 { width: 100%; font-size: 2em}
-    p { width: 100%; }
-    .sublist{ color: rgb(89, 248, 14); font-weight: bold;}
-  }
-  .border-bottom{
-    max-width: 100%;
-    margin-top: -1em;
-    img { width: 100%;}
-  }
-  .button{
-    margin-top: 1em;
-  }
-  .icons-container{
-    max-width:600px; 
-    .icon-container{
-      width:20%;
-      float: left;
-      img{width:100%;}
+    width: 100%;
+    .paragraph{
+      list-style-type: none;
+      padding: 0px 10px;
+      text-align: center;
+      max-width: 80%;
+      height: 22em;
+      color: white;
+      overflow-y: auto;
+      ul{ list-style-type: none;}
+      h1 { width: 100%; font-size: 2em}
+      p { width: 100%; }
+      .sublist{ color: rgb(89, 248, 14); font-weight: bold;}
     }
-    .icon-container.pin{
-      margin-top: -2%;
+  }
+  footer{
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    .border-bottom{
+      max-width: 100%;
+      margin-top: 20px;
+      img { width: 100%;}
+    }
+    .button{
+      margin-top: 2px;
+    }
+    .icons-container{
+      max-width:600px; 
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
+    }
+  }
+  @media screen and (min-width:768px) {
+    .paragraph {
+      h1{font-size: 3em !important;}
+      p{font-size: 2em !important;}
+      height: 52em !important;
     }
   }
 }

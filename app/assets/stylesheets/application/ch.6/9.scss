@@ -1,95 +1,107 @@
 .ch6page-9{
-  header{
-    max-width: 100%;color:white;
-    height:5em; 
-    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
-    .points {
-      margin-right:4%;
-      margin-top: -3em;
-      float: right;
-      max-width: 200px;
-      font-family: 'Permanent Marker', cursive;
-      h2{font-size: 5em;}
-      div { 
-        margin-top: -3.7em;
-        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
-        text-align: center;
+  .header{
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
+        }
       }
     }
-  }
-  .session {
-    margin-top: 5em;
-    text-align: center;
-    max-width: 200px;
-    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
-  }
-  .progress-bar{
-    max-width: 350px;
-  }
-  .progress{
-    float: left;
-    max-width: 9%;
-    img { width:100%; }
-  }
-  .progress.first{
-    margin-left: 9%;
-  }
-  .border-top{
-    max-width: 100%;
-    img { width:100%; }
-  }
-  .content{
-    max-width: 98%;
-    height:23em;
-    overflow-y: auto;
-    .title{
-      text-align: center;
-      max-width: 100%;
-      color: white;
-      h1 { width: 100%; font-size:1.3em; }
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
     }
-    .paragraph{
-      padding: 0px 5px;
-      text-align: center;
-      max-width: 100%;
-      color: white;
-      p { width: 100%; font-size:1.1em; }
-    }
-    .subtitle{
-      max-width: 80%;
-      color: white;
-      text-align: center;
-      h1 { width: 100%; font-size: 1.6em; }
-    }
-    .textarea{
-      padding: 0px 10px;
-      max-width:100%;
-      textarea { 
-        color: white;
-        width: 95%;
-        height:7.5em;
-        border:8px solid white; 
-        background-color: #d1d6da;
-      }
-    }
-  }
-  .border-bottom{
-    max-width: 100%;
-    img { width: 100%; }
-  }
-   .button{
-      margin-top: 3em;
-  } 
-  .icons-container{
-    max-width:600px; 
-    z-index: 1;
-    .icon-container{
-      width:20%;
+    .progress{
       float: left;
-      img{width:100%;}
+      max-width: 9%;
+      img { width:100%; }
     }
-    .icon-container.pin{
-      margin-top: -2%;
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
+    }
+  }
+  .middle-container{
+    position: absolute;
+    bottom: 120px;
+    top: 180px;
+    width: 100%;
+    overflow-y: auto;
+    .content{
+      max-width: 98%;
+      height:23em;
+      // overflow-y: auto;
+      .title{
+        text-align: center;
+        max-width: 100%;
+        color: white;
+        h1 { width: 100%; font-size:1.3em; }
+      }
+      .paragraph{
+        padding: 0px 5px;
+        text-align: center;
+        max-width: 100%;
+        color: white;
+        p { width: 100%; font-size:1.1em; }
+      }
+      .subtitle{
+        max-width: 80%;
+        color: white;
+        text-align: center;
+        h1 { width: 100%; font-size: 1.6em; }
+      }
+      .textarea{
+        padding: 0px 10px;
+        max-width:100%;
+        textarea { 
+          color: white;
+          width: 95%;
+          height:7.5em;
+          border:8px solid white; 
+          background-color: #d1d6da;
+        }
+      }
+    }
+  }
+  footer{
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      img { width: 100%; }
+    }
+     .button{
+        margin-top: 2px;
+    } 
+    .icons-container{
+      max-width:600px; 
+      z-index: 1;
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
     }
   }
    .textarea-click{

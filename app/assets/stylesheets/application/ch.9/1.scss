@@ -1,78 +1,94 @@
 .ch9page-1{
-  header {
-    max-width: 200px;
-    img { width:100%; }
-  }
-  .session {
-    font-family:'Open Sans', sans-serif;
-    margin-top: -1.5em;
-    font-size: 2em; color: rgb(39, 248, 11);
-    div { text-align: center}
-  }
-  .progress-bar {
-      margin-top: 1em;
-      max-width:400px;
-      .progress {
-        float: left; 
-        max-width: 9%;
-        img { width:100% }
-      }
-      .progress.first{
-        margin-left:9%;
-      }
+  .header{
+    height: 240px;
+    header {
+      max-width: 200px;
+      img { width:100%; }
     }
-  .border-top{
-    max-width:100%;
-    img { width:100%; }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -40px;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+    .progress-bar {
+        margin-top: 1em;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
+    .border-top{
+      max-width:100%;
+      img { width:100%; }
+    }
   }
-  .content{
-    max-width: 95%;
-    height:23em;
+  .middle-container{
+    position: absolute;
+    top: 240px;
+    bottom: 120px;
+    width: 100%;
     overflow-y: auto;
-    .title{
-      margin-top: -1.5em;
-      width: 100%;
-      color: white;
-      text-align: center;
-      h1{ font-size: 2em;}
-    }
-    .paragraph{
-      padding: 0px 5px;
-      max-width:100%;
-      color: white;
-      text-align: center;
-      p{}
-    }
-    .subtitle{
-      text-align: center;
-      color: white;
-      font-weight: bold;
-      p{font-size: 1.5em;}
-    }
-    .list{
-      text-align: center;
-      color: white;
-      max-width:100%;
-      span{font-weight: bold; font-size:1.2em;}
+    .content{
+      max-width: 95%;
+      height:23em;
+      // overflow-y: auto;
+      .title{
+        margin-top: -1.5em;
+        width: 100%;
+        color: white;
+        text-align: center;
+        h1{ font-size: 2em;}
+      }
+      .paragraph{
+        padding: 0px 5px;
+        max-width:100%;
+        color: white;
+        text-align: center;
+        p{}
+      }
+      .subtitle{
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        p{font-size: 1.5em;}
+      }
+      .list{
+        text-align: center;
+        color: white;
+        max-width:100%;
+        span{font-weight: bold; font-size:1.2em;}
+      }
     }
   }
-  .border-bottom{
-    margin-top: -1em;
-    max-width: 100%;
-    img { width: 100%; }
-  }
-  .button{
-    margin-top: 2em;
-  }
-  .icons-container{
-    max-width:600px; 
-    .icon-container{
-      width:20%;
-      float: left;
-      img{width:100%;}
+  footer{
+    height: 140px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      img { width: 100%; }
     }
-    .icon-container.pin{
-      margin-top: -2%;
+    .button{
+      margin-top: 2px;
+    }
+    .icons-container{
+      max-width:600px; 
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
     }
   }
 }

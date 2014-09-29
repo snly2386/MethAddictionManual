@@ -1,20 +1,15 @@
 class GettingOff.Finish_Setup extends Backbone.View
 
-  id: -> "#{@stylesheet}"
+  id: -> "finish-setup"
 
   template: JST['templates/finish_setup']
   
-  constructor: (options) ->
-     if options.cordova is true
-        @stylesheet = 'cordova-finish-setup'
-      else
-        @stylesheet = 'finish-setup'
-     super
-
   initialize: (options) -> 
     @app = options.app
     @avatar = options.avatar
+    @button = options.button
     @page_animation()
+
 
     @avatar.fetch
       success: (model, response, options) =>
@@ -23,6 +18,10 @@ class GettingOff.Finish_Setup extends Backbone.View
         @position()
         @render_avatar()
 
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
 
 
 
@@ -34,6 +33,10 @@ class GettingOff.Finish_Setup extends Backbone.View
     'click .pin'        : 'pinboard'
     'click .button'     : 'navigate'
     'click .previous'   : 'previous'
+
+  render_button: ->
+    @$('.button').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}") 
 
   previous: ->
     window.history.go(-1)

@@ -1,16 +1,12 @@
 class GettingOff.Ch1 extends GettingOff.View
 
-  id: -> "#{@stylesheet}"
+  id: -> "ch1"
   
   className: ->
     "page_#{@page}"
 
   constructor: (options) ->
     @page = parseInt options.page
-    if options.cordova is true
-        @stylesheet = 'cordova-ch1'
-    else
-        @stylesheet = 'ch1'
     super
 
   template: -> JST["templates/ch1/#{@page}"] 
@@ -41,7 +37,10 @@ class GettingOff.Ch1 extends GettingOff.View
     'mousedown .button, .finish-chapter'  : 'mousedown_effect'
     'mouseup .button'                     : 'mouseup_effect'
 
-  
+  scroll_to_bottom: ->
+    scrollElement = document.getElementById("mid-container")
+    scrollElement.scrollTop = scrollElement.scrollHeight
+
   load_page: ->
     $('body').css('display', 'none')
     $('body').fadeIn(1000)
@@ -68,6 +67,7 @@ class GettingOff.Ch1 extends GettingOff.View
       target.siblings().removeClass('border')
       @$('.description').html target.data 'description'
       @validation = true
+      @scroll_to_bottom()
 
   navigate: ->
     next_chapter = @page + 1

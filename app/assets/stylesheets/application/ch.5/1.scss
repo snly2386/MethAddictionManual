@@ -1,57 +1,80 @@
 .ch5page-1 {
-  header {
-    max-width: 200px;
-    img { width:100%; }
-  }
-  .session {
-    font-family:'Open Sans', sans-serif;
-    margin-top: -2em;
-    font-size: 2em; color: rgb(39, 248, 11);
-    div { text-align: center}
-  }
-  .progress-bar {
-      margin-top: 10px;
-      max-width:400px;
-      .progress {
-        float: left; 
-        max-width: 9%;
-        img { width:100% }
-      }
-      .progress.first{
-        margin-left:10%;
-      }
+   .header{
+    height: 250px;
+    header {
+      max-width: 200px;
+      img { width:100%; }
     }
-  .border-top{
-    max-width:100%;
-    img { width:100%; }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -40px;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+    .progress-bar {
+        margin-top: 1em;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
+    .border-top{
+      max-width:100%;
+      img { width:100%; }
+    }
   }
-  .paragraph{
-    padding: 0px 10px;
-    max-width: 85%;
-    color: white;
-    text-align: center;
-    height: 22em;
+  .middle-container{
+    position: absolute;
+    top: 250px;
+    bottom: 120px;
+    width: 100%;
     overflow-y: auto;
-    h1 { width: 100%; font-weight: bold; font-size: 2em;}
-    p { width: 100%; font-size: 1.2em; }
-  }
-  .border-bottom{
-    margin-top: -10px;
-    max-width: 100%;
-    img { width: 100%; }
-  }
-  .button{
-    margin-top: 3.5em;
-  }
-  .icons-container{
-    max-width:600px; 
-    .icon-container{
-      width:20%;
-      float: left;
-      img{width:100%;}
+    .paragraph{
+      padding: 0px 10px;
+      max-width: 85%;
+      color: white;
+      text-align: center;
+      height: 22em;
+      // overflow-y: auto;
+      h1 { width: 100%; font-weight: bold; font-size: 2em;}
+      p { width: 100%; font-size: 1.2em; }
     }
-    .icon-container.pin{
-      margin-top: -2%;
+  }
+  footer{
+    position: absolute;
+    width: 100%;
+    height: 140px;
+    bottom: 0;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      img { width: 100%; }
+    }
+    .button{
+      margin-top: 2px;
+    }
+    .icons-container{
+      max-width:600px; 
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
+    }
+  }
+  @media screen and (min-width:768px){
+    .paragraph{
+      margin-top: 4em;
+      h1{ font-size: 3.5em !important;}
+      p{ font-size: 2em !important;} 
     }
   }
 }

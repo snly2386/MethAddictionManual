@@ -1,14 +1,10 @@
 class GettingOff.Pinboard extends GettingOff.View
 
   className: ->
-    "#{@stylesheet}"
+    "pinboard"
 
   constructor: (options) ->
      @page = parseInt options.page
-     if options.cordova is true
-        @stylesheet = 'cordova-pinboard'
-      else
-        @stylesheet = 'pinboard'
      super
 
   template: (attributes) -> JST["templates/pinboard"](attributes)
@@ -29,7 +25,7 @@ class GettingOff.Pinboard extends GettingOff.View
         @render()
         @position()
         @populate_photos()
-    
+        @scroll_to_bottom()
     @$('.canvas').sketch(color: "red")
 
 
@@ -50,36 +46,39 @@ class GettingOff.Pinboard extends GettingOff.View
     'click .previous'             : 'previous'
     'click .color'                : 'choose_color'
     'click .start-drawing'        : 'paint_tools'
-    'click .close'                : 'close_canvas'
+    'click .work'                 : 'close_canvas'
     'click .tooltip'              : 'show_tooltip'
     'click .sketch-speech-bubble' : 'close_tooltip' 
-    'click .photo-speech-bubble'  : 'close_tooltip' 
+    'click .photo-speech-bubble'  : 'close_tooltip'
+
+  scroll_to_bottom: ->
+    scrollElement = document.getElementById("mid-container")
+    scrollElement.scrollTop = scrollElement.scrollHeight 
 
   close_tooltip: ->
-    if @cordova is true
-      @$('.sketch-speech-bubble, .photo-speech-bubble').fadeOut(2000)
-    else
-      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({maxWidth: '0px'},1000)
+    @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '0px'},1000)
     @$('.tool-overlay').fadeOut(2000)
 
   show_tooltip: ->
     @$('.tool-overlay').fadeIn(2000)
     if @cordova is true
-      @$('.sketch-speech-bubble, .photo-speech-bubble').fadeIn(2000)
-    else
-      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({maxWidth: '200px'}, 1000)
+      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '300px'}, 1000)
+    else  
+      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '150px'}, 1000)
 
   close_canvas: ->
-    @$('.canvas').hide('slide',{direction: 'left'}, 1000)
+    @$('.canvas-container').hide('slide',{direction: 'left'}, 1000)
     @$('.paint-tools').fadeOut(1000)
+    @$('.work-container').fadeOut(1000)
 
   show_canvas: ->
-    @$('.canvas').show('slide',{direction: 'left'}, 1000)
+    @$('.canvas-container').show('slide',{direction: 'left'}, 1000)
     if @cordova is true
-      @$('.canvas').attr('height', '160')
+      @$('.canvas').attr('height', '630')
 
   paint_tools: ->
     @$(".paint-tools").fadeIn(1000)
+    @$('.work-container').fadeIn(1000)
     @show_canvas()
 
   create_canvas: ->
@@ -95,7 +94,7 @@ class GettingOff.Pinboard extends GettingOff.View
     target = $(e.currentTarget)
     target.addClass('transitioned')
     target.addClass('opaque')
-    target.transition({width: '330px'}, 2000)
+    target.transition({width: '60%'}, 1000)
 
   previous: ->
     window.history.go(-1)

@@ -1,61 +1,93 @@
 .ch2page_1{
-  header {
-    max-width: 200px;
-    img { width:100%; }
-  }
-  .session {
-    font-family:'Open Sans', sans-serif;
-    margin-top: -1em;
-    font-size: 2em; 
-    color: rgb(39, 248, 11);
-    div { text-align: center}
-  }
-  .progress-bar {
-      margin-top: 10px;
-      max-width:400px;
-      .progress {
-        float: left; 
-        max-width: 9%;
-        img { width:100% }
-      }
-      .progress.first{
-        margin-left:9%;
-      }
+  .header{
+    height: 240px;
+    header {
+      max-width: 200px;
+      img { width:100%; }
     }
-  .border-top{
-    max-width:100%;
-    img { width:100%; }
-  } 
-  .content{
-    max-width:100%;
-    height: 20em;
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -40px;
+      font-size: 2em; 
+      color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+    .progress-bar {
+        margin-top: 10px;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
+    .border-top{
+      max-width:100%;
+      img { width:100%; }
+    } 
+  }
+  .middle-container{
+    position: absolute;
+    width: 100%;
+    top: 245px;
+    bottom: 120px;
     overflow-y: auto;
-    .paragraph{
-      color: white;
-      max-width:95%;
-      text-align: center;
-      h1 {font-size: 1.6em;}
-      p { max-width: 100%;}
+    .content{
+      max-width:100%;
+      height: 20em;
+      overflow-y: auto;
+      .paragraph{
+        color: white;
+        max-width:95%;
+        text-align: center;
+        h1 {font-size: 1.6em;}
+        p { max-width: 100%;}
+      }
     }
   }
-  .border-bottom{
-    margin-top: -1em;
-    max-width: 100%;
-    img { width: 100%; }
-  }
-  .button{
-    margin-top:2em;
-  }
-  .icons-container{
-    margin-top: 5%;
-    max-width:370px; 
-    .icon-container{
-      width:20%;
-      float: left;
-      img{width:100%;}
+  footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      img { width: 100%; }
     }
-    .icon-container.pinn{
-      margin-top: -2%;
+    .button{
+      margin-top:2px;
+    }
+    .icons-container{
+      max-width:370px; 
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pinn{
+        margin-top: -2%;
+      }
+    }
+  }
+  @media screen and (min-width:768px) {
+    .paragraph h1{
+      font-size: 2.5em !important;
+    }
+    .paragraph p{
+      font-size: 1.6em !important;
+    }
+    .content{
+      height: 52em !important;
+    }
+    .border-bottom{
+      margin-top:0px !important;
+    }
+    .middle-container{
+      bottom: 140px !important;
     }
   }
 }

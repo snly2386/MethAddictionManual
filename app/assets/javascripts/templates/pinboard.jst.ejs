@@ -1,63 +1,70 @@
 <div class="tooltip">
     <img src="assets/tooltip.png"/>
+</div>
+<section class="header">
+  <header class="centered">
+    <img src="assets/title.png"/>
+  </header>
+
+  <div class="title centered font-marker">
+    <p class="pinstuff"> Pinboard </p>
+  </div>
+</section>
+
+
+<section class="middle-container" id="mid-container">
+  <div class="centered content">
+    <div class="photos-container centered">
+    </div>
+  </div>
+  <!-- 
+  <form class="centered"> -->
+    <input type="file" class="photo centered" style="display: none"/>
+    <!-- <input type="submit" class="centered submit"> -->
+  <!-- </form> -->
+  <div class= "utility-container centered">
+    <div class="add-photo">
+      <img src="assets/add_button.png" class="shrink"/>
+    </div>
+
+    <div class="start-drawing">
+      <img src="assets/pen.png" class="shrink"/>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="border-bottom">
+    <img src="assets/text_border_bottom.png"/>
   </div>
 
-<header class="centered">
-  <img src="assets/title.png"/>
-</header>
-
-<div class="title centered font-marker">
-  <p class="pinstuff"> Pinboard </p>
-</div>
-
-
-<div class="centered content">
-  <div class="photos-container centered">
-  </div>
-</div>
-<!-- 
-<form class="centered"> -->
-  <input type="file" class="photo centered" style="display: none"/>
-  <!-- <input type="submit" class="centered submit"> -->
-<!-- </form> -->
-<div class= "utility-container centered">
-  <div class="add-photo">
-    <img src="assets/add_button.png" class="shrink"/>
+  <div class="button centered">
+    <img src="assets/next.png" class="shrink"/>
   </div>
 
-  <div class="start-drawing">
-    <i class="fa fa-pencil fa-4x shrink"></i>
+
+  <div class="icons-container centered">
+    <div class="icon-container user" data-id="menu" id="icon-menu"><img src="assets/menu-options.png" class="icon"/></div>
+    <div class="icon-container table" data-id="scheduler" id="icon-scheduler"><img src="assets/menu-scheduler.png" class="icon"/></div>
+    <div class="icon-container calendar" data-id="calendar" id="icon-calendar"><img src="assets/menu-calendar.png" class="icon"/></div>
+    <div class="icon-container pin" data-id="pin" id="icon-pin"><img src="assets/menu-pin.png" class="icon"/></div>
+    <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
   </div>
-</div>
+</footer>
 
-<div class="border-bottom">
-  <img src="assets/text_border_bottom.png"/>
-</div>
-
-<div class="button centered">
-  <img src="assets/next.png" class="shrink"/>
-</div>
-
-<div class="icons-container centered">
-  <div class="icon-container user" data-id="menu" id="icon-menu"><img src="assets/menu-options.png" class="icon"/></div>
-  <div class="icon-container table" data-id="scheduler" id="icon-scheduler"><img src="assets/menu-scheduler.png" class="icon"/></div>
-  <div class="icon-container calendar" data-id="calendar" id="icon-calendar"><img src="assets/menu-calendar.png" class="icon"/></div>
-  <div class="icon-container pin" data-id="pin" id="icon-pin"><img src="assets/menu-pin.png" class="icon"/></div>
-  <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
-</div>
-
-<canvas class='canvas' id='canvas' height='295'> </canvas>
 <div class="paint-tools">
   <div class='colors'>
     <a href="#canvas" data-color="rgb(113, 113, 252)"><div class="color" style="background-color: rgb(113, 113, 252)" data-color="rgb(113, 113, 252)"></div></a>
-    <div class="close">CLOSE</div>
+    <!-- <div class="close">CLOSE</div> -->
     <a href="#canvas" data-color="rgb(255, 139, 159)"><div class="color" style="background-color: rgb(255, 139, 159)" data-color="rgb(255, 139, 159)"></div></a>
     <a href="#canvas" data-color="rgb(255, 255, 87)"><div class="color" style="background-color: rgb(255, 255, 87)" data-color="rgb(255, 255, 87)"></div></a>
     <a href="#canvas" data-color="rgb(62, 246, 217)"><div class="color" style="background-color: rgb(62, 246, 217)" data-color="rgb(62, 246, 217)"></div></a>
     <a href="#canvas" data-color="rgb(252, 75, 75)"><div class="color" style="background-color: rgb(252, 75, 75)" data-color="rgb(252, 75, 75)"></div></a>
   </div>
 </div>
-
+<div class='canvas-container'>
+  <canvas class='canvas' id='canvas' height='295'> </canvas>
+</div>
 <div class="tool-overlay"></div>
 <div class="photo-speech-bubble">
   <img src="assets/photo_speech_bubble.png"/>
@@ -65,4 +72,7 @@
 
 <div class="sketch-speech-bubble">
   <img src="assets/sketch_speech_bubble.png"/>
+</div>
+<div class='work-container'>
+  <div class='work centered'><img src="assets/close.png"/></div>
 </div>

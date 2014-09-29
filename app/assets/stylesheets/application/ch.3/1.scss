@@ -1,66 +1,91 @@
 .ch3page-1 {
-  header {
-    max-width: 200px;
-    img { width:100%; }
-  }
-  .session {
-    font-family:'Open Sans', sans-serif;
-    margin-top: -2em;
-    font-size: 2em; color: rgb(39, 248, 11);
-    div { text-align: center}
-  }
-  .progress-bar {
-      margin-top: 1em;
-      max-width:400px;
-      .progress {
-        float: left; 
-        max-width: 9%;
-        img { width:100% }
-      }
-      .progress.first{
-        margin-left:9%;
-      }
-    }
-  .border-top{
-    max-width:100%;
-    img { width:100%; }
-  }
-  .paragraph {
-    margin-top: -1em;
-    height: 23em;
-    text-align:center;
-    overflow-y: auto;
-    font-family: 'Open Sans', sans-serif; 
-    color: white;
-    font-weight: lighter;
-    font-size: 1em;
-    max-width: 700px;
-    padding: 3%;
-    h2 { font-weight: bold; width:100%;font-size:2.5em;}
-    p { width:100%; }
-    .list { 
-      float: left; 
-      width:45%;
-      ul{ list-style-type: none;} 
-    }
-  }
-  .border-bottom{
-    max-width:100%;
-    margin-top: -1em;
-    img { width:100%; }
-  }
-  .button{
-   margin-top: 1.5em;
-  }
-  .icons-container{
-    max-width:600px;
-    .icon-container{
-      width:20%;
-      float: left;
+  .header{
+    height: 240px;
+    header {
+      max-width: 200px;
       img { width:100%; }
     }
-    .icon-container.pin{
-        img { margin-top:-11%; }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -2em;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+    .progress-bar {
+        margin-top: 1em;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
+    .border-top{
+      max-width:100%;
+      img { width:100%; }
+    }
+  }
+
+  .middle-container{
+    position: absolute;
+    top: 240px;
+    width: 100%;
+    bottom: 120px;
+    overflow-y: auto;
+    .paragraph {
+      margin-top: -1em;
+      height: 23em;
+      text-align:center;
+      overflow-y: auto;
+      font-family: 'Open Sans', sans-serif; 
+      color: white;
+      font-weight: lighter;
+      font-size: 1em;
+      max-width: 700px;
+      padding: 3%;
+      h2 { font-weight: bold; width:100%;font-size:2.5em;}
+      p { width:100%; }
+      .list { 
+        float: left; 
+        width:45%;
+        ul{ list-style-type: none;} 
+      }
+    }
+  }
+  footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 140px;
+    .border-bottom{
+      max-width:100%;
+      margin-top: 20px;
+      img { width:100%; }
+    }
+    .button{
+     margin-top: 2px;
+    }
+    .icons-container{
+      max-width:600px;
+      .icon-container{
+        width:20%;
+        float: left;
+        img { width:100%; }
+      }
+      .icon-container.pin{
+          img { margin-top:-11%; }
+      }
+    }
+  }
+  @media screen and (min-width:768px) {
+    .paragraph{
+      height: 52em !important;
+      h2{ font-size: 4em !important;}
+      p{ font-size: 2em !important;}
+      .list{ font-size: 2em !important}
     }
   }
 }

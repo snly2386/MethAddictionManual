@@ -1,87 +1,93 @@
-<header>
-  <div class="img">
-    <img src="assets/title.png"/>
-  </div>
-  <div class="points">
-    <h2>800</h2>
-    <div>POINTS</div>
-  </div>
-</header>
+<section class="header">
+  <header>
+    <div class="img">
+      <img src="assets/title.png"/>
+    </div>
+    <div class="points">
+      <h2>800</h2>
+      <div>POINTS</div>
+    </div>
+  </header>
+<!-- 
+  <section class="session centered font-sans">
+    <p>Session 5</p>
+  </section> -->
 
-<section class="session centered font-sans">
-  <p>Session 5</p>
-</section>
+  <section class="progress-bar centered"> 
+    <div class="progress first"><img src="assets/progress_check.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_check.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_x.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_x.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_x.png"/></div>
+  </section>
 
-<section class="progress-bar centered"> 
-  <div class="progress first"><img src="assets/progress_check.png"/></div>
-  <div class="progress"><img src="assets/progress_line.png"/></div>
-  <div class="progress"><img src="assets/progress_check.png"/></div>
-  <div class="progress"><img src="assets/progress_line.png"/></div>
-  <div class="progress"><img src="assets/progress_check.png"/></div>
-  <div class="progress"><img src="assets/progress_line.png"/></div>
-  <div class="progress"><img src="assets/progress_x.png"/></div>
-  <div class="progress"><img src="assets/progress_line.png"/></div>
-  <div class="progress"><img src="assets/progress_x.png"/></div>
-</section>
-
-<div class="border-top">
-  <img src="assets/text_border_top.png"/>
-</div>
-
-<section class="questions centered font-sans">
-  <div class="text centered">
-    <p>How many people are in your web? Are there any circles close to you or do you keep most people away?</p>
-  </div>
-
-  <div class="textarea">
-    <textarea class="1"><%=answer_1%></textarea>
-  </div>
-
-   <div class="text centered">
-    <p>What groups are represented in your web (for example, crystal­using friends, family, non­using friends, sex partners)?</p>
-  </div>
-
-  <div class="textarea">
-    <textarea class="2"><%=answer_2%></textarea>
-  </div>
-
-  <div class="text centered">
-    <p>Who are you least likely to use crystal with?</p>
-  </div>
-
-  <div class="textarea">
-    <textarea class="3"><%=answer_3%></textarea>
-  </div>
-
-   <div class="text centered">
-    <p>Who are you most likely to use crystal with?</p>
-  </div>
-
-  <div class="textarea">
-    <textarea class="4"><%=answer_4%></textarea>
-  </div>
-
-  <div class="text centered">
-    <p>Is there anyone in your web that you can talk to for support if you are feeling down or need help staying away from crystal?</p>
-  </div>
-
-  <div class="textarea">
-    <textarea class="5"><%=answer_5%></textarea>
+  <div class="border-top">
+    <img src="assets/text_border_top.png"/>
   </div>
 </section>
 
-<div class="border-bottom">
-  <img src="assets/text_border_bottom.png"/>
-</div>
+<section class="middle-container">
+  <section class="questions centered font-sans">
+    <div class="text centered">
+      <p>How many people are in your web? Are there any circles close to you or do you keep most people away?</p>
+    </div>
 
-<div class="centered save-answers">
-  <img src="assets/next.png" class="shrink"/>
-</div>
+    <div class="textarea">
+      <textarea class="1"><%=answer_1%></textarea>
+    </div>
 
-<div class="icons-container centered">
-  <div class="icon-container user" data-id="menu" id="icon-menu"><img src="assets/menu-options.png" class="icon"/></div>
-  <div class="icon-container table" data-id="scheduler" id="icon-scheduler"><img src="assets/menu-scheduler.png" class="icon"/></div>
-  <div class="icon-container calendar" data-id="calendar" id="icon-calendar"><img src="assets/menu-calendar.png" class="icon"/></div>
-  <div class="icon-container pin" data-id="pin" id="icon-pin"><img src="assets/menu-pin.png" class="icon"/></div>
-  <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
-</div>
+     <div class="text centered">
+      <p>What groups are represented in your web (for example, crystal­using friends, family, non­using friends, sex partners)?</p>
+    </div>
+
+    <div class="textarea">
+      <textarea class="2"><%=answer_2%></textarea>
+    </div>
+
+    <div class="text centered">
+      <p>Who are you least likely to use crystal with?</p>
+    </div>
+
+    <div class="textarea">
+      <textarea class="3"><%=answer_3%></textarea>
+    </div>
+
+     <div class="text centered">
+      <p>Who are you most likely to use crystal with?</p>
+    </div>
+
+    <div class="textarea">
+      <textarea class="4"><%=answer_4%></textarea>
+    </div>
+
+    <div class="text centered">
+      <p>Is there anyone in your web that you can talk to for support if you are feeling down or need help staying away from crystal?</p>
+    </div>
+
+    <div class="textarea">
+      <textarea class="5"><%=answer_5%></textarea>
+    </div>
+  </section>
+</section>
+
+<footer>
+  <div class="border-bottom">
+    <img src="assets/text_border_bottom.png"/>
+  </div>
+
+  <div class="centered save-answers">
+    <img src="assets/next.png" class="shrink"/>
+  </div>
+
+  <div class="icons-container centered">
+    <div class="icon-container user" data-id="menu" id="icon-menu"><img src="assets/menu-options.png" class="icon"/></div>
+    <div class="icon-container table" data-id="scheduler" id="icon-scheduler"><img src="assets/menu-scheduler.png" class="icon"/></div>
+    <div class="icon-container calendar" data-id="calendar" id="icon-calendar"><img src="assets/menu-calendar.png" class="icon"/></div>
+    <div class="icon-container pin" data-id="pin" id="icon-pin"><img src="assets/menu-pin.png" class="icon"/></div>
+    <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
+  </div>
+</footer>

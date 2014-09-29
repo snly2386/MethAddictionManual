@@ -1,35 +1,68 @@
 #ch1{
-  header{
-    max-width:200px;
-    img{width:100%;}
-  }
-  .paragraph{
-    padding: 0em 1em;
-    max-width: 400px;
-    font-size: 2em;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    p { width:100%; }
-  }
-  .finish-chapter{
-    margin-top: 2em;
-    height: 2em;
-    max-width: 120px;
-    img{
-      margin-top: 0.1em;
-      margin-left: 0.8em;
-      height: 2em;
+  .header{
+    height: 135px;
+    header{
+      max-width:200px;
+      img{width:100%;}
     }
   }
-  .progress-bar {    
-      margin-top:3em;
-      .progress {
-        float: left; 
-        max-width: 9%;
-        img { width:100% }
-      }
-      .progress.first{
-        margin-left:1em;
+  .mid-container{
+    position: absolute;
+    width: 100%;
+    top: 140px;
+    bottom: 160px;
+    bottom: 0px;
+    overflow-y: auto;
+    .paragraph{
+      padding: 0 10px;
+      max-width: 800px;
+      font-size: 1.5em;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      p { width:100%; }
+    }
+  }
+  .end{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    .finish-chapter{
+      // margin-top: 2em;
+      height: 3em;
+      max-width: 110px;
+      img{
+        margin-top: 0.3em;
+        margin-left: 1.3em;
+        height: 2.5em;
       }
     }
+   .progress-bar{
+      margin-top: 50px;
+      height: 30px;
+      // width: 100%;
+      .progress{
+        float: left;
+        width: 9%;
+        img { width:100%; }
+        &.first { margin-left: 10%; }
+      }
+    }
+  }
+   @media screen and (min-width:768px) {
+      .paragraph{
+        max-width: 600px !important;
+        margin-top: 2em;
+        font-size: 3em !important;
+      }
+      .finish-chapter{
+        height: 6em !important;
+        max-width: 220px !important;
+        img{
+          height: 5em !important;
+          margin-top: 0.6em !important;
+          margin-left: 2.6em !important;
+        }
+      }
+   }
 }

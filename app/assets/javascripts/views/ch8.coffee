@@ -27,6 +27,9 @@ class GettingOff.Ch8 extends GettingOff.View
 
     @render()
 
+    if @page is 7
+      @point_animation()
+
     @button.fetch
       success:(model, response, options) =>
         @button.set model.attributes[0]
@@ -45,6 +48,36 @@ class GettingOff.Ch8 extends GettingOff.View
     'click .user'                        : 'user'
     'click .pin'                         : 'pinboard'
     'click .previous'                    : 'previous'
+
+   point_animation: ->
+    window.setTimeout (->
+     $(".overlay").fadeIn(1000)
+     # $(".points-container").jrumble x: 10, y: 10, rotation: 4
+     # $(".points-container").trigger("startRumble")
+     return
+  ), 2000
+
+    window.setTimeout (->
+     # $('.score').animate({'color':'red'}, 3000)
+     # $('.points').animate({'color':'red'}, 3000)
+     $('.points-container').addClass('animated')
+     $('.points-container').addClass('rollOut')
+     return 
+  ), 3000
+
+    window.setTimeout (->
+     # $('.points-container').hide()
+     $('.score').text('1600')
+     return 
+  ), 4000
+
+    window.setTimeout (->
+     # $('.points-container').show()
+     $('.points-container').removeClass('rollOut')
+     $('.points-container').addClass('bounceInDown')
+     $('.overlay').fadeOut(3000)
+     return 
+  ), 5000  
 
   previous: ->
     window.history.go(-1)

@@ -32,7 +32,7 @@ class GettingOff.Application extends Backbone.Router
 
   
   set_cordova: ->
-    @cordova = false
+    @cordova = true
 
   create_calendar: ->
     @calendar_collection ||= new GettingOff.Calendar()
@@ -70,10 +70,11 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.New_Theme app: @, model: @user, button: @button, cordova: @cordova
 
   finish_setup: ->
+    @render_button()
     @set_cordova()
     @create_avatar()
     @user_create()
-    view = new GettingOff.Finish_Setup app: @, model: @user, avatar: @avatar_model, cordova: @cordova
+    view = new GettingOff.Finish_Setup app: @, model: @user, avatar: @avatar_model, cordova: @cordova, button: @button
 
   new_user2: (id) ->
     view = new GettingOff.New_User app: @, id: id

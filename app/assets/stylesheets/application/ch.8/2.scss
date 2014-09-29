@@ -1,84 +1,96 @@
 .ch8page-2{
-  header{
-    max-width: 100%;color:white;
-    height:5em; 
-    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
-    .points {
-      margin-right:4%;
-      margin-top: -3em;
-      float: right;
-      max-width: 200px;
-      font-family: 'Permanent Marker', cursive;
-      h2{font-size: 5em;}
-      div { 
-        margin-top: -3.7em;
-        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
-        text-align: center;
+  .header{
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
+        }
       }
     }
-  }
-  .session {
-    margin-top: 5em;
-    text-align: center;
-    max-width: 200px;
-    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
-  }
-  .progress-bar{
-    max-width: 350px;
-  }
-  .progress{
-    float: left;
-    max-width: 9%;
-    img { width:100%; }
-  }
-  .progress.first{
-    margin-left: 9%;
-  }
-  .border-top{
-    max-width: 100%;
-    img { width:100%; }
-  }
-  .title{
-    margin-top:-1.5em;
-    max-width: 95%;
-    color: rgb(102, 236, 96);
-    text-align: center;
-    font-size: 1.5em;
-    p { width: 100%;}
-  }
-  .content{
-    max-width: 100%;
-    background-color: rgba(255, 255, 255, 0.4);
-    height: 22em;
-    overflow-y: auto;
-    .list{
-      max-width: 85%;
-      color: white;
-      p { 
-        cursor: pointer;
-        width: 100%; 
-        font-size: 1.3em;
-        img{height: 1.3em; margin-bottom: -0.3em; margin-right: 0.1em;}
-      }
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
     }
-  }
-  .border-bottom{
-    max-width: 100%;
-    img { width: 100%; }
-  }
-   .button{
-      margin-top: 1em;
-  }
-  .icons-container{
-    max-width:600px; 
-    z-index: 1;
-    .icon-container{
-      width:20%;
+    .progress{
       float: left;
-      img{width:100%;}
+      max-width: 9%;
+      img { width:100%; }
     }
-    .icon-container.pin{
-      margin-top: -2%;
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
+    }
+  }
+  .middle-container{
+    position: absolute;
+    top: 180px;
+    bottom: 120px;
+    overflow-y: auto;
+    width: 100%;
+    .title{
+      // margin-top:-1.5em;
+      max-width: 95%;
+      color: rgb(102, 236, 96);
+      text-align: center;
+      font-size: 1.5em;
+      p { width: 100%;}
+    }
+    .content{
+      max-width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      height: 38em;
+      // overflow-y: auto;
+      .list{
+        max-width: 85%;
+        color: white;
+        p { 
+          cursor: pointer;
+          width: 100%; 
+          font-size: 1.3em;
+          img{height: 1.3em; margin-bottom: -0.3em; margin-right: 0.1em;}
+        }
+      }
+    }
+  }
+  footer{
+    height: 140px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      img { width: 100%; }
+    }
+     .button{
+        margin-top: 2px;
+    }
+    .icons-container{
+      max-width:600px; 
+      z-index: 1;
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
     }
   }
   .click-list{

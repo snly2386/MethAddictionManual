@@ -1,150 +1,107 @@
 .ch5page-4{
-  header{
-    max-width: 100%;color:white;
-    height:90px; 
-    .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
-    .points {
-      margin-right:4%;
-      margin-top: -3em;
-      float: right;
-      max-width: 200px;
-      font-family: 'Permanent Marker', cursive;
-      h2{font-size: 5em;}
-      div { 
-        margin-top: -3.7em;
-        font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
-        text-align: center;
-      }
-    }
+  .tooltip{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    img { height: 3em;}
   }
-  .session {
-    margin-top: 1em;
-    text-align: center;
-    max-width: 200px;
-    p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
-  }
-  .progress-bar{
-    max-width: 350px;
-  }
-  .progress{
-    float: left;
-    max-width: 9%;
-    img { width:100%; }
-  }
-  .progress.first{
-    margin-left: 9%;
-  }
-  .border-top{
-    max-width: 100%;
-    img { width:100%; }
-  }
-  .web{
-    max-width: 100%;
-    height: 27em;
-    .me {
-      height:3em;
-      max-width: 90px;
-      img { width: 100%; margin-top:7em;}
-    }
-    .circle{
-      position: absolute;
-      color: white;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 1.5em; font-weight: bold;
-      height:4em;
-      width:4em;
-      opacity: 0.5;
-      border-radius:4em;
-      background-color: rgb(90, 202, 90);
-      line-height:4em;
-      text-align: center;
-      border: 2px solid rgb(197, 255, 197);
-    }
-    .popup-menu{
-      display: none;
-      height:100%;
-      // position: fixed;
-      height: 24em;
-      position: relative;
-      z-index: 9999;
-      background-color:rgb(250, 248, 248);
-      width:100%;
-      text-align: center;
-      font-size: 1.5em;
-      color: navy;
-      .input{
-        height:2em;
-        padding: 0px 5px;
-        margin-top: 1em;
-        background-color: rgba(255, 255, 255, 0.33);
-        max-width: 95%;
-        input {
-          width:81%; height:1.2em; 
-          border:8px solid white; 
-          float: left; margin-left:4%; 
-          background-color: rgb(209, 214, 218); color:white; font-size:1.5em;
-        }
-        .submit{
-          position: relative;
-          float: left;
-          max-width:10%;
-          margin-top: -0.05em;
-          img{width:100%;height:2.8em; z-index: 1000;}
+  .header{
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
         }
       }
-      .colors{
-        max-width:70%;
-        .top-colors{
-          max-width: 200px;
-          height:2em;
-          .each-color {
-            float: left;
-            margin: 0px 0.3em;
-            max-width: 11%;
-            img { width: 100%; height: 1.1em;}
-          }
-          .first.each-color{
-            margin-left:13%;
-          }
-        }
-        .bottom-colors{
-          max-width: 200px;
-          height:30px;
-          .each-color {
-            float: left;
-            margin: 0px 0.3em;
-            max-width: 11%;
-            img { width: 100%; height:1.1em;}
-          }
-          .first.each-color{
-             margin-left: 13%;
-          }
-        }
-      }  
     }
-  }
-
-  .border-bottom{
-    max-width: 100%;
-    margin-top: -50px;
-    img { width: 100%; }
-    z-index: 1;
-  }
-  .button{
-    z-index: 1;
-    margin-top: 3.5em;
-  }
-  .icons-container{
-    max-width:600px; 
-    z-index: 1;
-    .icon-container{
-      width:20%;
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
+    }
+    .progress{
       float: left;
-      img{width:100%;}
+      max-width: 9%;
+      img { width:100%; }
     }
-    .icon-container.pin{
-      margin-top: -2%;
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
+    }
+  }
+  .middle-container{
+    position: absolute;
+    top: 180px;
+    bottom: 120px;
+    width: 100%;
+    overflow-y: auto;
+    .web{
+      background: url(./web.png) no-repeat;
+      background-size: cover;
+      max-width: 100%;
+      height: 27em;
+      .me {
+        height:3em;
+        max-width: 90px;
+        img { width: 100%; margin-top:15.5em;}
+      }
+      .circle{
+        position: absolute;
+        color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.5em; font-weight: bold;
+        height:4em;
+        width:4em;
+        opacity: 0.5;
+        border-radius:4em;
+        background-color: rgb(90, 202, 90);
+        line-height:4em;
+        text-align: center;
+        border: 2px solid rgb(197, 255, 197);
+      }
+    }
+  }
+  footer{
+    height: 140px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .border-bottom{
+      margin-top: 20px;
+      max-width: 100%;
+      // margin-top: -50px;
+      img { width: 100%; }
+      z-index: 1;
+    }
+    .button{
+      z-index: 1;
+      margin-top: 2px;
+    }
+    .icons-container{
+      max-width:600px; 
+      z-index: 1;
+      .icon-container{
+        width:20%;
+        float: left;
+        img{width:100%;}
+      }
+      .icon-container.pin{
+        margin-top: -2%;
+      }
     }
   }
   .float-shadow {
@@ -189,4 +146,128 @@
   .border-effect {
     border: 2px solid rgb(134, 224, 241) !important;
   }
+  .popup-container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .popup-menu{
+      display: none;
+      // position: fixed;
+      height: 18em;
+      position: relative;
+      z-index: 9999;
+      background-color:rgb(250, 248, 248);
+      width:100%;
+      text-align: center;
+      font-size: 1.5em;
+      color: navy;
+      .text{
+        width: 100%;
+      }
+      .fuck{
+        margin-top: 30px;
+      }
+      .input{
+        height:2em;
+        padding: 0px 5px;
+        margin-top: 1em;
+        background-color: rgba(255, 255, 255, 0.33);
+        max-width: 95%;
+        input {
+          width:70%; height:1.2em; 
+          border:8px solid white; 
+          float: left; margin-left:4%; 
+          background-color: rgb(209, 214, 218); color:white; font-size:1.5em;
+        }
+        .submit{
+          position: relative;
+          float: left;
+          max-width:10%;
+          margin-top: -0.05em;
+          img{width:100%;height:62px; z-index: 1000;}
+        }
+      }
+      .colors{
+        max-width:70%;
+        .top-colors{
+          max-width: 200px;
+          height:2em;
+          .each-color {
+            float: left;
+            margin: 0px 0.3em;
+            max-width: 11%;
+            img { width: 100%; height: 1.1em;}
+          }
+          .first.each-color{
+            margin-left:13%;
+          }
+        }
+        .bottom-colors{
+          max-width: 200px;
+          height:30px;
+          .each-color {
+            float: left;
+            margin: 0px 0.3em;
+            max-width: 11%;
+            img { width: 100%; height:1.1em;}
+          }
+          .first.each-color{
+             margin-left: 13%;
+          }
+        }
+      }  
+    }
+  }
+  .overlay{
+    display: none;
+    width: 100%;
+    background-color: rgb(31, 86, 204);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    opacity:0.7;
+  }
+  .speech-container{
+    // width: 0px;
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    z-index: 2000;
+    .speech-bubble{
+        // z-index: 1000;
+        width: 0px;
+        img{width: 100%;}
+      }
+    }
+    @media screen and (min-width:768px){
+      .web{
+        height: 60em !important;
+      }
+      .circle{
+        height: 80px !important;
+        border-radius: 40px !important;
+        max-width: 80px !important;
+        line-height: 80px !important;
+        font-size: 2em !important;
+      }
+      .me{
+        // margin-top: 18em !important;
+        height: 4em !important;
+        max-width: 120px !important;
+        img{ margin-top: 25em !important;}
+      }
+      .middle-container{
+        bottom: 140px !important;
+      }
+      footer{
+        height: 180px !important;
+      }
+      .fuck{
+        margin-top:40px !important;
+      }
+      .input{
+        margin-left: 2em !important;
+      }
+    }
 }
