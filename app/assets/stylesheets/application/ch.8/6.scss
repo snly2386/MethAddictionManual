@@ -104,4 +104,12 @@
       }
     }
   }
+  @media screen and (min-width:768px){
+    .title{
+      h1{ font-size: 2em !important; }
+    }
+    .paragraph{
+      p{ font-size: 2em;}
+    }
+  }
 }

@@ -164,8 +164,16 @@
       p{ font-size: 1.5em !important;}
     }
     .subtitles{
+      max-width: 612px !important;
+      .title{
+        width: 49.8% !important;
+        height: 3em !important;
+        h1{font-size: 1.8em; margin-top: 1px !important;}
+      }
+    }
+    .paragraph{
       max-width: 600px !important;
-
+      margin-top: 10px;
     }
   }
 }

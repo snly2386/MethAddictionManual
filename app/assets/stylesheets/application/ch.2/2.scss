@@ -212,7 +212,7 @@
   // }
   @media screen and (min-width:768px) {
     .header{
-    height:200px !important;
+    height:250px !important;
     header{
       margin-top: 2em !important;
       h1{ 
@@ -222,8 +222,11 @@
       .next{ margin-top : -20px;}
       }
     }
+    .middle-container{
+      top: 250px !important;
+    }
     .calendar{
-      margin-top: 15em !important;
+      margin-top: 1em !important;
     }
     .bottom-menu{
       height: 300px !important;

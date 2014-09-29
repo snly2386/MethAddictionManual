@@ -96,4 +96,18 @@
   .click-list{
     color: rgb(102, 236, 96) !important;
   }
+  @media screen and (min-width:768px){
+    .title{
+      font-size: 2em !important;
+    }
+    .content{
+      height: 61em !important;
+    }
+    .list {
+      p{ 
+        font-size: 2em !important;
+        img{ height: 1.6em !important;}
+      }
+    }
+  }
 }

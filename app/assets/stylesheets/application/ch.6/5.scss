@@ -141,4 +141,39 @@
   .title-clicked{
     background-color: rgba(115, 242, 253, 0.4) !important;
   }
+   @media screen and (min-width:768px){
+    .top{
+      max-width: 600px !important;
+      .stage{
+        h1{ font-size: 3em !important;}
+        p{ font-size: 1.5em !important;}
+      }
+      .stage-name{
+        margin-top: 1.3em !important;
+        h1{font-size: 2.5em !important; margin-top: 0.3em !important;}
+        width: 19em !important;
+        height: 5.2em !important; 
+      }
+    }
+    .line{
+      margin-top: 5em !important;
+      max-width: 600px !important;
+    }
+    .middle{
+      max-width: 600px !important;
+      p{ font-size: 1.5em !important;}
+    }
+    .subtitles{
+      max-width: 612px !important;
+      .title{
+        width: 49.8% !important;
+        height: 3em !important;
+        h1{font-size: 1.8em; margin-top: 1px !important;}
+      }
+    }
+    .paragraph{
+      max-width: 600px !important;
+      margin-top: 10px;
+    }
+  }
 }

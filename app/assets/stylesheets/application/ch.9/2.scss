@@ -103,6 +103,11 @@
         margin-top: -2%;
       }
     }
+    @media screen and (min-width:768px){
+      .paragraph p{
+        font-size: 2em !important;
+      }
+    }
   }
   .border{
       border: 1px solid white;

@@ -100,4 +100,7 @@
   .textarea-click{
     background-color: #959697 !important;
   }
+  @media screen and (min-width:768px){
+    .paragraph p{ font-size: 1.5em !important;}
+  }
 }

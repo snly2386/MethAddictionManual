@@ -94,4 +94,12 @@
   .click-list{
     color: rgb(102, 236, 96) !important;
   }
+  @media screen and (min-width:768px){
+    .title{
+      p{ font-size: 4em !important;}
+    }
+    .paragraph{
+      p{ font-size: 2em !important;}
+    }
+  }
 }

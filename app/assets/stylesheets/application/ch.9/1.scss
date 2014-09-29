@@ -91,4 +91,10 @@
       }
     }
   }
+  @media screen and (min-width:768px){
+    .content{
+      h1{font-size: 3em !important;}
+      p{ font-size: 2em !important;}
+    }
+  }
 }

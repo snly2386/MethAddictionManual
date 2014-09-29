@@ -37,6 +37,7 @@
     }
   }
   footer{
+    width: 100%;
     position: absolute;
     height: 140px;
     bottom: 0;
@@ -61,17 +62,25 @@
     }
   }
   .overlay{
+    position: absolute;
     display: none;
-    height: 70em;
     width: 100%;
     background-color: black;
     position: absolute;
     top: 0;
+    bottom: 0;
     z-index: 100;
     opacity:0.7;
   }
   
   .test{
     color: yellow !important;
+  }
+  @media screen and (min-width:768px){
+    .points-container{
+
+      p{ font-size: 13em !important;}
+      .points{ font-size: 3em !important;}
+    }
   }
 }

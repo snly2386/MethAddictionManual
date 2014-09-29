@@ -35,6 +35,9 @@ class GettingOff.Ch5 extends GettingOff.View
     if @page is 6
       @point_animation()
 
+    if @page is 2 || @page is 4
+      @scroll_to_bottom()
+
     @button.fetch
       success:(model, response, options) =>
         @button.set model.attributes[0]
@@ -61,6 +64,10 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .previous'                                  : 'previous'
     'click .tooltip'                                   : 'open_tooltip'
     'click .speech-container'                          : 'close_tooltip'
+
+  scroll_to_bottom: ->
+    scrollElement = document.getElementById("mid-container")
+    scrollElement.scrollTop = scrollElement.scrollHeight/2
 
   close_tooltip: ->
     @$('.overlay').fadeOut(1000)
