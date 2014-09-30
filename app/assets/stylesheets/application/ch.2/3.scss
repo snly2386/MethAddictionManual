@@ -95,7 +95,16 @@
     .paragraph{
       height: 6.5em !important;
       p{ font-size: 2.5em !important;}
-      img{ height: 2.5em !important; margin-top: 0.1em !important;}
+      img{ height: 2em !important; margin-top: 0.3em !important;}
+    }
+    .middle-container{
+      bottom: 160px !important;
+    }
+    footer{
+      height: 220px !important;
+      .finish-chapter{
+        margin-top: 10px !important;
+      }
     }
   }
 }

@@ -20,7 +20,7 @@
     overflow-y: auto;
     .points-container{
       position: relative;
-      margin-top: -5em;
+      margin-top: -10em;
       text-align: center;
       color: white;
       z-index: 9999;
@@ -77,10 +77,19 @@
     color: yellow !important;
   }
   @media screen and (min-width:768px){
-    .points-container{
+      .points-container{
 
-      p{ font-size: 13em !important;}
-      .points{ font-size: 3em !important;}
-    }
+        p{ font-size: 13em !important;}
+        .points{ font-size: 3em !important;}
+      }
+      .middle-container{
+        bottom: 170px !important;
+      }
+      footer{
+        height: 220px!important;
+        .finish-chapter{
+          margin-top: 10px !important;
+        }
+      }
    }
 }

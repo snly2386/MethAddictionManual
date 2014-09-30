@@ -102,5 +102,14 @@
   }
   @media screen and (min-width:768px){
     .paragraph p{ font-size: 1.5em !important;}
+    .middle-container{
+      bottom: 200px !important;
+    }
+    footer{
+      height: 250px !important;
+      .button{
+        margin-top: 10px !important;
+      }
+    }
   }
 }

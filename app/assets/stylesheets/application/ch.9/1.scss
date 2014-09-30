@@ -92,9 +92,18 @@
     }
   }
   @media screen and (min-width:768px){
+    .middle-container{
+      bottom: 170px !important;
+    }
     .content{
       h1{font-size: 3em !important;}
       p{ font-size: 2em !important;}
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
+      }
     }
   }
 }

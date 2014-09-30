@@ -103,27 +103,37 @@
         margin-top: -2%;
       }
     }
+  }
     @media screen and (min-width:768px){
       .paragraph p{
         font-size: 2em !important;
       }
+      .middle-container{
+        top: 190px !important;
+        bottom: 170px !important;
+      }
+      footer{
+        height: 220px !important;
+        .button{
+          margin-top: 10px !important;
+        }
+      }
     }
-  }
   .border{
       border: 1px solid white;
       border-radius: 48%;
   }
   .glow {
-  display: inline-block;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-.glowing {
-  box-shadow: 0 0 8px white;
-}
+    display: inline-block;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .glowing {
+    box-shadow: 0 0 8px white;
+  }
 }

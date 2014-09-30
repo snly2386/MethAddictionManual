@@ -129,19 +129,38 @@
           img { width:100% }
         }
         .progress.first{
-          margin-left:10%;
+          margin-left:8.5%;
         }
       }
     }
     @media screen and (min-width:768px) {
       .header p {
-        margin-top: 15em;
+        margin-top: 8em;
+        font-size: 1.5em !important;
+      }
+      .button{
+        margin-top: 20px !important;
       }
       .name-container{
-        margin-top:15em;
+        margin-top:6em;
+      }
+      .name-border{
+        height: 5em !important;
+        input.name{
+          width: 95% !important;
+        }
       }
       .header img{
         height: 13em;
+      }
+      footer{
+        height: 180px !important;
+        .progress-bar{
+          margin-top: 20px !important;
+        }
+        .progress.first{
+          margin-left:15% !important;
+        }
       }
     }
 }

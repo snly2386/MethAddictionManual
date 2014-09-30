@@ -142,6 +142,9 @@
     background-color: rgba(115, 242, 253, 0.4) !important;
   }
   @media screen and (min-width:768px){
+    .middle-container{
+      bottom: 170px !important;
+    }
     .top{
       max-width: 600px !important;
       .stage{
@@ -174,6 +177,12 @@
     .paragraph{
       max-width: 600px !important;
       margin-top: 10px;
+    }
+    footer{
+      height: 220px!important;
+      .button{
+        margin-top: 10px !important;
+      }
     }
   }
 }

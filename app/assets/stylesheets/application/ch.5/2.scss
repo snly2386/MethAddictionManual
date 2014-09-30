@@ -38,7 +38,7 @@
   }
   .middle-container{
     position: absolute;
-    top: 180px;
+    top: 170px;
     bottom: 120px;
     width: 100%;
     overflow-y: auto;
@@ -99,10 +99,10 @@
   }
   @media screen and (min-width:768px){
     .web{
-      height: 60em !important;
+      height: 35em !important;
     }
     .me-circle{
-      margin-top: -16em !important; 
+      margin-top: -10em !important; 
       height: 80px !important;
       border-radius: 40px !important;
       max-width: 80px !important;
@@ -111,6 +111,15 @@
     }
     .title{
       h1{ font-size: 3.5em !important;}
+    }
+    .middle-container{
+      bottom: 170px !important;
+    }
+    footer{
+      height: 230px !important;
+      .button{
+        margin-top: 10px !important;
+      }
     }
   }
 }

@@ -151,7 +151,16 @@
       h1{ font-size: 4.5em !important;}
     }
     .line{
-      margin-left: 45px !important;
+      margin-left: 42px !important;
+    }
+    .middle-container{
+      bottom: 170px !important;
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
+      }
     }
    }
 }

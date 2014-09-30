@@ -30,7 +30,7 @@
   }
   .middle-container{
     position: absolute;
-    top: 250px;
+    top: 240px;
     bottom: 120px;
     overflow-y: auto;
     width: 100%;
@@ -78,6 +78,16 @@
       h1{font-size: 3em !important;}
       p{font-size: 2em !important;}
       height: 52em !important;
+    }
+    .middle-container{
+      top: 250px !important;
+      bottom: 170px !important;
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
+      }
     }
   }
 }

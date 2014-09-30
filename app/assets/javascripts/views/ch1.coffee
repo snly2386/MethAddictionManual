@@ -29,6 +29,9 @@ class GettingOff.Ch1 extends GettingOff.View
         @render_button()
 
     @position()
+    
+    if @page != 13
+      @scroll_to_bottom()
 
   events: 
     'click .rating'                       : 'rate_question'
@@ -38,8 +41,11 @@ class GettingOff.Ch1 extends GettingOff.View
     'mouseup .button'                     : 'mouseup_effect'
 
   scroll_to_bottom: ->
+    # scrollElement = document.getElementById("mid-container")
+    # scrollElement.scrollTop = scrollElement.scrollHeight
     scrollElement = document.getElementById("mid-container")
-    scrollElement.scrollTop = scrollElement.scrollHeight
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 3000)
 
   load_page: ->
     $('body').css('display', 'none')

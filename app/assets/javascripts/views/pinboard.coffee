@@ -13,6 +13,7 @@ class GettingOff.Pinboard extends GettingOff.View
     @app = options.app
     @photos = options.photos
     @cordova = options.cordova
+    @button = options.button
     @color = "black"
     @counter = 5
    
@@ -26,7 +27,13 @@ class GettingOff.Pinboard extends GettingOff.View
         @position()
         @populate_photos()
         @scroll_to_bottom()
-    @$('.canvas').sketch(color: "red")
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
+    # @$('.canvas').sketch()
 
 
   events: ->
@@ -51,9 +58,16 @@ class GettingOff.Pinboard extends GettingOff.View
     'click .sketch-speech-bubble' : 'close_tooltip' 
     'click .photo-speech-bubble'  : 'close_tooltip'
 
+  render_button: ->
+    @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}") 
+
   scroll_to_bottom: ->
+    # scrollElement = document.getElementById("mid-container")
+    # scrollElement.scrollTop = scrollElement.scrollHeight 
     scrollElement = document.getElementById("mid-container")
-    scrollElement.scrollTop = scrollElement.scrollHeight 
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 3000)
 
   close_tooltip: ->
     @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '0px'},1000)
@@ -73,6 +87,8 @@ class GettingOff.Pinboard extends GettingOff.View
 
   show_canvas: ->
     @$('.canvas-container').show('slide',{direction: 'left'}, 1000)
+    @$('.photo-container').css('z-index','0')
+    @create_canvas()
     if @cordova is true
       @$('.canvas').attr('height', '630')
 
@@ -82,7 +98,7 @@ class GettingOff.Pinboard extends GettingOff.View
     @show_canvas()
 
   create_canvas: ->
-    @$('.canvas').sketch(defaultColor: "#{@color}")
+    @$('.canvas').sketch()
 
   choose_color: (e) ->
     $('.color').each( ->

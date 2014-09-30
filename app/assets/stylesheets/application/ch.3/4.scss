@@ -109,5 +109,14 @@
     .list{
       font-size: 2em;
     }
+    .middle-container{
+      bottom: 170px !important;
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
+      }
+    }
   }
 }

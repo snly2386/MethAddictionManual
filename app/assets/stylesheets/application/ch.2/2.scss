@@ -1,6 +1,6 @@
 .ch2page_2{
   .tooltip {
-    margin-top: -1em;
+    margin-top: -0.2em;
     float: right;
     img { height: 3em;}
   }
@@ -58,8 +58,8 @@
       }
     }
     .bottom-menu{
-      margin-top: 70px;
-      height:200px;
+      margin-top: 80px;
+      // height:200px;
       // overflow-y: auto;
       max-width:100%;
       .top-container{
@@ -161,6 +161,9 @@
     z-index: 1000;
    img { width: 100%;}
   } 
+  .selected{
+    background-color: rgba(0, 255, 62, 0.44);
+  }
   // @media screen and (min-width:420px) {
   //   .speech-bubble {
   //     left: 21%;
@@ -224,12 +227,22 @@
     }
     .middle-container{
       top: 250px !important;
+      bottom: 140px !important;
     }
     .calendar{
       margin-top: 1em !important;
     }
     .bottom-menu{
-      height: 300px !important;
+      // height: 300px !important;
+    }
+    footer{
+      height: 215px !important;
+      .border-bottom{
+        margin-top: 50px !important;
+      }
+      .button{
+        margin-top: 10px !important;
+      }
     }
   }
 }

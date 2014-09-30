@@ -105,11 +105,20 @@
     }
   }
   @media screen and (min-width:768px){
+    .middle-container{
+      bottom: 180px !important;
+    }
     .title{
       h1{ font-size: 2em !important; }
     }
     .paragraph{
       p{ font-size: 2em;}
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
+      }
     }
   }
 }

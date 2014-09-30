@@ -86,5 +86,14 @@
   }
   @media screen and (min-width:768px){
     .questions p{ font-size: 1.5em !important;}
+    .middle-container{
+      bottom: 170px !important;
+    }
+    footer{
+      height: 220px !important;
+      .save-answers{
+        margin-top: 10px !important;
+      }
+    }
   }
 }

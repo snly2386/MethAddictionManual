@@ -78,6 +78,14 @@
     color: rgb(102, 236, 96) !important;
   }
   @media screen and (min-width:768px){
-    
+    .middle-container{
+      bottom: 170px !important;
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
+      }
+    }
   }
 }

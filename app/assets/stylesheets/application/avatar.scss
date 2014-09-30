@@ -87,6 +87,9 @@
         height: 16em;
       }
     }
+    .middle-container{
+      bottom: 170px !important;
+    }
     .content{
       height: 43em !important;
     }
@@ -102,6 +105,9 @@
     }
     .avatar{
       max-width: 200px;
+    }
+    footer{
+      height: 210px !important;
     }
   }
 }

@@ -67,7 +67,7 @@ class GettingOff.Ch5 extends GettingOff.View
 
   scroll_to_bottom: ->
     scrollElement = document.getElementById("mid-container")
-    scrollElement.scrollTop = scrollElement.scrollHeight/2
+    scrollElement.scrollTop = scrollElement.scrollHeight/3
 
   close_tooltip: ->
     @$('.overlay').fadeOut(1000)

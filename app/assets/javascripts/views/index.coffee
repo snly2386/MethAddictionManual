@@ -26,7 +26,7 @@ class GettingOff.Index extends Backbone.View
     @$('.newuser').removeClass('shrunk')
 
   new_user: ->
-    @app.navigate 'ch5/1', trigger: true
+    @app.navigate 'pinboard', trigger: true
 
   render: ->
     console.log @template()
