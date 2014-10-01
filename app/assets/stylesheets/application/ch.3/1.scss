@@ -31,7 +31,7 @@
 
   .middle-container{
     position: absolute;
-    top: 240px;
+    top: 220px;
     width: 100%;
     bottom: 120px;
     overflow-y: auto;
@@ -90,6 +90,7 @@
     }
     .middle-container{
       bottom: 160px !important;
+      top: 240px !important;
     }
     footer{
       height: 220px !important;

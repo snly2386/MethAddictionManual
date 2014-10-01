@@ -44,7 +44,7 @@
   }
   .middle-container{
     position: absolute;
-    top: 185px;
+    top: 170px;
     bottom: 120px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -158,6 +158,7 @@
       }
       .middle-container{
         bottom: 170px !important;
+        top: 180px !important;
         .input{
           margin-left: 35px !important;
         }

@@ -111,7 +111,9 @@ class GettingOff.Ch2 extends GettingOff.View
     @$('.num.todayy').text(date)
     today.text(month)
     @add_border(target)
-    @scroll_to_bottom()
+    scrollElement = document.getElementById("mid-container")
+    if scrollElement.scrollTop != scrollElement.scrollHeight
+      @scroll_to_bottom()
 
   close_tooltip: ->
     @$('.tool-overlay').fadeOut(1000)
@@ -132,9 +134,7 @@ class GettingOff.Ch2 extends GettingOff.View
   render_calendar: ->
     month = $('header h1').html().split(" ")[0]
     year = $('header h1').html().split(" ")[1]
-    console.log @calendar_collection.length
     @calendar_collection.each (model) ->
-      console.log model.get('color')
       if model.get('month') is month && model.get('year') is year
         $('.date').each( ->
           if $(@).html() is model.get('day') && model.get('color') is 'red'
@@ -207,7 +207,6 @@ class GettingOff.Ch2 extends GettingOff.View
     @$('.chapter').each( ->
       model = table_of_contents.findWhere({chapter: parseInt("#{$(@).data('chapter')}")})
       percentage = model.percentage()
-      console.log percentage
       if percentage >= 100
         $(@).append("<img src='assets/progress_check.png'/>")
         $(@).addClass('session-complete')
