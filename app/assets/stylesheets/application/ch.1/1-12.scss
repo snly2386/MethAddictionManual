@@ -15,6 +15,7 @@
     top: 150px;
     bottom: 70px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     .paragraph-container {
       padding: 0px 5px;
       margin-top: -1.8em;

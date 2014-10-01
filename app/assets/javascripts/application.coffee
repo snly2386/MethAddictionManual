@@ -44,9 +44,10 @@ class GettingOff.Application extends Backbone.Router
     @photos ||= new GettingOff.Photos()
 
   avatar: ->
+    @render_button()
     @set_cordova()
     @create_avatar()
-    view = new GettingOff.Avatar app: @, avatar: @avatar_model, cordova : @cordova
+    view = new GettingOff.Avatar app: @, avatar: @avatar_model, cordova : @cordova, button: @button
 
   pinboard: ->
     @render_button()

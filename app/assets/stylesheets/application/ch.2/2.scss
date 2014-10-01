@@ -1,6 +1,6 @@
 .ch2page_2{
   .tooltip {
-    margin-top: -0.2em;
+    margin-top: 2px;
     float: right;
     img { height: 3em;}
   }
@@ -22,6 +22,7 @@
 
   .middle-container{
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     position: absolute;
     top: 110px;
     bottom: 120px;

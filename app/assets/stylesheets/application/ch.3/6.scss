@@ -17,6 +17,7 @@
     top: 170px;
     width: 100%;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     bottom: 120px;
     .points-container{
       position: relative;

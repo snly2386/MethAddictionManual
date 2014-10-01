@@ -9,6 +9,7 @@
       position: absolute; top: 215px; bottom: 40px;
       // height:20em;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       .terms-of-use { 
         margin-top: -1em;
         max-width:600px; 

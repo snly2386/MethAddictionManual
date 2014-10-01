@@ -5,6 +5,7 @@ class GettingOff.Finish_Setup extends Backbone.View
   template: JST['templates/finish_setup']
   
   initialize: (options) -> 
+    @model = options.model
     @app = options.app
     @avatar = options.avatar
     @button = options.button

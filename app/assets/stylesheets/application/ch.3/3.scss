@@ -41,6 +41,7 @@
     top: 185px;
     bottom: 120px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     width:100%;
     .topic{
       margin-top: -10px;
@@ -111,8 +112,8 @@
         position: relative;
         float: left;
         max-width:10%;
-        margin-top: -0.08em;
-        img{width:100%;height:59px; z-index: 1000;}
+        margin-top: -0.09em;
+        img{width:100%;height:65px; z-index: 1000;}
       }
     }
   }

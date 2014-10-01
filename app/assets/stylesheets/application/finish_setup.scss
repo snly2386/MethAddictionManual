@@ -11,6 +11,7 @@
     top: 180px;
     bottom: 120px;
     width: 100%;
+    -webkit-overflow-scrolling: touch;
     overflow-y: auto;
     .points-container{
       margin-top: 10px;

@@ -33,6 +33,7 @@
     top: 240px;
     bottom: 120px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     width: 100%;
     .paragraph{
       list-style-type: none;

@@ -12,7 +12,7 @@ class GettingOff.Avatar extends GettingOff.View
   initialize: (options) ->
     @app = options.app
     @avatar = options.avatar
-    console.log @avatar
+    @button = options.button
 
     @page_animation()
 
@@ -21,6 +21,12 @@ class GettingOff.Avatar extends GettingOff.View
         @avatar.set model.attributes[0]
     
     @render()
+
+    @button.fetch
+      success:(model, response, options) =>
+        @button.set model.attributes[0]
+        @render_button()
+
     @position()
 
   events: 
@@ -30,6 +36,10 @@ class GettingOff.Avatar extends GettingOff.View
     'click .user'     : 'user'
     'click .pin'      : 'pinboard'
     'click .previous' : 'previous'
+
+  render_button: ->
+    @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
+    $('body').css("background-image", "#{@button.get('background')}") 
 
   scroll_to_top: ->
     scrollElement = document.getElementById("mid-container")

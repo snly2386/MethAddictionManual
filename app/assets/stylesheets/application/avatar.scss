@@ -16,6 +16,7 @@
   }
   .middle-container{
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     position: absolute;
     width: 100%;
     top: 205px;

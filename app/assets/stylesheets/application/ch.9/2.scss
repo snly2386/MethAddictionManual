@@ -42,6 +42,7 @@
     bottom: 120px;
     width: 100%;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     .content{
       max-width: 97%;
       height:23em;

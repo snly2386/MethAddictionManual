@@ -42,6 +42,7 @@
     top: 180px;
     bottom: 120px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     .content{
       max-width:100%;
       .title{

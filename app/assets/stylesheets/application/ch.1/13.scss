@@ -13,6 +13,7 @@
     bottom: 160px;
     bottom: 0px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     .paragraph{
       padding: 0 10px;
       max-width: 800px;
