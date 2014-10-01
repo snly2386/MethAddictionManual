@@ -31,6 +31,11 @@ class GettingOff.Avatar extends GettingOff.View
     'click .pin'      : 'pinboard'
     'click .previous' : 'previous'
 
+  scroll_to_top: ->
+    scrollElement = document.getElementById("mid-container")
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: '0'}, 2000, 'easeOutBounce')
+
   previous: ->
     window.history.go(-1)
 
@@ -66,7 +71,10 @@ class GettingOff.Avatar extends GettingOff.View
     $('.image').css('opacity', '0.5')
     src = target.find('img').attr('src')
     target.find('img').css('opacity', '1')
+    @$('.selected-avatar img').hide()
     @$('.selected-avatar img').attr('src', "#{src}")
+    @$('.selected-avatar img').fadeIn(1000)
+    @scroll_to_top()
 
   navigate: ->
     @app.navigate 'finish_setup', trigger: true

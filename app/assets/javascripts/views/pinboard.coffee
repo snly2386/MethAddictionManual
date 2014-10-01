@@ -33,7 +33,6 @@ class GettingOff.Pinboard extends GettingOff.View
         @button.set model.attributes[0]
         @render_button()
 
-    # @$('.canvas').sketch()
 
 
   events: ->
@@ -67,7 +66,7 @@ class GettingOff.Pinboard extends GettingOff.View
     # scrollElement.scrollTop = scrollElement.scrollHeight 
     scrollElement = document.getElementById("mid-container")
     target = $('#mid-container')
-    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 3000)
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 3000, 'easeInOutBounce')
 
   close_tooltip: ->
     @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '0px'},1000)
@@ -75,6 +74,7 @@ class GettingOff.Pinboard extends GettingOff.View
 
   show_tooltip: ->
     @$('.tool-overlay').fadeIn(2000)
+    @scroll_to_bottom()
     if @cordova is true
       @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '300px'}, 1000)
     else  
@@ -98,7 +98,7 @@ class GettingOff.Pinboard extends GettingOff.View
     @show_canvas()
 
   create_canvas: ->
-    @$('.canvas').sketch()
+    $('#canvas').sketch()
 
   choose_color: (e) ->
     $('.color').each( ->
@@ -156,10 +156,6 @@ class GettingOff.Pinboard extends GettingOff.View
      photo = new GettingOff.Photo("file" : "#{url}")
      @photos.create(photo)
      @counter += 10
-
-
-  # create_canvas:  ->
-  #     @$('#drawing-board').sketch()
 
   populate_photos: ->
     counter = 5

@@ -69,9 +69,11 @@ class GettingOff.Ch1 extends GettingOff.View
       @$('.description').empty()
       @validation = false
     else 
-      target.addClass('border')
+      target.addClass('border', 1000, 'linear')
       target.siblings().removeClass('border')
+      @$('.description').hide()
       @$('.description').html target.data 'description'
+      @$('.description').fadeIn(1000)
       @validation = true
       @scroll_to_bottom()
 

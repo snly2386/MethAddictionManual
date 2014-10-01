@@ -3552,3 +3552,26 @@ You could find it at the following address https://developer.apple.com/icloud/do
 
 2014-09-30 11:56:07.688 GettingOff[75930:70b] Resetting plugins due to page load.
 2014-09-30 11:56:07.842 GettingOff[75930:70b] Finished load of: file:///Users/chrispalmer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/68DB9E7F-4FA1-452D-8BFF-EA7B836CBAAD/GettingOff.app/www/index.html
+2014-09-30 15:33:23.886 GettingOff[78300:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-30 15:33:23.892 GettingOff[78300:70b] Unlimited access to network resources
+2014-09-30 15:33:23.894 GettingOff[78300:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-09-30 15:33:23.989 GettingOff[78300:70b] Resetting plugins due to page load.
+2014-09-30 15:33:24.151 GettingOff[78300:70b] Finished load of: file:///Users/chrispalmer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/68DB9E7F-4FA1-452D-8BFF-EA7B836CBAAD/GettingOff.app/www/index.html
+2014-09-30 15:33:31.404 GettingOff[78300:70b] Received memory warning.
+2014-10-01 10:49:17.975 GettingOff[81940:70b] Multi-tasking -> Device: YES, App: YES
+2014-10-01 10:49:17.982 GettingOff[81940:70b] Unlimited access to network resources
+2014-10-01 10:49:17.984 GettingOff[81940:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-10-01 10:49:18.273 GettingOff[81940:70b] Resetting plugins due to page load.
+2014-10-01 10:49:18.504 GettingOff[81940:70b] Finished load of: file:///Users/chrispalmer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/68DB9E7F-4FA1-452D-8BFF-EA7B836CBAAD/GettingOff.app/www/index.html

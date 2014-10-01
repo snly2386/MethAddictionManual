@@ -41,6 +41,10 @@ class GettingOff.Ch2 extends GettingOff.View
         @render_button()
 
     @position()
+
+    if @page is 3
+      @scroll_to_bottom_contents()
+
     @render_table_of_contents()
     @practice = {}
     @practice["#{@month}" + "#{@year}"] = @$('.calendar').html()
@@ -77,6 +81,11 @@ class GettingOff.Ch2 extends GettingOff.View
     scrollElement = document.getElementById("mid-container")
     target = $('#mid-container')
     $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 2000)
+
+  scroll_to_bottom_contents: ->
+    scrollElement = document.getElementById("mid-container")
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 5000 )
 
   previous: ->
     window.history.go(-1)
