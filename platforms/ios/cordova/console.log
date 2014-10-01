@@ -3699,3 +3699,14 @@ You could find it at the following address https://developer.apple.com/icloud/do
 
 2014-10-01 11:49:33.409 GettingOff[87081:70b] Resetting plugins due to page load.
 2014-10-01 11:49:33.552 GettingOff[87081:70b] Finished load of: file:///Users/chrispalmer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/68DB9E7F-4FA1-452D-8BFF-EA7B836CBAAD/GettingOff.app/www/index.html
+2014-10-01 12:15:55.341 GettingOff[88537:70b] Multi-tasking -> Device: YES, App: YES
+2014-10-01 12:15:55.346 GettingOff[88537:70b] Unlimited access to network resources
+2014-10-01 12:15:55.348 GettingOff[88537:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-10-01 12:15:55.388 GettingOff[88537:70b] Resetting plugins due to page load.
+2014-10-01 12:15:55.534 GettingOff[88537:70b] Finished load of: file:///Users/chrispalmer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/68DB9E7F-4FA1-452D-8BFF-EA7B836CBAAD/GettingOff.app/www/index.html
