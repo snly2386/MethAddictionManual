@@ -60,7 +60,6 @@ class GettingOff.Ch1 extends GettingOff.View
   render_button: ->
     @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
     $('body').css("background-image", "#{@button.get('background')}")   
-    console.log @button.get('color')
 
   rate_question: (e)->
     target = $(e.currentTarget)
