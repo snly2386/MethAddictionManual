@@ -9,6 +9,7 @@
       position: absolute; top: 215px; bottom: 40px;
       // height:20em;
       overflow-y: auto;
+      bottom: 35px;
       // -webkit-overflow-scrolling: touch;
       .terms-of-use { 
         margin-top: -1em;
@@ -22,7 +23,7 @@
         p { width:100% }
       }
       .accept-terms {
-        max-width:500px; 
+        max-width:400px; 
         height: 2em;
         margin-top:1em;
           .accept {
@@ -34,6 +35,7 @@
       }
     }
    .progress-bar{
+    border: 1px solid pink;
     height: 30px;
     width: 100%;
     position: absolute;
@@ -53,7 +55,7 @@
       padding-top: 10px;
     }
     .middle-container{
-      bottom: 90px !important;
+      bottom: 100px !important;
     }
     .progress-bar{
       height: 90px;
