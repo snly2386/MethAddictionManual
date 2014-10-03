@@ -68,7 +68,7 @@ class GettingOff.New_Theme extends Backbone.View
     @navigate()
 
   navigate: ->
-    @app.navigate 'pinboard', trigger: true 
+    @app.navigate 'menu', trigger: true 
    
   render: ->
     @$el.html @template()

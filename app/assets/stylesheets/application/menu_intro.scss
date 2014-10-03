@@ -1,0 +1,136 @@
+.menu-intro{
+  .header{
+    height: 180px;
+     header {
+      max-width: 200px;
+      img { width:100%; }
+    }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -2em;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+  }
+  .border-top{
+    max-width:100%;
+    img { width:100%; }
+  }
+  .middle-container{
+    position: absolute;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    top: 190px;
+    bottom: 120px;
+    width: 100%;
+    .content{
+      margin-top: 10px;
+      max-width:100%;
+      .content-container { 
+        max-width: 380px;
+        height: 60px;
+        .paragraph{
+          float: left;
+          max-width: 60px;
+          img{ width: 100%;}
+          .pin-intro{
+            margin-top: -3px;
+          }
+          .scheduler-intro{
+            margin-left: -2px;
+          }
+        }
+        .p-first{
+        }
+        .description{
+          max-width: 80%;
+          float: left;
+          color: white;
+          p{ width: 100%;}
+          .tooltip{
+            font-weight: bold;
+            text-decoration: underline;
+          }
+        }
+        .paragraph.margin{
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+  .session-complete{
+    text-decoration: line-through;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    height: 140px;
+    width: 100%;
+    .border-bottom{
+      max-width:100%;
+      margin-top: 20px;
+      img { width:100%; }
+    }
+    .button{
+      margin-top:2px;
+    }
+    .icons-container{
+      max-width:600px;
+      .icon-container{
+        width:20%;
+        float: left;
+        img { width:100%; }
+      }
+      .icon-container.pinn{
+          img { margin-top:-11%; }
+      }
+    }
+  }
+  .overlay{
+    display: none;
+    width: 100%;
+    color: black;
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    background-color: #626364;
+    opacity: 0.7;
+  }
+  .message-container{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    bottom: 140px;
+    p{width: 80%; background-color: white; padding:5px; border-radius: 5px;} 
+  }
+  @media screen and (min-width:768px) {
+    .middle-container{
+      top: 200px !important;
+      bottom: 180px !important;
+      .content{
+        margin-top: 10px;
+        max-width:100%;
+        .content-container { 
+          max-width: 380px;
+          height: 80px;
+        }
+      }
+      .description{
+        margin-top: -8px;
+        p{font-size: 1.5em;}
+      }
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
+      }
+    }
+    .message-container{
+      top: 300px !important;
+      bottom: 180px !important;
+      font-size: 2em;
+    }
+  }
+}

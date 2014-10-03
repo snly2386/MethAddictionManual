@@ -55,8 +55,6 @@ class GettingOff.Finish_Setup extends Backbone.View
     @app.navigate 'ch2/2', trigger: true
 
   render_avatar: ->
-    console.log @avatar.get('image')
-    console.log @avatar
     @$('.avatar-container img').attr('src', "#{@avatar.get('image')}")
   
   page_animation: ->

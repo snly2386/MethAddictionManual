@@ -85,9 +85,9 @@ class GettingOff.Ch1 extends GettingOff.View
       @app.navigate "ch1/#{next_chapter}", trigger: true
     else if @cordova is true
       # validation failed
-      notification.alert 'You must enter a value'
+      notification.alert 'Please answer this question to proceed'
     else
-      alert 'You must enter a value'
+      alert 'Please answer this question to proceed'
 
   ch2: ->
     @app.navigate "ch2/1", trigger: true

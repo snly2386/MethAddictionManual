@@ -17,6 +17,7 @@ class GettingOff.Application extends Backbone.Router
     ''             : 'index'
     'new'          : 'new_user'
     'new_theme'    : 'new_theme'
+    'menu'         : 'menu_intro'
     'pinboard'     : 'pinboard'
     'finish_setup' : 'finish_setup'
     'avatar'       : 'avatar'
@@ -30,6 +31,7 @@ class GettingOff.Application extends Backbone.Router
     'ch8/:page'    : 'ch8'
     'ch9/:page'    : 'ch9'
 
+
   
   set_cordova: ->
     # @cordova = true
@@ -42,6 +44,10 @@ class GettingOff.Application extends Backbone.Router
   
   create_photos: ->
     @photos ||= new GettingOff.Photos()
+
+  menu_intro: ->
+    @render_button()
+    view = new GettingOff.Menu_Intro app: @, button: @button
 
   avatar: ->
     @render_button()
@@ -147,11 +153,12 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions, table_of_contents: @table_contents, button: @button
 
   ch5: (page) ->
+    @create_avatar()
     @render_button()
     @table_of_contents()
     @ch5_questions_save()
     @ch5_create_names()
-    view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
   ch6: (page) ->
     @render_button()
@@ -172,10 +179,11 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6, table_of_contents: @table_contents, button: @button
 
   ch9: (page) ->
+    @create_avatar()
     @render_button()
     @table_of_contents()
     @ch9_page3()
-    view = new GettingOff.Ch9 app: @, page: page, page3_model: @ch9_p3, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch9 app: @, page: page, page3_model: @ch9_p3, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
 
 

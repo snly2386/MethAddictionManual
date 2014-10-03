@@ -14,6 +14,7 @@ class GettingOff.Ch9 extends GettingOff.View
     @page3_model = options.page3_model
     @table_of_contents = options.table_of_contents
     @button = options.button
+    @avatar = options.avatar
     @page_animation()
 
     @page3_model.fetch
@@ -34,52 +35,80 @@ class GettingOff.Ch9 extends GettingOff.View
         @button.set model.attributes[0]
         @render_button()
 
+    @avatar.fetch
+      success: (model, response, options) =>
+        @avatar.set model.attributes[0]
+        @render_avatar()
+
     @position()
 
   events: ->
-    'click .button'                      : 'navigate'
-    'click .rating p'                    : 'select_rating'
-    'focus .textarea textarea'           : 'focus_handler'
-    'focusout .textarea textarea'        : 'focusout_handler'
-    'click .finish-chapter'              : 'page3_save'
-    'mousedown .button, .finish-chapter' : 'mousedown_effect'
-    'mouseup .button, .finish-chapter'   : 'mouseup_effect'
-    'click .calendar'                    : 'calendar'
-    'click .table'                       : 'go_to_table_of_contents'
-    'click .user'                        : 'user'
-    'click .pin'                         : 'pinboard'
-    'click .previous'                    : 'previous'
+    'click .button'                            : 'navigate'
+    'click .rating p'                          : 'select_rating'
+    'focus .textarea textarea'                 : 'focus_handler'
+    'focusout .textarea textarea'              : 'focusout_handler'
+    'click .finish-chapter'                    : 'page3_save'
+    'mousedown .button, .finish-chapter'       : 'mousedown_effect'
+    'mouseup .button, .finish-chapter'         : 'mouseup_effect'
+    'click .calendar'                          : 'calendar'
+    'click .table'                             : 'go_to_table_of_contents'
+    'click .user'                              : 'user'
+    'click .pin'                               : 'pinboard'
+    'click .previous'                          : 'previous'
+    'click .end-overlay, .paragraph-container' : 'go_to_table_of_contents'
+
+
+   scroll_to_avatar: ->
+    scrollElement = document.getElementById("mid-container")
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 2000)
+    @$('.avatar-container').fadeIn(2000)
+
+   show_avatar: ->
+    @$('.avatar-container').fadeIn(2000)
+
+   render_avatar: ->
+    src = @avatar.get('image')
+    filename = src.split(".")[0]
+    updated_filename = filename + "_finish.png"
+    @$('.avatar-container img').attr('src', "#{updated_filename}")
+
 
    point_animation: ->
-    console.log 'fuck u'
+    scroll_to_avatar = @scroll_to_avatar
     window.setTimeout (->
      $(".overlay").fadeIn(1000)
-     # $(".points-container").jrumble x: 10, y: 10, rotation: 4
-     # $(".points-container").trigger("startRumble")
      return
   ), 2000
 
     window.setTimeout (->
-     # $('.score').animate({'color':'red'}, 3000)
-     # $('.points').animate({'color':'red'}, 3000)
      $('.points-container').addClass('animated')
      $('.points-container').addClass('rollOut')
      return 
   ), 3000
 
     window.setTimeout (->
-     # $('.points-container').hide()
      $('.score').text('1800')
      return 
   ), 4000
 
     window.setTimeout (->
-     # $('.points-container').show()
      $('.points-container').removeClass('rollOut')
      $('.points-container').addClass('bounceInDown')
      $('.overlay').fadeOut(3000)
      return 
   ), 5000    
+
+    window.setTimeout (->
+     scroll_to_avatar()
+     return 
+  ), 6000
+
+    window.setTimeout (->
+     $('.end-overlay').fadeIn(1000)
+     $('.paragraph-container').fadeIn(2000)
+     return 
+  ), 8000 
 
   previous: ->
     window.history.go(-1)

@@ -13,6 +13,7 @@ class GettingOff.Ch5 extends GettingOff.View
     @app = options.app
     @names = options.names
     @button = options.button
+    @avatar = options.avatar
 
     @page_animation()
 
@@ -27,6 +28,11 @@ class GettingOff.Ch5 extends GettingOff.View
         @model.set model.attributes[0]
         @render()
         @position()
+
+    @avatar.fetch
+      success: (model, response, options) =>
+        @avatar.set model.attributes[0]
+        @render_avatar()
 
     @names.fetch
       success:(model, response, options) =>
@@ -65,6 +71,18 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .tooltip'                                   : 'open_tooltip'
     'click .speech-container'                          : 'close_tooltip'
 
+  scroll_to_avatar: ->
+    scrollElement = document.getElementById("mid-container")
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 2000)
+    @$('.avatar-container').fadeIn(2000)
+
+  render_avatar: ->
+    src = @avatar.get('image')
+    filename = src.split(".")[0]
+    updated_filename = filename + "_middle.png"
+    @$('.avatar-container img').attr('src', "#{updated_filename}")
+
   scroll_to_bottom: ->
     scrollElement = document.getElementById("mid-container")
     scrollElement.scrollTop = scrollElement.scrollHeight/3
@@ -74,39 +92,42 @@ class GettingOff.Ch5 extends GettingOff.View
     @$('.speech-bubble').transition({width: '0px'})
 
   open_tooltip: ->
-    console.log 'fuck'
     @$('.overlay').fadeIn(1000)
     @$('.speech-bubble').transition({width: '50%'}, 1000)
 
   point_animation: ->
+    scroll_to_avatar = @scroll_to_avatar
     window.setTimeout (->
      $(".overlay").fadeIn(1000)
-     # $(".points-container").jrumble x: 10, y: 10, rotation: 4
-     # $(".points-container").trigger("startRumble")
      return
   ), 2000
 
     window.setTimeout (->
-     # $('.score').animate({'color':'red'}, 3000)
-     # $('.points').animate({'color':'red'}, 3000)
      $('.points-container').addClass('animated')
      $('.points-container').addClass('rollOut')
      return 
   ), 3000
 
     window.setTimeout (->
-     # $('.points-container').hide()
      $('.score').text('1000')
      return 
   ), 4000
 
     window.setTimeout (->
-     # $('.points-container').show()
      $('.points-container').removeClass('rollOut')
      $('.points-container').addClass('bounceInDown')
      $('.overlay').fadeOut(3000)
      return 
   ), 5000
+
+
+    window.setTimeout (->
+     scroll_to_avatar()
+     return 
+  ), 6000
+
+  show_avatar: ->
+    @$('.avatar-container').fadeIn(2000)
 
   previous: ->
     window.history.go(-1)
@@ -184,6 +205,7 @@ class GettingOff.Ch5 extends GettingOff.View
     $('.circle').css({'z-index':'0', 'opacity' : '0.5'})
     target.css({'z-index': '100', 'opacity' : '1'})
     target.addClass('border-effect')
+    @make_draggable()
 
   render_names: ->
     @names.each (model) ->

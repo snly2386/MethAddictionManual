@@ -110,7 +110,7 @@ class GettingOff.Ch4 extends GettingOff.View
     @$('.button, .finish-chapter, .save-answers').css('background-color',"#{@button.get('color')}")
     $('body').css("background-image", "#{@button.get('background')}") 
 
-   update_table_of_contents: ->
+  update_table_of_contents: ->
     model = @table_of_contents.findWhere({chapter: 4})
     model.set('page', @page)
     model.save()
