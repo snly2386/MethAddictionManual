@@ -35,7 +35,6 @@
       }
     }
    .progress-bar{
-    border: 1px solid pink;
     height: 30px;
     width: 100%;
     position: absolute;
@@ -47,6 +46,11 @@
       &.first { margin-left: 10%; }
     }
   }
+  @media screen and (min-width:388px) {
+    .progress-bar{
+      height: 65px !important;
+    }
+  }
   @media screen and (min-width:768px) {
     .terms-paragraph p{
       font-size: 2em;
@@ -55,10 +59,10 @@
       padding-top: 10px;
     }
     .middle-container{
-      bottom: 100px !important;
+      bottom: 120px !important;
     }
     .progress-bar{
-      height: 90px;
+      height: 100px !important;
     }
   }
 }

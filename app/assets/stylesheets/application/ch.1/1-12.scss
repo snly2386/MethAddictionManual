@@ -62,7 +62,6 @@
         }
       }
       .rating.first{
-        
       }
     }
     .description-container{
@@ -94,6 +93,9 @@
       max-width: 600px !important;
       margin-top: 8em !important;
       font-size: 2em !important;
+    }
+    .rating.first{
+      margin-left: 5px !important;
     }
   }
 }
