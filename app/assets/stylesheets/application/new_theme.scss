@@ -17,7 +17,7 @@
     width: 100%;
     position: absolute;
     top: 230px;
-    bottom:120px;
+    bottom:140px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     .name-container{
@@ -44,7 +44,7 @@
         // font-size: 1.5em;
         input.name {
           // font-size: 1.1em;
-          width: 96%;
+          width: 94%;
           height: 3.8em;
           margin: 5px auto;
           // color: #0099FF;
@@ -121,26 +121,23 @@
       }
     }
 
-    .progress-bar {
+     .progress-bar {
       margin-top: 10px;
-        // height: 30px; 
-        // position: absolute;
-        // bottom: 2px;
-        // width: 100%;
+        max-width:400px;
         .progress {
           float: left; 
           max-width: 9%;
           img { width:100% }
         }
         .progress.first{
-          margin-left:8.8%;
+          margin-left:9%;
         }
       }
     }
     @media screen and (min-width:530px) {
-      footer{
-        height: 165px;
-      }
+      // footer{
+      //   height: 130px;
+      // }
     }
     @media screen and (min-width:768px) {
       .header p {
@@ -148,7 +145,7 @@
         font-size: 1.5em !important;
       }
       .middle-container{
-        bottom: 190px !important;
+        bottom: 130px !important;
       }
       .button{
         margin-top: 20px !important;
@@ -167,12 +164,12 @@
         height: 13em;
       }
       footer{
-        height: 180px !important;
+        height: 130px !important;
         .progress-bar{
           margin-top: 20px !important;
         }
         .progress.first{
-          margin-left:15% !important;
+          margin-left:9% !important;
         }
       }
     }

@@ -62,11 +62,9 @@ class GettingOff.Pinboard extends GettingOff.View
     $('body').css("background-image", "#{@button.get('background')}") 
 
   scroll_to_bottom: ->
-    # scrollElement = document.getElementById("mid-container")
-    # scrollElement.scrollTop = scrollElement.scrollHeight 
     scrollElement = document.getElementById("mid-container")
     target = $('#mid-container')
-    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 3000, 'easeInOutBounce')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 3000)
 
   close_tooltip: ->
     @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '0px'},1000)

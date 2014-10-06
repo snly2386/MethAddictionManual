@@ -1,0 +1,27 @@
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes.dex : \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/com/InputHealth/GettingOff/BuildConfig.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/com/InputHealth/GettingOff/GettingOff.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/com/InputHealth/GettingOff/R$attr.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/com/InputHealth/GettingOff/R$drawable.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/com/InputHealth/GettingOff/R$string.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/com/InputHealth/GettingOff/R$xml.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/com/InputHealth/GettingOff/R.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1$1.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1$2.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$1.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$2.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$3.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$4.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$1.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$2.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$3.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$4.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$4$1.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$4.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$5$1.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$5.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification.class \
+/Users/chrispalmer/code/mks/getting_off/GettingOff/platforms/android/ant-build/dexedLibs/classes-b0c4c084a3b06d350c1be0917c02af6b.jar \

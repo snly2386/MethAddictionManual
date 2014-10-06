@@ -27,7 +27,7 @@ class GettingOff.Ch4 extends GettingOff.View
         @model.set model.attributes[0]
         @render()
 
-    if @page is 3
+    if @page is 6
       @point_animation()
 
     @button.fetch

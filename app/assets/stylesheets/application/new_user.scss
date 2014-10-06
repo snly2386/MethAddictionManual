@@ -6,11 +6,10 @@
     }
     .middle-container{
       margin-top: -2em;
-      position: absolute; top: 215px; bottom: 40px;
-      // height:20em;
+      position: absolute; top: 210px; 
       overflow-y: auto;
-      bottom: 35px;
-      // -webkit-overflow-scrolling: touch;
+      bottom: 45px;
+      -webkit-overflow-scrolling: touch;
       .terms-of-use { 
         margin-top: -1em;
         max-width:600px; 
@@ -34,21 +33,28 @@
           .accept.n{margin-top:9px} 
       }
     }
-   .progress-bar{
-    height: 30px;
-    width: 100%;
-    position: absolute;
-    bottom: 0; 
-    .progress{
-      float: left;
-      width: 9%;
-      img { width:100%; }
-      &.first { margin-left: 10%; }
-    }
-  }
+      footer{
+        position: absolute;
+        bottom: 0;
+        // border: 1px solid pink;
+        height: 40px;
+        width: 100%;
+        .progress-bar {
+          // margin-top: 1em;
+          max-width:400px;
+          .progress {
+            float: left; 
+            max-width: 9%;
+            img { width:100% }
+          }
+          .progress.first{
+            margin-left:8%;
+          }
+        }
+      }
   @media screen and (min-width:388px) {
     .progress-bar{
-      height: 65px !important;
+      // height: 65px !important;
     }
   }
   @media screen and (min-width:768px) {
@@ -56,13 +62,14 @@
       font-size: 2em;
     }
     .header{
-      padding-top: 10px;
+      // padding-top: 10px;
     }
     .middle-container{
-      bottom: 120px !important;
+      bottom: 50px !important;
     }
     .progress-bar{
-      height: 100px !important;
+      border: 1px solid pink;
+      // height: 40px !important;
     }
   }
 }

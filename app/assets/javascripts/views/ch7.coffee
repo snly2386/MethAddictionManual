@@ -21,7 +21,7 @@ class GettingOff.Ch7 extends GettingOff.View
 
     @render()
 
-    if @page is 4
+    if @page is 6
       @point_animation()
 
     @button.fetch
