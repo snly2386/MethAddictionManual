@@ -33,6 +33,7 @@ class GettingOff.Ch2 extends GettingOff.View
       @get_calendar()
       @position()
       @set_date()
+      @show_tooltip()
     
       
     @button.fetch
@@ -63,7 +64,7 @@ class GettingOff.Ch2 extends GettingOff.View
     'click .pinn'                        : 'pinboard'
     'click .chapter'                     : 'go_to_chapter'
     'click .tooltip'                     : 'show_tooltip'
-    'click .speech-bubble'               : 'close_tooltip'
+    'click .tool-overlay, .message-container'                : 'close_tooltip'
     'click .date'                        : 'mark_calendar'
     'click .previous'                    : 'previous'
     'click .pulse-shrink'                : 'click_effect'
@@ -117,12 +118,12 @@ class GettingOff.Ch2 extends GettingOff.View
 
   close_tooltip: ->
     @$('.tool-overlay').fadeOut(1000)
-    @$(".speech-bubble").transition({width: '0px'}, 1000)
+    @$(".message-container").fadeOut(1000)
 
   show_tooltip: ->
     @scroll_to_bottom()
     @$('.tool-overlay').fadeIn(1000)
-    @show_speech_bubble()
+    @$('.message-container').fadeIn(1000)
 
   show_speech_bubble: ->
     @$(".speech-bubble").transition({width:'150px'},1000)

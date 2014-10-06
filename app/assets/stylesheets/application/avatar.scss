@@ -88,11 +88,15 @@
         height: 16em;
       }
     }
+    .title{
+      font-size: 2em !important;
+    }
     .middle-container{
       bottom: 170px !important;
     }
     .content{
-      height: 43em !important;
+      height: 40em !important;
+      max-width: 40% !important;
     }
     .row{
       height: 10em !important;
@@ -102,10 +106,10 @@
       height: 9em !important;
     }
     .avatar-container{
-      max-width: 600px;
+      max-width: 210px !important;
     }
     .avatar{
-      max-width: 200px;
+      max-width: 70px !important;
     }
     footer{
       height: 210px !important;

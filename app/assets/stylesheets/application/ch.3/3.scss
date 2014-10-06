@@ -38,7 +38,7 @@
   }
   .middle-container{
     position: absolute;
-    top: 170px;
+    top: 180px;
     bottom: 120px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -147,7 +147,7 @@
   }
    @media screen and (min-width:768px) {
     .topic{ 
-      margin-top: 6em !important;
+      margin-top: 3em !important;
       p{ font-size: 2em !important;}
     }
     .middle-container{
