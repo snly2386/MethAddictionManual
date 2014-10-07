@@ -52,11 +52,10 @@ class GettingOff.New_Theme extends Backbone.View
     theme = target.data('color')
     border = target.data('border')
     button = target.data('button')
-    $('body').css("background-image", "url(./assets/#{theme})")
+    $('body').css("background-image", "url('#{theme}'')")
     @$('.name-border, .twin-border').css('background-color', border)
     @button.set('color', button)
-    # @button.set('background', "url(./assets/#{theme})" )
-    @button.set('background', "url(#{theme})" )
+    @button.set('background', "url(./assets/#{theme})" )
     @button.save()
     @render_button()
     

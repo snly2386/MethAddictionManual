@@ -10,29 +10,29 @@
 	<string>CordovaLib</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B74CC0D7-4ED9-44E7-A286-FA9F2544D41E</key>
+		<key>53691A4AC86BA22CD717195FBFD903084987407D</key>
 		<string>https://github.com/Healthism/GettingOff.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>platforms/ios/CordovaLib/CordovaLib.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B74CC0D7-4ED9-44E7-A286-FA9F2544D41E</key>
+		<key>53691A4AC86BA22CD717195FBFD903084987407D</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Healthism/GettingOff.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B74CC0D7-4ED9-44E7-A286-FA9F2544D41E</string>
+	<string>53691A4AC86BA22CD717195FBFD903084987407D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B74CC0D7-4ED9-44E7-A286-FA9F2544D41E</string>
+			<string>53691A4AC86BA22CD717195FBFD903084987407D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GettingOff</string>
 		</dict>
