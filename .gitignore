@@ -3,3 +3,4 @@
 .config
 .yardoc
 Gemfile.lock
+www/assets/application.css
