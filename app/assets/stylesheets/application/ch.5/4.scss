@@ -230,19 +230,29 @@
     z-index: 100;
     opacity:0.7;
   }
-  .speech-container{
-    // width: 0px;
-    position: absolute;
-    width: 100%;
-    top: 210px;
-    z-index: 2000;
-    .speech-bubble{
-        // z-index: 1000;
-        margin-left: 15px;
-        width: 0px;
-        img{width: 100%;}
-      }
+  // .speech-container{
+  //   // width: 0px;
+  //   position: absolute;
+  //   width: 100%;
+  //   top: 210px;
+  //   z-index: 2000;
+  //   .speech-bubble{
+  //       // z-index: 1000;
+  //       margin-left: 15px;
+  //       width: 0px;
+  //       img{width: 100%;}
+  //     }
+  //   }
+    .message-container{
+      z-index: 9999;
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 200px;
+      bottom: 140px;
+      p{width: 80%; background-color: white; padding:5px; border-radius: 5px;} 
     }
+
     @media screen and (min-width:768px){
       .web{
         height: 60em !important;
@@ -274,6 +284,9 @@
       }
       .input{
         margin-left: 2em !important;
+      }
+      .message-container{
+        font-size: 1.5em !important;
       }
     }
 }

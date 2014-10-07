@@ -88,7 +88,7 @@ class GettingOff.Ch9 extends GettingOff.View
   ), 3000
 
     window.setTimeout (->
-     $('.score').text('1800')
+     $('.score').text('2000')
      return 
   ), 4000
 

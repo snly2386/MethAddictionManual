@@ -494,9 +494,10 @@ body {
         color-stop(0, #A7A7A7),
         color-stop(0.51, #E4E4E4)
     );*/
-    background: url(./background.png) no-repeat;
+    background: url("background.png");
+    background-repeat: no-repeat;
     background-attachment:fixed;
-    background-size: 100% 100%;
+    background-size: 100%;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;

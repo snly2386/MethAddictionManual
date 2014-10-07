@@ -44,6 +44,9 @@ class GettingOff.Ch5 extends GettingOff.View
     if @page is 2 || @page is 4
       @scroll_to_bottom()
 
+    if @page is 4
+      @open_tooltip()
+
     @button.fetch
       success:(model, response, options) =>
         @button.set model.attributes[0]
@@ -69,7 +72,8 @@ class GettingOff.Ch5 extends GettingOff.View
     'mousedown .circle'                                : 'bring_to_front'
     'click .previous'                                  : 'previous'
     'click .tooltip'                                   : 'open_tooltip'
-    'click .speech-container'                          : 'close_tooltip'
+    'click .message-container, .overlay'               : 'close_tooltip'
+
 
   scroll_to_avatar: ->
     scrollElement = document.getElementById("mid-container")
@@ -89,11 +93,11 @@ class GettingOff.Ch5 extends GettingOff.View
 
   close_tooltip: ->
     @$('.overlay').fadeOut(1000)
-    @$('.speech-bubble').transition({width: '0px'})
+    @$('.message-container').fadeOut(1000)
 
   open_tooltip: ->
     @$('.overlay').fadeIn(1000)
-    @$('.speech-bubble').transition({width: '50%'}, 1000)
+    @$('.message-container').fadeIn(1000)
 
   point_animation: ->
     scroll_to_avatar = @scroll_to_avatar
