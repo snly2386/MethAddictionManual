@@ -3788,3 +3788,15 @@ You could find it at the following address https://developer.apple.com/icloud/do
 
 2014-10-07 14:07:24.890 GettingOff[7714:290658] Resetting plugins due to page load.
 2014-10-07 14:07:25.220 GettingOff[7714:290658] Finished load of: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Bundle/Application/A36E4379-2579-4625-9DBE-AC0035A59974/GettingOff.app/www/index.html
+2014-10-07 16:19:36.771 GettingOff[13978:357644] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Data/Application/1A58149D-BD64-46F5-A4C0-0496C84F1E0D/Library/Cookies/Cookies.binarycookies
+2014-10-07 16:19:36.838 GettingOff[13978:357644] Multi-tasking -> Device: YES, App: YES
+2014-10-07 16:19:36.844 GettingOff[13978:357644] Unlimited access to network resources
+2014-10-07 16:19:36.846 GettingOff[13978:357644] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-10-07 16:19:37.074 GettingOff[13978:357644] Resetting plugins due to page load.
+2014-10-07 16:19:37.347 GettingOff[13978:357644] Finished load of: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Bundle/Application/73EF2B23-37E9-4C46-B1E9-FB40A5F3B56C/GettingOff.app/www/index.html
