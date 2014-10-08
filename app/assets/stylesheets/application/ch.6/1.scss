@@ -88,12 +88,13 @@
       ul{ font-size: 2em;}
     }
     .middle-container{
-      bottom: 180px;
+      top: 190px !important;
+      bottom: 180px !important;
     }
     footer{
-      height: 220px; 
+      height: 220px !important; 
       .button{
-        margin-top: 10px;
+        margin-top: 10px !important;
       }
     }
   }

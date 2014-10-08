@@ -107,4 +107,9 @@
       }
     }
   }
+  @media screen and (min-width:1000px){
+    .middle-container{
+      top: 250px !important;
+    }
+  }
 }
