@@ -54,8 +54,8 @@ class GettingOff.Pinboard extends GettingOff.View
     'click .start-drawing'        : 'paint_tools'
     'click .work'                 : 'close_canvas'
     'click .tooltip'              : 'show_tooltip'
-    'click .sketch-speech-bubble' : 'close_tooltip' 
-    'click .photo-speech-bubble'  : 'close_tooltip'
+    'click .tool-overlay'         : 'close_tooltip' 
+    'click .message-container'    : 'close_tooltip'
 
   render_button: ->
     @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
@@ -67,16 +67,13 @@ class GettingOff.Pinboard extends GettingOff.View
     $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 3000)
 
   close_tooltip: ->
-    @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '0px'},1000)
+    @$('.message-container').fadeOut(1000)
     @$('.tool-overlay').fadeOut(2000)
 
   show_tooltip: ->
     @$('.tool-overlay').fadeIn(2000)
-    @scroll_to_bottom()
-    if @cordova is true
-      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '300px'}, 1000)
-    else  
-      @$('.sketch-speech-bubble, .photo-speech-bubble').transition({width: '150px'}, 1000)
+    # @scroll_to_bottom()
+    @$('.message-container').fadeIn(1000)
 
   close_canvas: ->
     @$('.canvas-container').hide('slide',{direction: 'left'}, 1000)

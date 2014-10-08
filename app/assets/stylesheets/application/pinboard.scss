@@ -50,26 +50,29 @@
         }
       }
     }
-
-    .utility-container{
-      // max-width: 85px;
-      max-width: 60px;
-      .add-photo{
-        float: left;
-        max-width:48%;
-        img{
-          width: 100%; 
-          height: 2.3em;
+  }
+    .menu-options{
+      position: absolute;
+      width: 100%;
+      bottom: 125px;
+      .utility-container{
+        max-width: 60px;
+        .add-photo{
+          float: left;
+          max-width:48%;
+          img{
+            width: 100%; 
+            height: 2.3em;
+          }
+        }
+        .start-drawing{
+          margin-left: 1px;
+          float: left;
+          max-width: 48%;
+          img{ width: 100%; height: 2.34em; margin-top: -0.515px;}
         }
       }
-      .start-drawing{
-        margin-left: 1px;
-        float: left;
-        max-width: 48%;
-        img{ width: 100%; height: 2.34em; margin-top: -0.515px;}
-      }
     }
-  }
   footer{
     height:140px;
     position: absolute;
@@ -77,10 +80,11 @@
     width: 100%;
     .border-bottom{
       max-width: 100%;
+      margin-top: 20px;
       img { width: 100%; margin-top:-2em;}
     }
     .button{
-      margin-top: 1em;
+      margin-top: 2px;
     }
     .icons-container{
       margin-top:1em;
@@ -106,7 +110,6 @@
     bottom: 155px;
     width:100%;
     .canvas{
-      // display: none;
       height: 19.7em;
       width:100%;
       background-color: white;
@@ -159,22 +162,14 @@
     z-index: 100;
     opacity:0.7;
   }
-  .photo-speech-bubble{
-    width: 0px;
-    z-index: 1000;
-    left: 1em;
-    bottom: 210px;
+  .message-container{
+    z-index: 8888;
+    display: none;
     position: absolute;
-    img{ width: 100%; }
-  }
-  .sketch-speech-bubble{
-    width: 0px;
-    z-index: 1000;
-    float: right;
-    bottom: 160px;
-    left: 45%;
-    position: absolute;
-    img { width: 100%;}
+    width: 100%;
+    top: 200px;
+    bottom: 140px;
+    p{width: 80%; background-color: white; padding:5px; border-radius: 5px;} 
   }
   .work-container{
     display: none;
@@ -187,79 +182,7 @@
       z-index: 2000;
     }
   }
-   @media screen and (min-width:420px) {
-    .photo-speech-bubble {
-      left: 3em;
-    }
-    .sketch-speech-bubble{
-      left: 20em;
-    }
-  }
-
-   @media screen and (min-width:500px) {
-    .photo-speech-bubble {
-      left: 4em;
-    }
-     .sketch-speech-bubble{
-      left: 24em;
-    }
-  }
-   @media screen and (min-width:600px) {
-    .photo-speech-bubble {
-      left: 6em;
-    }
-    .sketch-speech-bubble{
-      left: 30em;
-    }
-  }
-  @media screen and (min-width:700px) {
-    .photo-speech-bubble {
-      left: 9em;
-    }
-     .sketch-speech-bubble{
-      left: 36em;
-    }
-  }
-   @media screen and (min-width:800px) {
-    .photo-speech-bubble {
-      left: 15em;
-    }
-     .sketch-speech-bubble{
-      left: 41em;
-    }
-  }
-   @media screen and (min-width:900px) {
-    .photo-speech-bubble {
-      left: 19em;
-    }
-     .sketch-speech-bubble{
-      left: 48em;
-    }
-  }
-  @media screen and (min-width:1000px) {
-    .photo-speech-bubble {
-      left: 23em;
-    }
-     .sketch-speech-bubble{
-      left: 52em;
-    }
-  }
-  @media screen and (min-width:1100px) {
-    .photo-speech-bubble {
-      left: 26em;
-    }
-     .sketch-speech-bubble{
-      left: 58em;
-    }
-  }
-   @media screen and (min-width:1200px) {
-    .photo-speech-bubble {
-      left: 34em;
-    }
-     .sketch-speech-bubble{
-      left: 65em;
-    }
-  }
+ 
     @media screen and (min-width:768px) {
       .content{
         height: 19em !important;
@@ -270,11 +193,17 @@
       .color{
         height: 2.85em !important;
       }
-      footer{
-        height: 190px !important;
-      }
       .middle-container{
-        bottom: 190px !important;
+        bottom: 220px !important;
+      }
+      .menu-options{
+        bottom: 220px !important;
+      }
+      footer{
+        height: 220px !important;
+        .button{
+          margin-top:10px !important;
+        }
       }
       .canvas{
         height: 27.5em !important;
@@ -282,23 +211,6 @@
       .tool-overlay{
         top: 0 !important;
         bottom: 0 !important;
-      }
-      .photo-speech-bubble{
-        width: 0px;
-        z-index: 1000;
-        left: 30% !important;
-        bottom: 180px !important;
-        position: absolute;
-        img{ width: 100%; }
-      }
-      .sketch-speech-bubble{
-        width: 0px;
-        z-index: 1000;
-        float: right;
-        bottom: 180px;
-        left: 55% !important;
-        position: absolute;
-        img { width: 100%;}
       }
         .photos-container{
           margin-top: 35px !important;

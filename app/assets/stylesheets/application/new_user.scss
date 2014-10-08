@@ -5,6 +5,7 @@
       img{width: 100%;}
     }
     .middle-container{
+      width: 100%;
       margin-top: -2em;
       position: absolute; top: 210px; 
       overflow-y: auto;
@@ -16,7 +17,7 @@
         img { width:100% }
       }
       .terms-paragraph {
-        // max-width:500px;
+        max-width:800px;
         padding: 0 20px;
         text-align:center;color: white;font-family: 'Open Sans', sans-serif;font-size: 1em;
         p { width:100% }

@@ -41,10 +41,8 @@ class GettingOff.Ch5 extends GettingOff.View
     if @page is 6
       @point_animation()
 
-    if @page is 2 || @page is 4
+    if @page is 2 
       @scroll_to_bottom()
-
-    if @page is 4
       @open_tooltip()
 
     @button.fetch
@@ -73,6 +71,7 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .previous'                                  : 'previous'
     'click .tooltip'                                   : 'open_tooltip'
     'click .message-container, .overlay'               : 'close_tooltip'
+    'click .pin-icon'                                  : 'pinboard'
 
 
   scroll_to_avatar: ->

@@ -153,7 +153,7 @@ class GettingOff.Ch6 extends GettingOff.View
       when 6 then solutions = ["Exercise", "Identifying Relapse Justifications", "Thought-stopping", "Schedule Time", "Group Involvement", "Conjoint Counseling"]
       when 7 then solutions = ["Relationship Counseling", "Group Involvement", "Goal Setting", "Vocational Counseling", "Starting New Activities", "Redefine Meaning of Sex and Sexuality"]
       when 8 then solutions = ["Exercise, Counseling, and Group Therapy", "12-step Meetings/Spend Time with Friends", "Conjoint Therapy"]
-      else solutions = ["Medical Examination", "Exercise", "Daily Visits to Therapist/12-step Meetings", "Eliminate Triggers", "Allow Time for Sleep", "Let Time Pass/Talk to Therpaist or Friend"]
+      else solutions = ["Medical Examination", "Exercise", "Daily Visits to Therapist/12-step Meetings", "Eliminate Triggers", "Allow Time for Sleep", "Let Time Pass/Talk to Therapist or Friend"]
 
     @$('.title').removeClass('title-clicked')
     @$('.title.second').addClass('title-clicked')
