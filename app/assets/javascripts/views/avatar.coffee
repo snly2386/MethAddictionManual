@@ -35,6 +35,7 @@ class GettingOff.Avatar extends GettingOff.View
     'click .table'    : 'go_to_table_of_contents'
     'click .user'     : 'user'
     'click .pin'      : 'pinboard'
+    'click .calendar' : 'calendar'
     'click .previous' : 'previous'
 
   render_button: ->

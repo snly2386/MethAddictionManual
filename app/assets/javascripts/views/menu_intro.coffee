@@ -23,10 +23,10 @@ class GettingOff.Menu_Intro extends GettingOff.View
     'click .button'                     : 'navigate'
     'click .tooltip'                    : 'tooltip'
     'click .overlay, .message-container': 'close_tooltip'
-    'click .calendar'                   : 'calendar'
+    'click .calendarr'                  : 'calendar'
     'click .table'                      : 'go_to_table_of_contents'
     'click .user'                       : 'user'
-    'click .pin'                        : 'pinboard'
+    'click .pinn'                       : 'pinboard'
     'click .previous'                   : 'previous'
 
   render_button: ->
