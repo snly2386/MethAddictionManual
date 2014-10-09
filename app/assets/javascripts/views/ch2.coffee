@@ -264,7 +264,6 @@ class GettingOff.Ch2 extends GettingOff.View
       if year is yearr && month is "February"
         number_of_days = 29
 
-    # @$('.calendar').html(@practice["#{month}" + "#{@year}"])
     empty_slots = []
     results = []
     last_day = ""
@@ -398,7 +397,7 @@ class GettingOff.Ch2 extends GettingOff.View
 
 
   update_calendar: (target, color) ->
-    saved_color = ""
+    saved_color
     classname = target.data('tag')
     value = @$("#{classname}").html()
     month = @$('header h1').html().split(" ")[0]
@@ -435,15 +434,13 @@ class GettingOff.Ch2 extends GettingOff.View
     year = @year
     @$('header h1').html(months[@month_index] + " #{year}")
     @$(".date").each ( ->
-      $(@).removeClass('red blue-background')
+      $(@).removeClass('red blue-background mix-background')
       )
     @render_calendar()
 
   set_date: ->
     date = @date.getDate()
     @$(".day .num.todayy").html(date)
-    # @$(".day .num.yesterday").html(date - 1)
-    # @$(".day .num.tomorrow").html(date + 1)
     @set_month()
     @set_day()
 
@@ -460,8 +457,6 @@ class GettingOff.Ch2 extends GettingOff.View
     else 
       tomorrow = day + 1
     @$(".day .dayofweek-today").html(days[day])
-    # @$(".day .dayofweek-yesterday").html(days[yesterday])
-    # @$(".day .dayofweek-tomorrow").html(days[tomorrow])
 
   ch3: ->
     @app.navigate "ch3/1", trigger: true
