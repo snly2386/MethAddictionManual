@@ -260,6 +260,14 @@
 .red{
   background-color:#F88282 !important;
 }
+.blue-background{
+  background-color: rgb(0, 153, 255) !important;
+}
+.mix-background{
+  background: -webkit-linear-gradient(left, #F88282, rgb(0, 153, 255)) !important;
+  background: linear-gradient(to right, #F88282, rgb(0, 153, 255)) !important;
+  // background-color: blue;
+}
 .original{
    background-color:rgb(102, 211, 97);
 }
