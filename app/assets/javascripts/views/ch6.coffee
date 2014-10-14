@@ -29,13 +29,14 @@ class GettingOff.Ch6 extends GettingOff.View
       success:(model, response, options) =>
         @page9_model.set model.attributes[0]
 
-    if @page == 9
+    if @page == 10
       @render_9()
     else    
       @render()
 
-    if @page is 10
+    if @page is 11
       @point_animation()
+      @play_sound()
 
     @button.fetch
       success:(model, response, options) =>
@@ -60,6 +61,10 @@ class GettingOff.Ch6 extends GettingOff.View
     'click .user'                                                   : 'user'
     'click .pin'                                                    : 'pinboard'
     'click .previous'                                               : 'previous'
+
+  play_sound: ->
+    bell_chime = new buzz.sound("/sounds/bell_chime.mp3")
+    bell_chime.play()
 
   point_animation: ->
     window.setTimeout (->

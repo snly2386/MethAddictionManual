@@ -38,10 +38,11 @@ class GettingOff.Ch5 extends GettingOff.View
       success:(model, response, options) =>
         @render_names()
 
-    if @page is 6
+    if @page is 7
       @point_animation()
+      @play_sound()
 
-    if @page is 2 
+    if @page is 3 
       @scroll_to_bottom()
       @open_tooltip()
 
@@ -73,7 +74,10 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .message-container, .overlay'               : 'close_tooltip'
     'click .pin-icon'                                  : 'pinboard'
 
-
+  play_sound: ->
+    bell_chime = new buzz.sound("/sounds/bell_chime.mp3")
+    bell_chime.play()
+    
   scroll_to_avatar: ->
     scrollElement = document.getElementById("mid-container")
     target = $('#mid-container')

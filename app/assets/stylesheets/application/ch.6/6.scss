@@ -38,10 +38,10 @@
   }
   .middle-container{
     position: absolute;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     top: 180px;
     bottom: 120px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     width: 100%;
     .content{
       max-width: 98%;
@@ -116,8 +116,8 @@
   footer{
     height: 140px;
     position: absolute;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
      .border-bottom{
       margin-top: 20px;
       max-width: 100%;
@@ -142,9 +142,9 @@
   .title-clicked{
     background-color: rgba(115, 242, 253, 0.4) !important;
   }
-   @media screen and (min-width:768px){
+  @media screen and (min-width:768px){
     .middle-container{
-      top: 190px !important;
+      top: 180px !important;
       bottom: 180px !important;
     }
     .top{

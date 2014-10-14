@@ -1,6 +1,6 @@
 .ch3page-1 {
   .header{
-    height: 240px;
+    height: 190px;
     header {
       max-width: 200px;
       img { width:100%; }
@@ -31,29 +31,14 @@
 
   .middle-container{
     position: absolute;
-    top: 240px;
+    top: 190px;
     width: 100%;
     bottom: 120px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     .paragraph {
-      margin-top: -1em;
-      // height: 23em;
-      text-align:center;
-      overflow-y: auto;
-      font-family: 'Open Sans', sans-serif; 
-      color: white;
-      font-weight: lighter;
-      font-size: 1em;
-      max-width: 700px;
-      padding: 3%;
-      h2 { font-weight: bold; width:100%;font-size:2.5em;}
-      p { width:100%; }
-      .list { 
-        float: left; 
-        width:45%;
-        ul{ list-style-type: none;} 
-      }
+     height: 20em;
+     img { width :100%; }
     }
   }
   footer{
@@ -83,14 +68,11 @@
   }
   @media screen and (min-width:768px) {
     .paragraph{
-      height: 52em !important;
-      h2{ font-size: 4em !important;}
-      p{ font-size: 2em !important;}
-      .list{ font-size: 2em !important}
+   
     }
     .middle-container{
       bottom: 180px !important;
-      top: 250px !important;
+      top: 190px !important;
     }
     footer{
       height: 220px !important;

@@ -19,6 +19,12 @@
         }
       }
     }
+    .session {
+      margin-top: 2em;
+      text-align: center;
+      max-width: 200px;
+      p { width:100%;font-size:1.7em;color:rgb(67, 230, 67); text-align: center;}
+    }
     .progress-bar{
       margin-top: 70px;
       max-width: 350px;
@@ -149,13 +155,13 @@
     }
   }
    @media screen and (min-width:768px) {
-    .topic{ 
-      margin-top: 3em !important;
-      p{ font-size: 2em !important;}
-    }
-    .middle-container{
-        top: 180px !important;
+      .topic{ 
+        margin-top: 3em !important;
+        p{ font-size: 2em !important;}
+      }
+      .middle-container{
         bottom: 180px !important;
+        top: 180px !important;
         .input{
           margin-left: 35px !important;
         }

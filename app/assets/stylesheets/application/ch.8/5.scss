@@ -44,20 +44,37 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     .content{
-      max-width: 100%;
-      // height: 200px;
-      img { width: 100%;}
+      max-width:100%;
+      height:250px;
+      margin-bottom: 1.5em;
+      .title{
+        max-width:95%;
+        margin-top: -1em;
+        color: white;
+        text-align: center;
+        p{ font-size: 2.5em;}
+      }
+      .paragraph{
+        padding: 8px 0px;
+        margin-bottom: 2em;
+        max-width: 95%;
+        color: white;
+        text-align: center;
+        border: 2px solid white;
+        border-radius: 5px;
+        p{ width: 100%; font-size: 1.1em;}
+      }
     }
   }
   footer{
-    height: 140px;
     width: 100%;
     position: absolute;
     bottom: 0;
+    height: 140px;
      .border-bottom{
       margin-top: 20px;
       max-width: 100%;
-      img { width: 100%; margin-top:-15px;}
+      img { width: 100%; }
     }
      .button{
         margin-top: 2px;
@@ -80,8 +97,14 @@
   }
   @media screen and (min-width:768px){
     .middle-container{
-      bottom: 180px !important;
+      bottom: 180px!important;
       top: 180px !important;
+    }
+    .title{
+      p{ font-size: 4em !important;}
+    }
+    .paragraph{
+      p{ font-size: 2em !important;}
     }
     footer{
       height: 220px !important;

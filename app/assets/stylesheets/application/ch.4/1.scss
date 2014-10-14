@@ -1,13 +1,13 @@
 .ch4page-1 {
   .header{
-    height: 250px;
+    height: 190px;
     header {
       max-width: 200px;
       img { width:100%; }
     }
     .session {
       font-family:'Open Sans', sans-serif;
-      margin-top: -40px;
+      margin-top: -2em;
       font-size: 2em; color: rgb(39, 248, 11);
       div { text-align: center}
     }
@@ -28,73 +28,57 @@
       img { width:100%; }
     }
   }
+
   .middle-container{
     position: absolute;
-    top: 250px;
+    top: 190px;
+    width: 100%;
     bottom: 120px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
-    .paragraph{
-      list-style-type: none;
-      padding: 0px 10px;
-      text-align: center;
-      max-width: 80%;
-      // height: 22em;
-      color: white;
-      overflow-y: auto;
-      ul{ list-style-type: none;}
-      h1 { width: 100%; font-size: 1.5em}
-      p { width: 100%; }
-      .left-align{ text-decoration: underline; font-weight: bold; font-size: 1.2em; line-height: 2em;}
-      .sublist{ color: rgb(89, 248, 14); font-weight: bold;}
+    .paragraph {
+     height: 20em;
+     img { width :100%; }
     }
   }
   footer{
     width: 100%;
-    height: 140px;
     position: absolute;
     bottom: 0;
+    height: 140px;
     .border-bottom{
-      max-width: 100%;
+      max-width:100%;
       margin-top: 20px;
-      img { width: 100%;}
+      img { width:100%; }
     }
     .button{
-      margin-top: 2px;
+     margin-top: 2px;
     }
     .icons-container{
-      max-width:600px; 
+      max-width:600px;
       .icon-container{
         width:20%;
         float: left;
-        img{width:100%;}
+        img { width:100%; }
       }
       .icon-container.pin{
-        margin-top: -2%;
+          img { margin-top:-11%; }
       }
     }
   }
   @media screen and (min-width:768px) {
-    .paragraph {
-      h1{font-size: 3em !important;}
-      p{font-size: 2em !important;}
-      height: 52em !important;
+    .paragraph{
+   
     }
     .middle-container{
-      top: 250px !important;
-      bottom: 190px !important;
+      bottom: 180px !important;
+      top: 190px !important;
     }
     footer{
       height: 220px !important;
       .button{
         margin-top: 10px !important;
       }
-    }
-  }
-   @media screen and (min-width:1000px){
-    .middle-container{
-      top: 260px !important;
     }
   }
 }

@@ -27,8 +27,9 @@ class GettingOff.Ch9 extends GettingOff.View
 
     @render()
 
-    if @page is 4
+    if @page is 5
       @point_animation()
+      @play_sound()
 
     @button.fetch
       success:(model, response, options) =>
@@ -57,6 +58,9 @@ class GettingOff.Ch9 extends GettingOff.View
     'click .previous'                          : 'previous'
     'click .end-overlay, .paragraph-container' : 'go_to_table_of_contents'
 
+  play_sound: ->
+    bell_chime = new buzz.sound("/sounds/bell_chime.mp3")
+    bell_chime.play()
 
    scroll_to_avatar: ->
     scrollElement = document.getElementById("mid-container")

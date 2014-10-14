@@ -4,10 +4,7 @@
     header{
       max-width: 100%;color:white;
       height:5em; 
-      .img {
-        width: 8em; float: left; margin-left: 3%; margin-top:2.8em;
-        img{ width:100%;}
-      }
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
       .points {
         margin-right:4%;
         margin-top: -3em;
@@ -40,7 +37,7 @@
     }
   }
 
-  .middle-container{
+.middle-container{
     position: absolute;
     width: 100%;
     top: 180px;
@@ -62,12 +59,11 @@
         padding: 0px 5px;
         color: white;
         text-align: center;
-        h1{ font-size: 1.5em;}
+        h1{ font-size: 1.7em;}
         p { width: 100%; font-size: 1em;}
       }
     }
   }
-
   footer{
     height: 140px;
     position: absolute;
@@ -78,7 +74,9 @@
       max-width: 100%;
       img { width: 100%; }
     }
-     .button{ margin-top: 2px; }
+     .button{
+        margin-top: 2px;
+    }
     .icons-container{
       max-width:600px; 
       z-index: 1;
@@ -112,5 +110,3 @@
     }
   }
 }
-
-

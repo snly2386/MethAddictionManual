@@ -1,13 +1,13 @@
-.ch9page-1{
+.ch9page-1 {
   .header{
-    height: 240px;
+    height: 190px;
     header {
       max-width: 200px;
       img { width:100%; }
     }
     .session {
       font-family:'Open Sans', sans-serif;
-      margin-top: -40px;
+      margin-top: -2em;
       font-size: 2em; color: rgb(39, 248, 11);
       div { text-align: center}
     }
@@ -28,88 +28,57 @@
       img { width:100%; }
     }
   }
+
   .middle-container{
     position: absolute;
-    top: 240px;
-    bottom: 120px;
+    top: 190px;
     width: 100%;
+    bottom: 120px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    .content{
-      max-width: 95%;
-      height:23em;
-      // overflow-y: auto;
-      .title{
-        margin-top: -1.5em;
-        width: 100%;
-        color: white;
-        text-align: center;
-        h1{ font-size: 2em;}
-      }
-      .paragraph{
-        padding: 0px 5px;
-        max-width:100%;
-        color: white;
-        text-align: center;
-        p{}
-      }
-      .subtitle{
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        p{font-size: 1.5em;}
-      }
-      .list{
-        text-align: center;
-        color: white;
-        max-width:100%;
-        span{font-weight: bold; font-size:1.2em;}
-      }
+    .paragraph {
+     height: 20em;
+     img { width :100%; }
     }
   }
   footer{
-    height: 140px;
     width: 100%;
     position: absolute;
     bottom: 0;
+    height: 140px;
     .border-bottom{
+      max-width:100%;
       margin-top: 20px;
-      max-width: 100%;
-      img { width: 100%; }
+      img { width:100%; }
     }
     .button{
-      margin-top: 2px;
+     margin-top: 2px;
     }
     .icons-container{
-      max-width:600px; 
+      max-width:600px;
       .icon-container{
         width:20%;
         float: left;
-        img{width:100%;}
+        img { width:100%; }
       }
       .icon-container.pin{
-        margin-top: -2%;
+          img { margin-top:-11%; }
       }
     }
   }
-  @media screen and (min-width:768px){
+  @media screen and (min-width:768px) {
+    .paragraph{
+   
+    }
     .middle-container{
       bottom: 180px !important;
-    }
-    .content{
-      h1{font-size: 3em !important;}
-      p{ font-size: 2em !important;}
+      top: 190px !important;
     }
     footer{
       height: 220px !important;
       .button{
         margin-top: 10px !important;
       }
-    }
-  }
-  @media screen and (min-width:1000px){
-    .middle-container{
-      top: 250px !important;
     }
   }
 }

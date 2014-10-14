@@ -1,56 +1,61 @@
 .ch5page-6{
   .header{
-    height: 170px;
-    header {
-      max-width: 200px;
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
+        }
+      }
+    }
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
+    }
+    .progress{
+      float: left;
+      max-width: 9%;
       img { width:100%; }
     }
-    .session {
-      font-family:'Open Sans', sans-serif;
-      margin-top: -2em;
-      font-size: 2em; color: rgb(39, 248, 11);
-      div { text-align: center}
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
     }
   }
   .middle-container{
     position: absolute;
-    top: 170px;
+    top: 180px;
     bottom: 120px;
     width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    .points-container{
-      position: relative;
-      margin-top: -10em;
+    .paragraph{
+      border-radius: 5%;
+      // margin-top: -1em;
+      max-width: 70%;
       text-align: center;
       color: white;
-      z-index: 9999;
-      // height:3em;
-      // font-size: 10em;
-      p{
-        font-size: 9em;
-      }
-      .points{
-        // margin-top: -4em;
-        margin-top: -6em;
-        font-size: 2em;
-        color: rgb(39, 248, 11);
-      }
-    }
-    .avatar-container{
-      height: 160px;
-      // border: 1px solid pink;
-      display: none;
-      padding-right:6px;
-      margin-top: -40px;
-      max-width: 150px;
-      // margin-left: 1px;
-      img{ width: 100%;}
+      h1 { font-size: 3em; width: 100%;}
+      p { width: 100%; font-size:1.5em;}
     }
   }
   footer{
-    position: absolute;
     height: 140px;
+    position: absolute;
     bottom: 0;
     width: 100%;
     .border-bottom{
@@ -58,11 +63,12 @@
       max-width: 100%;
       img { width: 100%; }
     }
-    .finish-chapter{
+    .button{
       margin-top: 2px;
     }
-    .icons-container{
+     .icons-container{
       max-width:600px; 
+      z-index: 1;
       .icon-container{
         width:20%;
         float: left;
@@ -73,37 +79,21 @@
       }
     }
   }
-  .overlay{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: none;
-    // height: 70em;
-    width: 100%;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    z-index: 100;
-    opacity:0.7;
-  }
-  
-  .test{
-    color: yellow !important;
-  }
   @media screen and (min-width:768px){
-    .points-container{
-
-      p{ font-size: 13em !important;}
-      .points{ font-size: 3em !important;}
+    .paragraph{
+      margin-top: 4em;
+      h1{ font-size: 3.5em !important;}
+      p{ font-size: 2em !important;}
     }
     .middle-container{
-      bottom: 190px !important; 
+      top: 190px !important;
+      bottom: 180px !important;
     }
     footer{
       height: 220px !important;
-      .finish-chapter{
+      .button{
         margin-top: 10px !important;
       }
     }
-   }
+  }
 }

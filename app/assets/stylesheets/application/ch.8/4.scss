@@ -40,38 +40,40 @@
     position: absolute;
     top: 180px;
     bottom: 120px;
-    width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    .title{
+      // margin-top:-1.5em;
+      max-width: 95%;
+      color: rgb(102, 236, 96);
+      text-align: center;
+      font-size: 1.5em;
+      p { width: 100%;}
+    }
     .content{
-      max-width:100%;
-      height:250px;
-      margin-bottom: 1.5em;
-      .title{
-        max-width:95%;
-        margin-top: -1em;
+      max-width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      height: 38em;
+      // overflow-y: auto;
+      .list{
+        max-width: 85%;
         color: white;
-        text-align: center;
-        p{ font-size: 2.5em;}
-      }
-      .paragraph{
-        padding: 8px 0px;
-        margin-bottom: 2em;
-        max-width: 95%;
-        color: white;
-        text-align: center;
-        border: 2px solid white;
-        border-radius: 5px;
-        p{ width: 100%; font-size: 1.1em;}
+        p { 
+          cursor: pointer;
+          width: 100%; 
+          font-size: 1.3em;
+          img{height: 1.3em; margin-bottom: -0.3em; margin-right: 0.1em;}
+        }
       }
     }
   }
   footer{
+    height: 140px;
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 140px;
-     .border-bottom{
+    .border-bottom{
       margin-top: 20px;
       max-width: 100%;
       img { width: 100%; }
@@ -95,18 +97,23 @@
   .click-list{
     color: rgb(102, 236, 96) !important;
   }
-  @media screen and (min-width:768px){
+    @media screen and (min-width:768px){
     .middle-container{
-      bottom: 180px!important;
-      top: 180px !important;
+      bottom: 180px !important;
     }
     .title{
-      p{ font-size: 4em !important;}
+      font-size: 2em !important;
     }
-    .paragraph{
-      p{ font-size: 2em !important;}
+    .content{
+      height: 61em !important;
     }
-    footer{
+    .list {
+      p{ 
+        font-size: 2em !important;
+        img{ height: 1.6em !important;}
+      }
+    }
+     footer{
       height: 220px !important;
       .button{
         margin-top: 10px !important;

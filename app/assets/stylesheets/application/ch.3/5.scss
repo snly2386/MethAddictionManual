@@ -38,70 +38,50 @@
   }
   .middle-container{
     position: absolute;
+    top: 185px;
+    bottom: 120px;
     width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    top: 180px;
-    bottom: 120px;
+    .title{
+      max-width: 95%;
+      color: white;
+      margin-top: -3em;
+      text-align: center;
+      p{width:100%; font-size:2.5em;}
+    }
     .paragraph{
       max-width: 90%;
       color: white;
-      font-size: 1.2em;
-      p { width: 100%; }
+      padding: 0px 10px;
+      margin-top:-1em;
+      p{width:100%; padding: 0px 5px; color: white;}
     }
-    .choice{
-      max-width: 60%;
-      padding-left: 30px;
-      color: white;
-      font-size: 3.5em;
+    .trigger-list{
+      max-width: 100%;
+      height:220px;
+      // overflow-y: auto;
       text-align: center;
-      .list{
-        cursor: pointer;
-        margin-top: -1em;
-        float: left;
-        width:50%;
-        height:2.5em;
-      p{width:100%;}
-      }
-      .list.n{
-        text-align: left;
-      }
-      .list.y{
-        text-align: right;
-      }
-    }
-    .if-yes{
-      margin-top: 1em;
-      text-align:center;
-      font-size:1.5em;
-      color:white;
-      max-width: 50%;
-      p { width: 100%;}
-    }
-    .textarea{
-      padding-right: 10px;
-      max-width: 92%;
-      textarea { 
-        height:5em;
-        color: white;
-        font-size: 1.5em;
-        width:98%;
-        border:8px solid white; 
-        background-color:rgb(209, 214, 218);
+      color: white;
+      background-color: rgba(255, 255, 255, 0.33);
+      .list { 
+          width:45%;
+          float: left;
+          ul{list-style-type: none}
       }
     }
   }
   footer{
     width: 100%;
-    height:140px;
+    height: 140px;
     position: absolute;
     bottom: 0;
     .border-bottom{
-      margin-top: 20px;
       max-width: 100%;
+      margin-top: 20px;
       img { width: 100%; }
     }
-    .finish-chapter{
+    .button{
       margin-top: 2px;
     }
     .icons-container{
@@ -116,29 +96,28 @@
       }
     }
   }
-  .textarea-click{
-    background-color: #959697 !important;
-  }
-  .list-handler{
-
-  }
-  .green{
-    color: rgb(124, 223, 120) !important;
-  }
-    @media screen and (min-width:768px) {
-      .paragraph{
-        font-size: 2.5em !important;
-        margin-top: 4em !important;
-      }
-      .middle-container{
-        top: 190px !important;
-        bottom: 200px !important;
-      }
-      footer{
-        height: 220px !important;
-        .button{
-          margin-top: 10px !important;
-        }
+  @media screen and (min-width:768px) {
+    .title p{
+      margin-top: 3em !important; 
+      font-size: 4em;
+    }
+    .paragraph{
+      font-size: 2em;
+    }
+    .trigger-list{
+      height: 36em !important;
+    }
+    .list{
+      font-size: 2em;
+    }
+    .middle-container{
+      bottom: 180px !important;
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important;
       }
     }
+  }
 }

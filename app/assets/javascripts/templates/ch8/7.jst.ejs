@@ -1,28 +1,82 @@
 <section class="header">
-  <header class="centered">
-    <img src="assets/title.png"/>
+  <header>
+    <div class="img">
+      <img src="assets/title.png"/>
+    </div>
+    <div class="points">
+      <h2>1400</h2>
+      <div>POINTS</div>
+    </div>
   </header>
+<!-- 
+  <section class="session centered font-sans">
+    <p>Session 5</p>
+  </section> -->
 
-  <section class="session centered">
-    <div>Session 8</div>
+  <section class="progress-bar centered"> 
+    <div class="progress first"><img src="assets/progress_check.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_check.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_check.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_check.png"/></div>
+    <div class="progress"><img src="assets/progress_line.png"/></div>
+    <div class="progress"><img src="assets/progress_check.png"/></div>
   </section>
+
+  <div class="border-top">
+    <img src="assets/text_border_top.png"/>
+  </div>
 </section>
 
 <section class="middle-container">
-  <section class="points-container centered font-marker hang">
-    <p class="score">1400</p>
-    <p class="points font-sans">POINTS</p>
-  </section>
+  <section class="content centered">
+    <div class="title centered font-sans">
+      <h1>Preparing for Auntie Tina's Visit . . .</h1>
+    </div>
 
+    <div class="paragraph centered font-sans">
+      <p>Is your apartment/condo/house ready for her visit?
+      </p>
+    </div>
+
+    <div class="subtitle centered font-sans">
+      <p>Take a look at your living space. Does it represent your commitment to recovery from crystal? Do you need to make any changes to prepare for Auntie Tina’s visit?</p>
+    </div>
+
+    <div class="textarea centered">
+      <textarea class="1 centered"><%=question_1%></textarea>
+    </div>
+
+    <div class="subtitle centered font-sans">
+      <p>There must be lots of things to do in your city, but when we use crystal we often get stuck doing the same thing over and over. How would you explore the city with Auntie Tina? What are some of the places you would take her that do not involve crystal use or sex? Do you want to explore new places in the city that you haven’t been to or perhaps take her to some of your favorite sites? Make a list of the places you would like to take Auntie Tina to show her your city, such as restaurants and coffee shops, the beach, cultural and entertainment venues (movies, plays, museums), places to shop, people watch, or just hang out.</p>
+    </div>
+
+    <div class="textarea centered">
+      <textarea class="2 centered"><%=question_2%></textarea>
+    </div>
+
+    <div class="subtitle centered font-sans">
+      <p> Auntie Tina can only spend a week with you. What would you like her to remember most about her visit with you?</p>
+    </div>
+
+    <div class="textarea centered">
+      <textarea class="3 centered"><%=question_3%></textarea>
+    </div>
+
+  </section>
 </section>
 
 <footer>
   <div class="border-bottom">
     <img src="assets/text_border_bottom.png"/>
   </div>
-  <div class="finish-chapter centered">
-    <img src="assets/next_session_button.png" class="shrink"/>
+
+  <div class="button centered">
+    <img src="assets/next.png" class="shrink"/>
   </div>
+
   <div class="icons-container centered">
     <div class="icon-container user" data-id="menu" id="icon-menu"><img src="assets/menu-options.png" class="icon"/></div>
     <div class="icon-container table" data-id="scheduler" id="icon-scheduler"><img src="assets/menu-scheduler.png" class="icon"/></div>
@@ -31,4 +85,3 @@
     <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
   </div>
 </footer>
-<div class="overlay"></div>

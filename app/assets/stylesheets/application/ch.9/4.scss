@@ -1,68 +1,93 @@
 .ch9page-4{
   .header{
-    height: 170px;
-    header {
-      max-width: 200px;
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
+        }
+      }
+    }
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
+    }
+    .progress{
+      float: left;
+      max-width: 9%;
       img { width:100%; }
     }
-    .session {
-      font-family:'Open Sans', sans-serif;
-      margin-top: -2em;
-      font-size: 2em; color: rgb(39, 248, 11);
-      div { text-align: center}
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
     }
   }
   .middle-container{
     position: absolute;
-    top: 170px;
-    // bottom: 70px;
-    bottom: 80px;
-    width: 100%;
+    top: 180px;
+    bottom: 120px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    .points-container{
-      position: relative;
-      margin-top: -8em;
-      text-align: center;
-      color: white;
-      z-index: 9999;
-      p{
-        font-size: 9em;
+    width: 100%;
+    .content{
+      max-width:98%;
+      height:23em;
+      // overflow-y: auto;
+      .paragraph{
+        max-width:95%;
+        padding: 0px 5px;
+        color: white; text-align: center;
+        p{ width: 100%;}
       }
-      .points{
-        margin-top: -5.7em;
-        font-size: 2em;
-        color: rgb(39, 248, 11);
+      .subtitle{
+        max-width: 90%;
+        color: white;
+        text-align: center;
+        h1 { width: 100%; font-size:1.6em; }
       }
-    }
-    .avatar-container{
-      height: 160px;
-      // border: 1px solid pink;
-      display: none;
-      padding-right:6px;
-      margin-top: -40px;
-      max-width: 150px;
-      // margin-left: 1px;
-      img{ width: 100%;}
+      .textarea{
+        padding: 0px 10px;
+        max-width:100%;
+        textarea { 
+          color: white;
+          width: 95%;
+          height:7em;
+          border:8px solid white; 
+          background-color: #d1d6da;
+        }
+      }
     }
   }
   footer{
-    height: 140px;
-    position: absolute;
     width: 100%;
+    position: absolute;
+    height: 140px;
     bottom: 0;
     .border-bottom{
+      margin-top: 20px;
       max-width: 100%;
-      // margin-top: 70px;
-      margin-top: 60px;
       img { width: 100%; }
     }
-    .finish-chapter{
-      margin-top: 2px;
+     .button{
+        margin-top: 2px;
     }
     .icons-container{
-      margin-bottom: 2em;
-      max-width:600px; 
+      max-width:800px; 
+      z-index: 1;
       .icon-container{
         width:20%;
         float: left;
@@ -73,66 +98,24 @@
       }
     }
   }
-  .overlay{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: none;
-    width: 100%;
-    background-color: black;
-    position: absolute;
-    z-index: 100;
-    opacity:0.7;
-  }
-  .end-overlay{
-    display: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    opacity: 0.9;
-    z-index: 9999;
-  }
-  .paragraph-container{
-    display: none;
-    overflow-y: auto;
-    position: absolute;
-    width: 100%;
-    top: 130px;
-    bottom: 90px;
-    z-index: 99999;
-    .paragraph{
-      text-align: center;
-      font-size: 2em;
-      color: white;
-      padding: 0px 10px;
-    }
-  }
-  
-  .test{
-    color: yellow !important;
+  .textarea-click{
+    background-color: #959697 !important;
   }
   @media screen and (min-width:768px){
+    .paragraph p{ font-size: 1.5em !important;}
     .middle-container{
-      bottom: 190px !important;
-    }
-    .points-container{
-
-      p{ font-size: 13em !important;}
-      .points{ font-size: 3em !important;}
+      bottom: 200px !important;
     }
     footer{
-      height: 220px !important;
-      .finish-chapter{
+      height: 250px !important;
+      .button{
         margin-top: 10px !important;
       }
     }
-    .paragraph-container{
-      top: 160px !important; 
-      .paragraph{
-        font-size: 4em !important;
-      }
+  }
+   @media screen and (min-width:1000px){
+    .middle-container{
+      top: 190px !important;
     }
   }
 }

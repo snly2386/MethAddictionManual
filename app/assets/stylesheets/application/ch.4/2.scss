@@ -1,71 +1,64 @@
-.ch4page-2{
+.ch4page-2 {
   .header{
-    height: 185px;
-    header{
-      max-width: 100%;color:white;
-      height:90px; 
-      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
-      .points {
-        margin-right:4%;
-        margin-top: -3em;
-        float: right;
-        max-width: 200px;
-        font-family: 'Permanent Marker', cursive;
-        h2{font-size: 5em;}
-        div { 
-          margin-top: -3.7em;
-          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
-          text-align: center;
-        }
-      }
-    }
-    .progress-bar{
-      max-width: 350px;
-      margin-top: 45px;
-    }
-    .progress{
-      float: left;
-      max-width: 9%;
+    height: 250px;
+    header {
+      max-width: 200px;
       img { width:100%; }
     }
-    .progress.first{
-      margin-left: 9%;
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -40px;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
     }
+    .progress-bar {
+        margin-top: 1em;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
     .border-top{
-      max-width: 100%;
+      max-width:100%;
       img { width:100%; }
     }
   }
   .middle-container{
     position: absolute;
-    top: 185px;
+    top: 250px;
     bottom: 120px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     width: 100%;
     .paragraph{
-      padding-left: 8px;
-      margin-top: 1em;
-      max-width: 90%;
+      list-style-type: none;
+      padding: 0px 10px;
+      text-align: center;
+      max-width: 80%;
+      // height: 22em;
       color: white;
-      // text-align: center;
-      h1{font-size: 1.8em; margin-top: -2px; text-align: center;}
-      .subtitle{
-        font-weight: bold;
-        font-size: 1.2em;
-        text-decoration: underline;
-      }
+      overflow-y: auto;
+      ul{ list-style-type: none;}
+      h1 { width: 100%; font-size: 1.5em}
+      p { width: 100%; }
+      .left-align{ text-decoration: underline; font-weight: bold; font-size: 1.2em; line-height: 2em;}
+      .sublist{ color: rgb(89, 248, 14); font-weight: bold;}
     }
   }
   footer{
     width: 100%;
-    height:140px;
+    height: 140px;
     position: absolute;
     bottom: 0;
     .border-bottom{
-      margin-top: 20px;
       max-width: 100%;
-      img { width: 100%; }
+      margin-top: 20px;
+      img { width: 100%;}
     }
     .button{
       margin-top: 2px;
@@ -82,15 +75,14 @@
       }
     }
   }
-   .textarea-click{
-    background-color: #959697 !important;
-  }
-  @media screen and (min-width:768px){
-    .paragraph{
-      font-size: 1.5em !important;
+  @media screen and (min-width:768px) {
+    .paragraph {
+      h1{font-size: 3em !important;}
+      p{font-size: 2em !important;}
+      height: 52em !important;
     }
     .middle-container{
-      top: 190px !important;
+      top: 250px !important;
       bottom: 190px !important;
     }
     footer{
@@ -98,6 +90,11 @@
       .button{
         margin-top: 10px !important;
       }
+    }
+  }
+   @media screen and (min-width:1000px){
+    .middle-container{
+      top: 260px !important;
     }
   }
 }

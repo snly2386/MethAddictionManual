@@ -44,12 +44,13 @@
     -webkit-overflow-scrolling: touch;
     width: 100%;
     .paragraph{
+      margin-top: 1em;
       max-width: 90%;
       color: white;
       text-align: center;
       h1{font-size: 1.8em; margin-top: -2px;}
-      .subtitle-2{
-        margin-top: 15px;
+      .healthy-subtitle{
+        margin-top: 30px;
       }
     }
   }

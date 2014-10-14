@@ -1,57 +1,100 @@
 .ch6page-10{
   .header{
-    height: 170px;
-    header {
-      max-width: 200px;
+    height: 180px;
+    header{
+      max-width: 100%;color:white;
+      height:5em; 
+      .img {width: 8em; float: left; margin-left: 3%; margin-top:2.8em; img{ width:100%;}}
+      .points {
+        margin-right:4%;
+        margin-top: -3em;
+        float: right;
+        max-width: 200px;
+        font-family: 'Permanent Marker', cursive;
+        h2{font-size: 5em;}
+        div { 
+          margin-top: -3.7em;
+          font-family: 'Open Sans', sans-serif; font-size: 1.5em; color: rgb(67, 230, 67);
+          text-align: center;
+        }
+      }
+    }
+    .progress-bar{
+      margin-top: 70px;
+      max-width: 350px;
+    }
+    .progress{
+      float: left;
+      max-width: 9%;
       img { width:100%; }
     }
-    .session {
-      font-family:'Open Sans', sans-serif;
-      margin-top: -2em;
-      font-size: 2em; color: rgb(39, 248, 11);
-      div { text-align: center}
+    .progress.first{
+      margin-left: 10%;
+    }
+    .border-top{
+      max-width: 100%;
+      img { width:100%; }
     }
   }
   .middle-container{
     position: absolute;
-    top: 170px;
     bottom: 120px;
+    top: 180px;
     width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    .points-container{
-      position: relative;
-      margin-top: -10em;
-      text-align: center;
-      color: white;
-      z-index: 9999;
-      // height:3em;
-      // font-size: 10em;
-      p{
-        font-size: 9em;
+    .content{
+      max-width: 98%;
+      height:23em;
+      // overflow-y: auto;
+      .title{
+        text-align: center;
+        max-width: 100%;
+        color: white;
+        h1 { width: 100%; font-size:1.3em; }
       }
-      .points{
-        margin-top: -4em;
-        font-size: 2em;
-        color: rgb(39, 248, 11);
+      .paragraph{
+        padding: 0px 5px;
+        text-align: center;
+        max-width: 100%;
+        color: white;
+        p { width: 100%; font-size:1.1em; }
+      }
+      .subtitle{
+        max-width: 80%;
+        color: white;
+        text-align: center;
+        h1 { width: 100%; font-size: 1.6em; }
+      }
+      .textarea{
+        padding: 0px 10px;
+        max-width:100%;
+        textarea { 
+          color: white;
+          width: 95%;
+          height:7.5em;
+          border:8px solid white; 
+          background-color: #d1d6da;
+        }
       }
     }
   }
   footer{
-    width: 100%;
-    position: absolute;
     height: 140px;
+    position: absolute;
     bottom: 0;
+    width: 100%;
     .border-bottom{
       margin-top: 20px;
       max-width: 100%;
       img { width: 100%; }
     }
-    .finish-chapter{
-      margin-top: 2px;
-    }
+     .button{
+        margin-top: 2px;
+    } 
     .icons-container{
       max-width:600px; 
+      z-index: 1;
       .icon-container{
         width:20%;
         float: left;
@@ -62,35 +105,22 @@
       }
     }
   }
-  .overlay{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: none;
-    width: 100%;
-    background-color: black;
-    position: absolute;
-    z-index: 100;
-    opacity:0.7;
-  }
-  
-  .test{
-    color: yellow !important;
+   .textarea-click{
+    background-color: #959697 !important;
   }
   @media screen and (min-width:768px){
-      .points-container{
-
-        p{ font-size: 13em !important;}
-        .points{ font-size: 3em !important;}
+    .title h1{
+      font-size: 2em !important;
+    }
+    .middle-container{
+      top: 190px !important;
+      bottom: 180px !important;
+    }
+    footer{
+      height: 220px !important;
+      .button{
+        margin-top: 10px !important; 
       }
-      .middle-container{
-        bottom: 190px !important;
-      }
-      footer{
-        height: 220px!important;
-        .finish-chapter{
-          margin-top: 10px !important;
-        }
-      }
-   }
+    }
+  }
 }

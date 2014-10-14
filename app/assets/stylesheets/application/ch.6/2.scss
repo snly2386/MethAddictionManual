@@ -43,22 +43,16 @@
     width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    .questions{
-      max-width:95%;
-      height: 23em;
-      // overflow-y: auto;
+    .paragraph{
+      max-width:90%;
       padding: 0px 5px;
       color: white;
-      .instructions{ width: 100%; text-align: center; font-size: 1.2em;}
-      .text{
-        max-width: 95%;
-        h1{font-size: 2em;}
-        .example{font-size: .8em; margin-top: -2em;}
-      }
-      .textarea{
-        max-width: 95%;
-        textarea{ width: 95%; border: 8px solid white; height: 6em; background-color: #d1d6da}
-      }
+      text-align: center;
+      height: 22em;
+      // overflow-y: auto;
+      h1 { width: 100%; font-size:2em;}
+      p { width: 100%;}
+
     }
   }
   footer{
@@ -67,12 +61,12 @@
     bottom: 0;
     width: 100%;
     .border-bottom{
-      margin-top: 20px;
       max-width: 100%;
+      margin-top: 20px;
       img { width: 100%; }
     }
-     .page2-model{
-      margin-top: 2px;
+     .button{
+     margin-top: 2px;
     }
     .icons-container{
       max-width:600px; 
@@ -87,22 +81,18 @@
       }
     }
   }
-  .textarea-click{
-    background-color: #959697 !important;
-  }
   @media screen and (min-width:768px){
-    .instructions{
-      font-size: 2em !important;
-    }
-    .example{
-      font-size: 1.2em !important;
+    .paragraph{
+      h1{ font-size: 5em !important;}
+      p{ font-size: 2em;}
+      ul{ font-size: 2em;}
     }
     .middle-container{
       top: 190px !important;
       bottom: 180px !important;
     }
     footer{
-      height: 220px !important;
+      height: 220px !important; 
       .button{
         margin-top: 10px !important;
       }

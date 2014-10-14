@@ -28,8 +28,9 @@ class GettingOff.Ch3 extends GettingOff.View
     @sex_hash = {"Never Risk": [], "Some Risk": [], "Always Risk": []}
     @render()
 
-    if @page is 6
+    if @page is 7
       @page6_animation()
+      @play_sound()
 
     @button.fetch
       success:(model, response, options) =>
@@ -59,6 +60,10 @@ class GettingOff.Ch3 extends GettingOff.View
     'click .previous'                   : 'previous'
     'click .list.y'                     : 'validate'
     'click .list.n'                     : 'invalidate'
+
+  play_sound: ->
+    bell_chime = new buzz.sound("/sounds/bell_chime.mp3")
+    bell_chime.play()
 
   invalidate: ->
     @validation = false

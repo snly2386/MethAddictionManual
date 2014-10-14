@@ -1,5 +1,5 @@
 .ch7page-4{
-  .header{
+    .header{
     height: 180px;
     header{
       max-width: 100%;color:white;
@@ -36,8 +36,7 @@
       img { width:100%; }
     }
   }
-
-.middle-container{
+  .middle-container{
     position: absolute;
     width: 100%;
     top: 180px;
@@ -45,29 +44,33 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     .content{
-      max-width:96%;
-      height: 14em;
+      max-width:100%;
       .title{
-        margin-top: 2em;
-        max-width:100%;
+        background-color: rgba(183, 231, 250, 0.29);
+        height: 80px;
+        max-width: 220px;
+        border-radius: 3px;
+        border: 1px solid rgb(90, 199, 241);
         color: white;
         text-align: center;
-        p{ width: 100%; font-size: 2em;}
+        p { width: 100%; font-size: 2.1em; margin-top:5px;}
+        h1 { width: 100%; font-size: 2em; font-weight: bold; margin-top: -30px;}
       }
-      .paragraph{
-        max-width:98%;
-        padding: 0px 5px;
-        color: white;
-        text-align: center;
-        h1{ font-size: 1.7em;}
-        p { width: 100%; font-size: 1em;}
+      .arch-container{
+        max-width:100%;
+        margin-top:20px;
+        img { width: 100%;}
+      }
+      .text-container{
+        max-width:60%;
+        img { width: 100%; }
       }
     }
   }
   footer{
     height: 140px;
-    position: absolute;
     width: 100%;
+    position: absolute;
     bottom: 0;
     .border-bottom{
       margin-top: 20px;
@@ -90,17 +93,16 @@
       }
     }
   }
+  .click-list{
+    color: rgb(102, 236, 96) !important;
+  }
   @media screen and (min-width:768px){
     .middle-container{
       top: 190px !important;
       bottom: 180px !important;
-    }
-    .title {
-      margin-top: 30px !important;
-      p{ font-size: 5em !important;} 
-    }
-    .paragraph{
-      p{ font-size: 2em !important;}
+      .title{
+        margin-top: 20px;
+      }
     }
     footer{
       height: 220px !important;

@@ -37,12 +37,12 @@
     }
   }
   .middle-container{
-    position: absolute;
+    position:absolute;
     top: 180px;
     bottom: 120px;
+    width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
     .content{
       max-width: 98%;
       height:23em;
@@ -113,7 +113,7 @@
       }
     }
   }
-  footer{
+   footer{
     height: 140px;
     position: absolute;
     width: 100%;
@@ -144,7 +144,7 @@
   }
   @media screen and (min-width:768px){
     .middle-container{
-      top: 180px !important;
+      top: 190px !important;
       bottom: 180px !important;
     }
     .top{

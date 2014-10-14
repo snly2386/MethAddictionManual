@@ -1,3 +1,6 @@
+<div class="tooltip">
+    <img src="assets/tooltip.png"/>
+</div>
 <section class="header">
   <header>
     <div class="img">
@@ -18,7 +21,7 @@
     <div class="progress"><img src="assets/progress_line.png"/></div>
     <div class="progress"><img src="assets/progress_check.png"/></div>
     <div class="progress"><img src="assets/progress_line.png"/></div>
-    <div class="progress"><img src="assets/progress_check.png"/></div>
+    <div class="progress"><img src="assets/progress_x.png"/></div>
     <div class="progress"><img src="assets/progress_line.png"/></div>
     <div class="progress"><img src="assets/progress_x.png"/></div>
     <div class="progress"><img src="assets/progress_line.png"/></div>
@@ -30,46 +33,13 @@
   </div>
 </section>
 
-<section class="middle-container">
-  <section class="questions centered font-sans">
-    <div class="text centered">
-      <p>How many people are in your web? Are there any circles close to you or do you keep most people away?</p>
+<section class="middle-container" id="mid-container">
+  <section class="web">
+    <div class="me centered">
+      <img src="assets/me_button.png" class="add-name"/>
     </div>
+    
 
-    <div class="textarea">
-      <textarea class="1"><%=answer_1%></textarea>
-    </div>
-
-     <div class="text centered">
-      <p>What groups are represented in your web (for example, crystal­ using friends, family, non­-using friends, sex partners)?</p>
-    </div>
-
-    <div class="textarea">
-      <textarea class="2"><%=answer_2%></textarea>
-    </div>
-
-    <div class="text centered">
-      <p>Who are you least likely to use crystal with?</p>
-    </div>
-
-    <div class="textarea">
-      <textarea class="3"><%=answer_3%></textarea>
-    </div>
-
-     <div class="text centered">
-      <p>Who are you most likely to use crystal with?</p>
-    </div>
-
-    <div class="textarea">
-      <textarea class="4"><%=answer_4%></textarea>
-    </div>
-
-    <div class="text centered">
-      <p>Is there anyone in your web that you can talk to for support if you are feeling down or need help staying away from crystal?</p>
-    </div>
-
-    <div class="textarea">
-      <textarea class="5"><%=answer_5%></textarea>
     </div>
   </section>
 </section>
@@ -79,7 +49,7 @@
     <img src="assets/text_border_bottom.png"/>
   </div>
 
-  <div class="centered save-answers">
+  <div class="button centered">
     <img src="assets/next.png" class="shrink"/>
   </div>
 
@@ -91,3 +61,68 @@
     <div class="icon-container previous" data-id="exit" id="icon-exit"><img src="assets/menu-exit.png" class="icon"/></div>
   </div>
 </footer>
+
+  <section class="popup-container">
+    <div class="popup-menu">
+      <div class="text centered font-marker">
+        <h1>Add a Person</h1>
+      </div>
+
+      <div class="input centered">
+        <input type="text" class="name"> </input>
+        <div class="submit"><img src="assets/check_button.png"/></div>
+      </div>
+
+      <div class="text centered font-marker">
+        <h1 class='fuck'>Pick a Color</h1>
+      </div>
+
+      <div class="colors centered">
+        <div class="top-colors centered">
+          <div class="first each-color float-shadow" data-color="blue">
+            <img src="assets/blue_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="dark blue">
+            <img src="assets/navy_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="pink">
+            <img src="assets/pink_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="purple">
+            <img src="assets/purple_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="navy">
+            <img src="assets/dark_blue_box.png"/>
+          </div>
+        </div>
+
+        <div class="bottom-colors centered">
+          <div class="first each-color float-shadow" data-color="orange">
+            <img src="assets/orange_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="lime">
+            <img src="assets/lime_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="green">
+            <img src="assets/green_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="yellow">
+            <img src="assets/yellow_box.png"/>
+          </div>
+          <div class="each-color float-shadow" data-color="red">
+            <img src="assets/red_box.png"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="overlay"></section>
+<!-- <div class="speech-container">
+  <div class="speech-bubble centered">
+    <img src="assets/ch5_tooltip.png"/>
+  </div>
+</div> -->
+
+ <section class="message-container">
+    <p class="centered font-sans tool-message">Click the 'me' button add friends and family to your social web.</p>
+  </section>

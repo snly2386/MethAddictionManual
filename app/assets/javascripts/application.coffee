@@ -99,13 +99,13 @@ class GettingOff.Application extends Backbone.Router
 
   create_chapters: ->
     @table_of_contents()
-    chapter_3 = new GettingOff.Chapter chapter: 3, total_pages: 5, page: 3
-    chapter_4 = new GettingOff.Chapter chapter: 4, total_pages: 2, page: 2
-    chapter_5 = new GettingOff.Chapter chapter: 5, total_pages: 5, page: 5
-    chapter_6 = new GettingOff.Chapter chapter: 6, total_pages: 9, page: 7
-    chapter_7 = new GettingOff.Chapter chapter: 7, total_pages: 3, page: 1
-    chapter_8 = new GettingOff.Chapter chapter: 8, total_pages: 6, page: 4
-    chapter_9 = new GettingOff.Chapter chapter: 9, total_pages: 3, page: 2
+    chapter_3 = new GettingOff.Chapter chapter: 3, total_pages: 5, page: 0
+    chapter_4 = new GettingOff.Chapter chapter: 4, total_pages: 5, page: 0
+    chapter_5 = new GettingOff.Chapter chapter: 5, total_pages: 5, page: 0
+    chapter_6 = new GettingOff.Chapter chapter: 6, total_pages: 9, page: 0
+    chapter_7 = new GettingOff.Chapter chapter: 7, total_pages: 5, page: 0
+    chapter_8 = new GettingOff.Chapter chapter: 8, total_pages: 6, page: 0
+    chapter_9 = new GettingOff.Chapter chapter: 9, total_pages: 3, page: 0
     table_of_contents = [chapter_3, chapter_4, chapter_5, chapter_6, chapter_7, chapter_8, chapter_9]
     for chapter in table_of_contents
       @table_contents.create(chapter)
