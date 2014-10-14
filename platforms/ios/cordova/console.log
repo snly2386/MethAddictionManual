@@ -3848,3 +3848,47 @@ You could find it at the following address https://developer.apple.com/icloud/do
 2014-10-14 11:42:12.777 GettingOff[82973:3290011] Playing audio sample '/sounds/bell_chime.mp3'
 2014-10-14 11:42:12.787 GettingOff[82973:3290011] THREAD WARNING: ['Media'] took '87.957031' ms. Plugin should use a background thread.
 2014-10-14 11:42:19.467 GettingOff[82973:3290011] Finished playing audio sample '/sounds/bell_chime.mp3'
+2014-10-14 11:51:16.649 GettingOff[84005:3297605] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Data/Application/0C5E928C-39EA-42B2-A241-7FC608841944/Library/Cookies/Cookies.binarycookies
+2014-10-14 11:51:16.701 GettingOff[84005:3297605] Multi-tasking -> Device: YES, App: YES
+2014-10-14 11:51:16.705 GettingOff[84005:3297605] Unlimited access to network resources
+2014-10-14 11:51:16.707 GettingOff[84005:3297605] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-10-14 11:51:16.792 GettingOff[84005:3297605] [CDVTimer][file] 2.435029ms
+2014-10-14 11:51:16.792 GettingOff[84005:3297605] [CDVTimer][TotalPluginStartup] 2.592027ms
+2014-10-14 11:51:16.832 GettingOff[84005:3297605] Resetting plugins due to page load.
+2014-10-14 11:51:16.958 GettingOff[84005:3297605] Finished load of: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Bundle/Application/243A5861-406E-4CB6-9CCA-D3322C68EADF/GettingOff.app/www/index.html
+2014-10-14 11:51:34.648 GettingOff[84005:3297605] -[WebActionDisablingCALayerDelegate setBeingRemoved:]: unrecognized selector sent to instance 0x7a65e770
+2014-10-14 11:51:34.648 GettingOff[84005:3297605] *** WebKit discarded an uncaught exception in the webView:willRemoveScrollingLayer:withContentsLayer:forNode: delegate: <NSInvalidArgumentException> -[WebActionDisablingCALayerDelegate setBeingRemoved:]: unrecognized selector sent to instance 0x7a65e770
+2014-10-14 11:52:33.939 GettingOff[84395:3299274] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Data/Application/3A058B55-2523-4F7C-BFD6-3526F8FFBF31/Library/Cookies/Cookies.binarycookies
+2014-10-14 11:52:33.987 GettingOff[84395:3299274] Multi-tasking -> Device: YES, App: YES
+2014-10-14 11:52:33.991 GettingOff[84395:3299274] Unlimited access to network resources
+2014-10-14 11:52:33.993 GettingOff[84395:3299274] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-10-14 11:52:34.067 GettingOff[84395:3299274] [CDVTimer][file] 2.147019ms
+2014-10-14 11:52:34.067 GettingOff[84395:3299274] [CDVTimer][TotalPluginStartup] 2.283990ms
+2014-10-14 11:52:34.111 GettingOff[84395:3299274] Resetting plugins due to page load.
+2014-10-14 11:52:34.234 GettingOff[84395:3299274] Finished load of: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Bundle/Application/37B0B335-A73C-47CF-AD28-67DC1B01FD4A/GettingOff.app/www/index.html
+2014-10-14 11:53:18.529 GettingOff[84727:3300353] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Data/Application/88B043B3-677B-4302-95E2-DFDB6B2493A1/Library/Cookies/Cookies.binarycookies
+2014-10-14 11:53:18.612 GettingOff[84727:3300353] Multi-tasking -> Device: YES, App: YES
+2014-10-14 11:53:18.616 GettingOff[84727:3300353] Unlimited access to network resources
+2014-10-14 11:53:18.617 GettingOff[84727:3300353] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-10-14 11:53:18.695 GettingOff[84727:3300353] [CDVTimer][file] 1.815021ms
+2014-10-14 11:53:18.695 GettingOff[84727:3300353] [CDVTimer][TotalPluginStartup] 1.949012ms
+2014-10-14 11:53:18.744 GettingOff[84727:3300353] Resetting plugins due to page load.
+2014-10-14 11:53:18.870 GettingOff[84727:3300353] Finished load of: file:///Users/chrispalmer/Library/Developer/CoreSimulator/Devices/14EB84C7-CBD5-4593-A47C-25D3E6418190/data/Containers/Bundle/Application/244C4EEC-FFD0-46F7-B896-2B29A9AD66FE/GettingOff.app/www/index.html
