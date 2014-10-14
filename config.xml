@@ -9,4 +9,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <plugin name="Media" value="org.apache.cordova.AudioHandler" />
+    <plugin name="Media" value="CDVSound" />
 </widget>

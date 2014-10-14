@@ -27,6 +27,7 @@ class GettingOff.Pinboard extends GettingOff.View
         @position()
         @populate_photos()
         @scroll_to_bottom()
+        @show_tooltip()
 
     @button.fetch
       success:(model, response, options) =>

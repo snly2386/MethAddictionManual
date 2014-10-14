@@ -64,6 +64,9 @@ class GettingOff.Ch3 extends GettingOff.View
   play_sound: ->
     bell_chime = new buzz.sound("/sounds/bell_chime.mp3")
     bell_chime.play()
+    # bell_chime = new Media('/sounds/bell_chime.mp3')
+    # bell_chime.play()
+   
 
   invalidate: ->
     @validation = false
