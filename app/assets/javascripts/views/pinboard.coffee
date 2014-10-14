@@ -20,6 +20,7 @@ class GettingOff.Pinboard extends GettingOff.View
 
   
     @page_animation()
+    @page_flip_sound()
 
     @photos.fetch
       success:(model, response, options) =>
@@ -57,6 +58,10 @@ class GettingOff.Pinboard extends GettingOff.View
     'click .tooltip'              : 'show_tooltip'
     'click .tool-overlay'         : 'close_tooltip' 
     'click .message-container'    : 'close_tooltip'
+
+  page_flip_sound: ->
+    page_flip = new buzz.sound("/sounds/page_flip.mp3")
+    page_flip.play()
 
   render_button: ->
     @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")
