@@ -27,7 +27,7 @@ class GettingOff.Ch9 extends GettingOff.View
 
     @render()
 
-    if @page is 5
+    if @page is 7
       @point_animation()
       @play_sound()
 
