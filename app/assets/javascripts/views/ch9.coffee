@@ -16,6 +16,7 @@ class GettingOff.Ch9 extends GettingOff.View
     @button = options.button
     @avatar = options.avatar
     @page_animation()
+    @fastclick()
 
     @page3_model.fetch
       success:(model, response, options) =>
@@ -57,6 +58,9 @@ class GettingOff.Ch9 extends GettingOff.View
     'click .pin'                               : 'pinboard'
     'click .previous'                          : 'previous'
     'click .end-overlay, .paragraph-container' : 'go_to_table_of_contents'
+
+  fastclick: ->
+    FastClick.attach(document.body)
 
   play_sound: ->
     bell_chime = new buzz.sound("/sounds/bell_chime.mp3")

@@ -12,8 +12,12 @@ class GettingOff.Index extends Backbone.View
     @app = options.app
 
     @page_animation()
+    @fastclick()
     @render()
     @position()
+
+  fastclick: ->
+    FastClick.attach(document.body)
 
   page_animation: ->
     $('body').css('display', 'none')

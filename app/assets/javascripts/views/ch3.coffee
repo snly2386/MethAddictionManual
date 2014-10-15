@@ -7,14 +7,18 @@ class GettingOff.Ch3 extends GettingOff.View
     @page = parseInt options.page
     super
 
-  template: -> JST["templates/ch3/#{@page}"]
+  template: (attributes) -> JST["templates/ch3/#{@page}"](attributes)
 
   initialize: (options) ->
     @app = options.app
     @table_of_contents = options.table_of_contents
     @button = options.button
+    @ch3_page6 = options.ch3_page6
+    @avatar = options.avatar
     @validated = false
+    @navbar_active = false
     @page_animation()
+    @fastclick()
 
     @table_of_contents.fetch
       success:(model, response, options) =>
@@ -36,6 +40,16 @@ class GettingOff.Ch3 extends GettingOff.View
       success:(model, response, options) =>
         @button.set model.attributes[0]
         @render_button()
+
+    @avatar.fetch
+      success: (model, response, options) =>
+        @avatar.set model.attributes[0]
+        @render_avatar()
+
+    @ch3_page6.fetch
+      success:(model, response, options) =>
+        @ch3_page6.set model.attributes[0]
+        @render_question()
 
     @position()
 
@@ -60,6 +74,42 @@ class GettingOff.Ch3 extends GettingOff.View
     'click .previous'                   : 'previous'
     'click .list.y'                     : 'validate'
     'click .list.n'                     : 'invalidate'
+    'click .save-model'                 : 'save_model'
+    'click .points'                     : 'open_navbar'
+
+  fastclick: ->
+    FastClick.attach(document.body)
+
+  scroll_to_avatar: ->
+    scrollElement = document.getElementById("mid-container")
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 2000)
+    @$('.avatar-container').fadeIn(2000)
+
+  render_avatar: ->
+    src = @avatar.get('image')
+    filename = src.split(".")[0]
+    updated_filename = filename + "_middle.png"
+    @$('.avatar-container img').attr('src', "#{updated_filename}")
+
+  open_navbar: ->
+    if @navbar_active is false 
+      @$('footer').css('z-index', '9999')
+      if $(window).width() < 768
+        @$('.middle-container').animate({'bottom':'120px'}, 1000)
+      else
+        @$('.middle-container').animate({'bottom': '200px'}, 1000)
+        
+      @$('footer').show 'slide',{direction: 'down'}, 1000
+      @navbar_active = true
+    else 
+      @$('footer').hide 'slide',{direction: 'down'}, 1000
+      @$('.middle-container').animate({'bottom': '0px'}, 1000)
+      @navbar_active = false
+
+  save_model: ->
+    answer = @$(".textarea textarea").val()
+    @ch3_page6.set('answer', answer)
 
   play_sound: ->
     bell_chime = new buzz.sound("/sounds/bell_chime.mp3")
@@ -67,6 +117,10 @@ class GettingOff.Ch3 extends GettingOff.View
     # bell_chime = new Media('/sounds/bell_chime.mp3')
     # bell_chime.play()
    
+  render_question: ->
+    answer = @ch3_page6.get('answer')
+    console.log answer
+    @$('.textarea textarea').val(answer)
 
   invalidate: ->
     @validation = false
@@ -86,34 +140,35 @@ class GettingOff.Ch3 extends GettingOff.View
     window.history.go(-1)
 
   page6_animation: ->
+    scroll_to_avatar = @scroll_to_avatar
     window.setTimeout (->
      $(".overlay").fadeIn(1000)
-     # $(".points-container").jrumble x: 10, y: 10, rotation: 4
-     # $(".points-container").trigger("startRumble")
      return
   ), 2000
 
     window.setTimeout (->
-     # $('.score').animate({'color':'red'}, 3000)
-     # $('.points').animate({'color':'red'}, 3000)
      $('.points-container').addClass('animated')
      $('.points-container').addClass('rollOut')
      return 
   ), 3000
 
     window.setTimeout (->
-     # $('.points-container').hide()
      $('.score').text('600')
      return 
   ), 4000
 
     window.setTimeout (->
-     # $('.points-container').show()
      $('.points-container').removeClass('rollOut')
      $('.points-container').addClass('bounceInDown')
      $('.overlay').fadeOut(3000)
      return 
   ), 5000
+
+
+    window.setTimeout (->
+     scroll_to_avatar()
+     return 
+  ), 6000
 
   user: ->
     @app.navigate 'new', trigger: true
@@ -159,13 +214,14 @@ class GettingOff.Ch3 extends GettingOff.View
    add_trigger_sex: -> 
     input = @display_trigger()
     if @sex_counter == 0 
-       @sex_hash["Never High-Risk"].push(input)
+       @sex_hash["Never Risk"].push(input)
      else if @sex_counter == 1 
-       @sex_hash["Some High-Risk"].push(input)
+       @sex_hash["Some Risk"].push(input)
      else
-       @sex_hash["Always High-Risk"].push(input)
+       @sex_hash["Always Risk"].push(input)
 
   display_trigger: ->
+    @$('#trig-display').html("")
     element = @$('.triggers-display')
     scrollElement = document.getElementById("trig-display")
     input = @$('.input-value').val()
@@ -175,12 +231,11 @@ class GettingOff.Ch3 extends GettingOff.View
     return input
 
   validation: ->
-    console.log 'fuck'
     if @$('.input-value').val() == "" 
       alert 'You must enter a value!'
-    else if @page == 2
-      @add_trigger_crystal()
     else if @page == 3
+      @add_trigger_crystal()
+    else if @page == 4
       @add_trigger_sex()
 
   next_frequency_crystal: ->
@@ -262,4 +317,4 @@ class GettingOff.Ch3 extends GettingOff.View
     @app.navigate 'ch4/1', trigger: true
 
   render: ->
-    @$el.html @template()
+    @$el.html @template @ch3_page6.toJSON()

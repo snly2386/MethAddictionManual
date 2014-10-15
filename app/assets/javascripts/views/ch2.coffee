@@ -29,7 +29,7 @@ class GettingOff.Ch2 extends GettingOff.View
     @render()
 
     @load_page()
-    if @page is 2
+    if @page is 3
       @get_calendar()
       @position()
       @set_date()
@@ -43,7 +43,7 @@ class GettingOff.Ch2 extends GettingOff.View
 
     @position()
 
-    if @page is 3
+    if @page is 4
       @scroll_to_bottom_contents()
 
     @render_table_of_contents()
@@ -120,11 +120,16 @@ class GettingOff.Ch2 extends GettingOff.View
   close_tooltip: ->
     @$('.tool-overlay').fadeOut(1000)
     @$(".message-container").fadeOut(1000)
+    @bring_pins_to_front()
 
   show_tooltip: ->
     @scroll_to_bottom()
+    @$('.middle-container').css('z-index', '0')
     @$('.tool-overlay').fadeIn(1000)
     @$('.message-container').fadeIn(1000)
+
+  bring_pins_to_front: ->
+    @$('.middle-container').animate({'z-index': '888'}, 1000)
 
   show_speech_bubble: ->
     @$(".speech-bubble").transition({width:'150px'},1000)

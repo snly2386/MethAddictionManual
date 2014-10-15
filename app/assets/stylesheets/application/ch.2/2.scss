@@ -1,261 +1,106 @@
 .ch2page_2{
-  .tooltip {
-    margin-top: 2px;
-    float: right;
-    img { height: 3em;}
-  }
   .header{
-    height:100px;
-    header{
-      margin-top: -20px;
-      max-width:70%;
-      color: white;
-      text-align: center;
-      h1{ 
-        width: 100%; 
-        font-size: 2em;
-      }
-      h2{ width:100%; font-size: 1.2em;}
-      .next{ margin-top : -20px;}
+    height: 240px;
+    header {
+      max-width: 200px;
+      img { width:100%; }
     }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -40px;
+      font-size: 2em; 
+      color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+    .progress-bar {
+        margin-top: 10px;
+        max-width:400px;
+        .progress {
+          float: left; 
+          max-width: 9%;
+          img { width:100% }
+        }
+        .progress.first{
+          margin-left:9%;
+        }
+      }
+    .border-top{
+      max-width:100%;
+      img { width:100%; }
+    } 
   }
-
   .middle-container{
+    position: absolute;
+    width: 100%;
+    top: 245px;
+    bottom: 130px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    position: absolute;
-    top: 110px;
-    bottom: 120px;
-    width: 100%;
-    .calendar{
-      margin-top: -1em;
+    .content{
       max-width:100%;
-      .row{
-        padding: 0px 5px;
-        max-width:400px;
+      // height: 20em;
+      overflow-y: auto;
+      .paragraph{
         color: white;
+        max-width:95%;
         text-align: center;
-        height:30px;
-        p{
-          float: left; width: 13%; 
+        h1 {font-size: 1.6em;}
+        p { max-width: 100%;}
+        .red-pin-text{
+          color: red;
         }
-        p:first-child{
-          margin-left:1.2em;
-        }
-      }
-      .date-row{
-        padding: 0px 5px;
-        max-width: 400px;
-        color: white;
-        text-align: center;
-        height:2.5em;
-        p{ float: left; width:13%;}
-        p:first-child{
-          margin-left: 1.2em;
-        }
-      }
-      .backup1{
-        display: none
-      }
-    }
-    .bottom-menu{
-      margin-top: 80px;
-      // height:200px;
-      // overflow-y: auto;
-      max-width:100%;
-      .top-container{
-        margin-top: 0.2em;
-        max-width:400px;
-        height:99px;
-        background-color: rgba(255, 255, 255, 0.33);
-        .day{
-          margin-left: 2em;
-          margin-top:0.3em;
-          height:7em;
-          color: white;
-          float: left;
-          p{font-size: 1.5em;}
-        }
-        .today{
-          padding-left: 10px;
-          height:7em;
-          width:7em;
-          margin-top: 1em;
-          text-align: center;
-          color: white;
-          margin-left: 5em;
-          float: left;
-          p{ font-size: 1.6em; height:1.5em; float: left; }
-        }
-        .pins{
-          height: 99px;
-          max-width:30px;
-          float: right;
-          background-color: rgba(255, 255, 255, 0.63);
-          .pin{
-            z-index: 9999;
-            max-width:100%;
-            background-color: rgba(255, 255, 255, 0.63); 
-            img { width:100%; height:29px;}   
-          }
+        .blue-pin-text{
+          color: blue;
         }
       }
     }
   }
-
   footer{
-    height: 140px;
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 140px;
     .border-bottom{
       margin-top: 20px;
-      max-width:100%;
-      img { width:100%; }
+      max-width: 100%;
+      img { width: 100%; }
     }
     .button{
       margin-top:2px;
     }
     .icons-container{
-      max-width:400px;
+      max-width:370px; 
       .icon-container{
         width:20%;
         float: left;
-        img { width:100%; }
+        img{width:100%;}
       }
       .icon-container.pinn{
-          img { margin-top:-11%; }
+        margin-top: -2%;
       }
     }
   }
-  .one{
-    
-  }
-  .blue-color{
-    border-top: 3px solid rgb(0, 153, 255) !important;
-    border-left: 3px solid rgb(0, 153, 255) !important;
-  }
-  .white-color{
-    border: 3px solid white !important;
-  }
-  .red-color{
-    border-bottom: 3px solid red !important;
-    border-right: 3px solid red !important;
-  }
-  .test{
-
-  }
-  .tool-overlay{
-    display: none;
-    width: 100%;
-    background-color: #626364;
-    position: absolute;
-    top: 0;
-    bottom:0;
-    z-index: 100;
-    opacity:0.7;
-  }
-  .selected{
-    background-color: rgba(0, 255, 62, 0.44);
-  }
-  .message-container{
-    text-align: center;
-    z-index: 9999;
-    display: none;
-    position: absolute;
-    width: 100%;
-    top: 200px;
-    bottom: 140px;
-    p{width: 80%; background-color: white; padding:5px; border-radius: 5px;} 
-  }
-  .red-text{
-    color: red;
-  }
-  .blue-text{
-    color: blue;
-  }
-  // @media screen and (min-width:420px) {
-  //   .speech-bubble {
-  //     left: 21%;
-  //   }
-  // }
-  //  @media screen and (min-width:500px) {
-  //   .speech-bubble {
-  //     left: 26%;
-  //   }
-  // }
-  //   @media screen and (min-width:600px) {
-  //   .speech-bubble {
-  //     left: 27%;
-  //   }
-  //   .tool-overlay{
-  //     height: 66em;
-  //   }
-  // }
-  //  @media screen and (min-width:700px) {
-  //   .speech-bubble {
-  //     left: 33%;
-  //   }
-  //   .tool-overlay{
-  //     height: 67em;
-  //   }
-  // }
-  //  @media screen and (min-width:850px) {
-  //   .speech-bubble {
-  //     left: 35%;
-  //   }
-  // }
-  //  @media screen and (min-width:1000px) {
-  //   .speech-bubble {
-  //     left: 38%;
-  //   }
-  //    .tool-overlay{
-  //     height: 69em;
-  //   }
-  // }
-  //  @media screen and (min-width:1200px) {
-  //   .speech-bubble {
-  //     left: 40%;
-  //   }
-  // }
-  //  @media screen and (min-width:1350px) {
-  //   .speech-bubble {
-  //     left: 41%;
-  //   }
-  // }
   @media screen and (min-width:768px) {
-    .header{
-    height:250px !important;
-    header{
-      margin-top: 2em !important;
-      h1{ 
-        font-size: 4em !important;
-      }
-      h2{ width:100%; font-size: 2.4em !important;}
-      .next{ margin-top : -20px;}
-      }
+    .paragraph h1{
+      font-size: 2.5em !important;
+    }
+    .paragraph p{
+      font-size: 1.6em !important;
+    }
+    .content{
+      height: 52em !important;
+    }
+    .border-bottom{
+      margin-top:50px !important;
     }
     .middle-container{
-      top: 250px !important;
       bottom: 160px !important;
     }
-    .calendar{
-      margin-top: 1em !important;
-    }
-    .bottom-menu{
-      // height: 300px !important;
-    }
     footer{
-      height: 215px !important;
-      .border-bottom{
-        margin-top: 50px !important;
-      }
+      height: 210px !important;
       .button{
-        margin-top: 10px !important;
+        margin-top: 10px;
       }
-    }
-    .message-container p{
-      font-size: 1.5em;
     }
   }
 }

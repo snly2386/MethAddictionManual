@@ -1,0 +1,112 @@
+.ch2page_4{
+  .header{
+    height: 180px;
+     header {
+      max-width: 200px;
+      img { width:100%; }
+    }
+    .session {
+      font-family:'Open Sans', sans-serif;
+      margin-top: -2em;
+      font-size: 2em; color: rgb(39, 248, 11);
+      div { text-align: center}
+    }
+  }
+  .border-top{
+    max-width:100%;
+    img { width:100%; }
+  }
+  .middle-container{
+    position: absolute;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    top: 180px;
+    bottom: 120px;
+    width: 100%;
+    .content{
+      max-width:100%;
+      height:40%;
+      // overflow-y: auto;
+      .paragraph { 
+        cursor: pointer;
+        height:3.45em;
+        padding: 0px 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        max-width: 100%;
+        color: white;
+        line-height: 3em;
+        p { 
+          font-size: 1.2em; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          // margin-top: 5px;
+          letter-spacing: 1px;
+          img{
+            height: 2em;
+            margin-top:0.5em;
+            float: right;
+          }
+        }
+        .progress{
+          text-align: center;
+          line-height:1.3em;
+          margin-top: -2em;
+          height: 1.2em;
+          width: 90%;
+          background-color: rgb(102, 211, 97);
+        }
+      }
+      .first{
+        // margin-top: -5px;
+      }
+    }
+  }
+  .session-complete{
+    text-decoration: line-through;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    height: 140px;
+    width: 100%;
+    .border-bottom{
+      max-width:100%;
+      margin-top: 20px;
+      img { width:100%; }
+    }
+    .finish-chapter{
+      margin-top:2px;
+    }
+    .icons-container{
+      max-width:600px;
+      .icon-container{
+        width:20%;
+        float: left;
+        img { width:100%; }
+      }
+      .icon-container.pinn{
+          img { margin-top:-11%; }
+      }
+    }
+  }
+  @media screen and (min-width:768px) {
+    .content{
+      height: 52em !important;
+    }
+    .paragraph{
+      height: 6.5em !important;
+      p{ font-size: 2.5em !important;}
+      img{ height: 2em !important; margin-top: 0.3em !important;}
+    }
+    .middle-container{
+      top: 190px !important;
+      bottom: 180px !important;
+    }
+    footer{
+      height: 220px !important;
+      .finish-chapter{
+        margin-top: 10px !important;
+      }
+    }
+  }
+}

@@ -20,6 +20,7 @@ class GettingOff.Pinboard extends GettingOff.View
 
   
     @page_animation()
+    @fastclick()
     @page_flip_sound()
 
     @photos.fetch
@@ -59,6 +60,9 @@ class GettingOff.Pinboard extends GettingOff.View
     'click .tool-overlay'         : 'close_tooltip' 
     'click .message-container'    : 'close_tooltip'
 
+  fastclick: ->
+    FastClick.attach(document.body)
+
   page_flip_sound: ->
     page_flip = new buzz.sound("/sounds/page_flip.mp3")
     page_flip.play()
@@ -75,8 +79,10 @@ class GettingOff.Pinboard extends GettingOff.View
   close_tooltip: ->
     @$('.message-container').fadeOut(1000)
     @$('.tool-overlay').fadeOut(2000)
+    @$('.menu-options').css("z-index", '9999')
 
   show_tooltip: ->
+    $('.menu-options').css("z-index", "0")
     @$('.tool-overlay').fadeIn(2000)
     # @scroll_to_bottom()
     @$('.message-container').fadeIn(1000)
@@ -85,6 +91,7 @@ class GettingOff.Pinboard extends GettingOff.View
     @$('.canvas-container').hide('slide',{direction: 'left'}, 1000)
     @$('.paint-tools').fadeOut(1000)
     @$('.work-container').fadeOut(1000)
+    @bring_menu_to_front()
 
   show_canvas: ->
     @$('.canvas-container').show('slide',{direction: 'left'}, 1000)
@@ -93,7 +100,11 @@ class GettingOff.Pinboard extends GettingOff.View
     if @cordova is true
       @$('.canvas').attr('height', '630')
 
+  bring_menu_to_front: ->
+    @$('.menu-options').animate({'z-index':'9999'}, 1000)
+
   paint_tools: ->
+    @$('.menu-options').css('z-index', '0')
     @$(".paint-tools").fadeIn(1000)
     @$('.work-container').fadeIn(1000)
     @show_canvas()

@@ -15,8 +15,10 @@ class GettingOff.Ch4 extends GettingOff.View
    
     @table_of_contents = options.table_of_contents
     @button = options.button
+    @avatar = options.avatar
 
     @page_animation()
+    @fastclick()
 
     @table_of_contents.fetch
       success:(model, response, options) =>
@@ -26,6 +28,13 @@ class GettingOff.Ch4 extends GettingOff.View
       success: (model, response, options) =>
         @model.set model.attributes[0]
         @render()
+        @render_answers()
+        @position()
+
+    @avatar.fetch
+      success: (model, response, options) =>
+        @avatar.set model.attributes[0]
+        @render_avatar()
 
     if @page is 7
       @point_animation()
@@ -36,7 +45,6 @@ class GettingOff.Ch4 extends GettingOff.View
         @button.set model.attributes[0]
         @render_button()
 
-    @position()
 
   events: 
     'click .button'                      : 'navigate'
@@ -50,40 +58,57 @@ class GettingOff.Ch4 extends GettingOff.View
     'click .user'                        : 'user'
     'click .pin'                         : 'pinboard'
     'click .previous'                    : 'previous'
+    'click .page4-model'                 : 'page4_model'
+
+  fastclick: ->
+    FastClick.attach(document.body)
+
+  scroll_to_avatar: ->
+    scrollElement = document.getElementById("mid-container")
+    target = $('#mid-container')
+    $('#mid-container').animate({scrollTop: scrollElement.scrollHeight}, 2000)
+    @$('.avatar-container').fadeIn(2000)
+
+  render_avatar: ->
+    src = @avatar.get('image')
+    filename = src.split(".")[0]
+    updated_filename = filename + "_middle.png"
+    @$('.avatar-container img').attr('src', "#{updated_filename}")
 
   play_sound: ->
     bell_chime = new buzz.sound("/sounds/bell_chime.mp3")
     bell_chime.play()
 
   point_animation: ->
+    scroll_to_avatar = @scroll_to_avatar
     window.setTimeout (->
      $(".overlay").fadeIn(1000)
-     # $(".points-container").jrumble x: 10, y: 10, rotation: 4
-     # $(".points-container").trigger("startRumble")
      return
   ), 2000
 
     window.setTimeout (->
-     # $('.score').animate({'color':'red'}, 3000)
-     # $('.points').animate({'color':'red'}, 3000)
      $('.points-container').addClass('animated')
      $('.points-container').addClass('rollOut')
      return 
   ), 3000
 
     window.setTimeout (->
-     # $('.points-container').hide()
      $('.score').text('800')
      return 
   ), 4000
 
     window.setTimeout (->
-     # $('.points-container').show()
      $('.points-container').removeClass('rollOut')
      $('.points-container').addClass('bounceInDown')
      $('.overlay').fadeOut(3000)
      return 
   ), 5000
+
+
+    window.setTimeout (->
+     scroll_to_avatar()
+     return 
+  ), 6000
 
   previous: ->
     window.history.go(-1)
@@ -130,22 +155,28 @@ class GettingOff.Ch4 extends GettingOff.View
   save_answers: ->
     counter = 1
     @$('.textarea').each( =>
-      console.log "answer_#{counter}"
-      console.log $("." + counter).val()
-      @model.set("answer_#{counter}", $("." + counter).val()) 
-      counter++ 
-    )
+      @model.set("answer_#{counter}", @$(".#{counter}").val())
+      counter++
+      )
     @model.save()
-    @answers = true
-    console.log 'worked'
 
+  render_answers: ->
+    counter = 1
+    _this = @
+    @$('.textarea').each( ->
+      model = _this.model.get("answer_#{counter}")
+      $(@).find('textarea').val(model)
+      counter++
+      )
+
+  page4_model: ->
+    @save_answers()
 
   navigate: ->
     next_page = @page += 1
     @app.navigate "ch4/#{next_page}", trigger: true
 
   ch5: ->
-     @save_answers()
      @app.navigate "ch5/1", trigger: true
 
   render: ->

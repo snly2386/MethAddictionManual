@@ -8,6 +8,7 @@ class GettingOff.New_Theme extends Backbone.View
     @app = options.app
     @button = options.button
     @page_animation()
+    @fastclick()
 
     @button.fetch
       success:(model, response, options) =>
@@ -26,6 +27,9 @@ class GettingOff.New_Theme extends Backbone.View
     'mousedown .button' : 'mousedown_effect'
     'mouseup .button'   : 'mouseup_effect'
 
+  fastclick: ->
+    FastClick.attach(document.body)
+
   page_animation: ->
     $('body').css('display', 'none')
     $('body').fadeIn(2000)
@@ -39,7 +43,6 @@ class GettingOff.New_Theme extends Backbone.View
   render_button: ->
     @$('.button').css('background-color',"#{@button.get('color')}")
     $('body').css("background-image", "#{@button.get('background')}")   
-    console.log @button.get('color')
 
   focus_handler: ->
     @$('.name-border').addClass 'name-border-toggle'

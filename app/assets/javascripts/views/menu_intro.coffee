@@ -9,6 +9,7 @@ class GettingOff.Menu_Intro extends GettingOff.View
     @button = options.button
 
     @page_animation()
+    @fastclick()
 
     @render()
 
@@ -28,6 +29,9 @@ class GettingOff.Menu_Intro extends GettingOff.View
     'click .user'                       : 'user'
     'click .pinn'                       : 'pinboard'
     'click .previous'                   : 'previous'
+
+  fastclick: ->
+    FastClick.attach(document.body)
 
   render_button: ->
     @$('.button, .finish-chapter, .save-answers').css('background-color',"#{@button.get('color')}")

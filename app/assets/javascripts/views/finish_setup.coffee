@@ -10,6 +10,7 @@ class GettingOff.Finish_Setup extends Backbone.View
     @avatar = options.avatar
     @button = options.button
     @page_animation()
+    @fastclick()
 
 
     @avatar.fetch
@@ -34,6 +35,9 @@ class GettingOff.Finish_Setup extends Backbone.View
     'click .pin'        : 'pinboard'
     'click .button'     : 'navigate'
     'click .previous'   : 'previous'
+
+  fastclick: ->
+    FastClick.attach(document.body)
 
   render_button: ->
     @$('.button').css('background-color',"#{@button.get('color')}")
@@ -63,7 +67,7 @@ class GettingOff.Finish_Setup extends Backbone.View
     
   navigate:  ->
     console.log 'working'
-    @app.navigate 'ch1/1', trigger: true
+    @app.navigate 'ch1_cover', trigger: true
 
   render: ->
     name = @model.get('name')
@@ -77,28 +81,5 @@ class GettingOff.Finish_Setup extends Backbone.View
 
 
 
-
-  create_overlay: (e) ->
-    # target = $(e.currentTarget)
-    # data = target.data('id')
-    # @$('#' + data).css('visibility', 'visible').slideDown()
-    # console.log(target)
-    # @$('.finish-setup-icon-container').removeClass 'inactive_reverse active_reverse'
-    # @$('.finish-overlay-container').removeClass 'active active_reverse'
-    # target.siblings().addClass 'inactive'
-    # target.addClass 'active'
-    # data = target.data 'id'
-    # @$('#' + data).addClass 'active'
-    # $('body').addClass 'noscroll'
-
-  close_overlay: (e) ->
-    # target = $(e.currentTarget)
-    # @$('.active, .finish-setup-icons-container').removeClass 'active'.addClass 'active_reverse'
-    # # @$('.inactive, .finish-setup-icons-container').addClass'inactive_reverse'
-    # target.parent().addClass('active_reverse')
-    # @$('.inactive_reverse').bind AnimEnd ->
-    #   $('body').removeClass 'noscroll'
-    #   $('.finish-setup-icon-container').removeClass 'inactive'
-    #   $('.inactive_reverse').unbind AnimEnd
 
 

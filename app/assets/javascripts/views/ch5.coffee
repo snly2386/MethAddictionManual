@@ -16,6 +16,7 @@ class GettingOff.Ch5 extends GettingOff.View
     @avatar = options.avatar
 
     @page_animation()
+    @fastclick()
 
     @table_of_contents = options.table_of_contents
 
@@ -73,6 +74,9 @@ class GettingOff.Ch5 extends GettingOff.View
     'click .tooltip'                                   : 'open_tooltip'
     'click .message-container, .overlay'               : 'close_tooltip'
     'click .pin-icon'                                  : 'pinboard'
+
+  fastclick: ->
+    FastClick.attach(document.body)
 
   play_sound: ->
     bell_chime = new buzz.sound("/sounds/bell_chime.mp3")

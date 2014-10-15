@@ -19,8 +19,9 @@ class GettingOff.Application extends Backbone.Router
     'new_theme'    : 'new_theme'
     'menu'         : 'menu_intro'
     'pinboard'     : 'pinboard'
-    'finish_setup' : 'finish_setup'
     'avatar'       : 'avatar'
+    'finish_setup' : 'finish_setup'
+    'ch1_cover'    : 'ch1_cover'
     'ch1/:page'    : 'ch1'
     'ch2/:page'    : 'ch2'
     'ch3/:page'    : 'ch3'
@@ -92,7 +93,7 @@ class GettingOff.Application extends Backbone.Router
     # please fix me in the future
 
   answers_create: ->
-    @relapse_questions ||= new GettingOff.Relapse_Questions "answer_1": "", "answer_2":"","answer_3":"","answer_4":"","answer_5":"","answer_6":""
+    @relapse_questions ||= new GettingOff.Relapse_Questions 
 
   table_of_contents: ->
     @table_contents ||= new GettingOff.Table_Contents()
@@ -110,6 +111,8 @@ class GettingOff.Application extends Backbone.Router
     for chapter in table_of_contents
       @table_contents.create(chapter)
 
+  ch3_model: ->
+    @ch3_page6 ||= new GettingOff.Ch3_Page6 "answer" : " "
 
   ch5_questions_save: ->
     @ch5_questions ||= new GettingOff.Ch5_Questions "answer_1": "", "answer_2": "", "answer_3": "", "answer_4": "", "answer_5": ""
@@ -129,6 +132,10 @@ class GettingOff.Application extends Backbone.Router
   ch9_page3: ->
     @ch9_p3 ||= new GettingOff.Ch9_Page3 "question_1" : "", "question_2": "", "question_3": ""
 
+  ch1_cover: ->
+    @render_button()
+    view = new GettingOff.Ch1_Cover app: @, button: @button
+
   ch1: (page) ->
     @set_cordova()
     @render_button()
@@ -142,15 +149,18 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents, button: @button, calendar_collection: @calendar_collection, cordova : @cordova
 
   ch3: (page) ->
+    @create_avatar()
+    @ch3_model()
     @render_button()
     @table_of_contents()
-    view = new GettingOff.Ch3 app: @, page: page, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch3 app: @, page: page, table_of_contents: @table_contents, button: @button, ch3_page6: @ch3_page6, avatar: @avatar_model 
 
   ch4: (page) ->
+    @create_avatar()
     @render_button()
     @table_of_contents()
     @answers_create()
-    view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
   ch5: (page) ->
     @create_avatar()
@@ -161,22 +171,25 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.Ch5 app: @, page: page, model: @ch5_questions, names: @names, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
   ch6: (page) ->
+    @create_avatar()
     @render_button()
     @table_of_contents()
     @ch6_page2()
     @ch6_page9()
-    view = new GettingOff.Ch6 app: @, page: page, page2_model: @ch6_p2, page9_model: @ch6_p9, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch6 app: @, page: page, page2_model: @ch6_p2, page9_model: @ch6_p9, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
   ch7: (page) ->
+    @create_avatar()
     @render_button()
     @table_of_contents()
-    view = new GettingOff.Ch7 app: @, page: page, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch7 app: @, page: page, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
   ch8: (page) ->
+    @create_avatar()
     @render_button()
     @table_of_contents()
     @ch8_page6()
-    view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6, table_of_contents: @table_contents, button: @button
+    view = new GettingOff.Ch8 app: @, page: page, page6_model: @ch8_p6, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
   ch9: (page) ->
     @create_avatar()

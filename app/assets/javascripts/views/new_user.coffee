@@ -11,6 +11,7 @@ class GettingOff.New_User extends Backbone.View
     @app = options.app
     @id = options.id
     @page_animation()
+    @fastclick()
     
     @render()
     @position()
@@ -18,8 +19,11 @@ class GettingOff.New_User extends Backbone.View
     @template @id
 
   events:
-    'click .accept.y' : 'accept_terms',
+    'click .accept.y' : 'accept_terms'
     'click .accept.n' : 'decline_terms'
+
+  fastclick: ->
+    FastClick.attach(document.body)
 
   page_animation: ->
     $('body').css('display', 'none')
