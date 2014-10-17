@@ -49,7 +49,7 @@ class GettingOff.Ch9 extends GettingOff.View
     'click .rating p'                          : 'select_rating'
     'focus .textarea textarea'                 : 'focus_handler'
     'focusout .textarea textarea'              : 'focusout_handler'
-    'click .finish-chapter'                    : 'page3_save'
+    'click .ch9-model'                         : 'page3_save'
     'mousedown .button, .finish-chapter'       : 'mousedown_effect'
     'mouseup .button, .finish-chapter'         : 'mouseup_effect'
     'click .calendar'                          : 'calendar'
@@ -160,7 +160,7 @@ class GettingOff.Ch9 extends GettingOff.View
         counter++
       )
     @page3_model.save()
-    console.log 'worked'
+    @navigate()
 
   focus_handler: (e) ->
     target = @$(e.currentTarget)

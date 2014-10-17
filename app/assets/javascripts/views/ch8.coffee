@@ -48,7 +48,7 @@ class GettingOff.Ch8 extends GettingOff.View
   events: 
     'click .button'                      : 'navigate'
     'click .list p'                      : 'add_check'
-    'click .finish-chapter'              : 'page6_save'
+    'click .finish-chapter'              : 'ch9'
     'mousedown .button, .finish-chapter' : 'mousedown_effect'
     'mouseup .button, .finish-chapter'   : 'mouseup_effect'
     'click .calendar'                    : 'calendar'
@@ -56,6 +56,7 @@ class GettingOff.Ch8 extends GettingOff.View
     'click .user'                        : 'user'
     'click .pin'                         : 'pinboard'
     'click .previous'                    : 'previous'
+    'click .ch8-model'                    : 'page6_save'
 
   fastclick: ->
     FastClick.attach(document.body)
@@ -160,7 +161,7 @@ class GettingOff.Ch8 extends GettingOff.View
         counter++
       )
     @page6_model.save()
-    @ch9()
+    @navigate()
 
   ch9:->
     @app.navigate "ch9/1", trigger: true
