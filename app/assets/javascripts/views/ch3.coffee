@@ -15,8 +15,15 @@ class GettingOff.Ch3 extends GettingOff.View
     @button = options.button
     @ch3_page6 = options.ch3_page6
     @avatar = options.avatar
+    @always_sex = options.always_sex
+    @sometimes_sex = options.sometimes_sex
+    @never_sex = options.never_sex
+    @always_crystal = options.always_crystal
+    @sometimes_crystal = options.sometimes_crystal
+    @never_crystal = options.never_crystal
     @validated = false
     @navbar_active = false
+    @current_select = ""
     @page_animation()
     @fastclick()
 
@@ -51,16 +58,36 @@ class GettingOff.Ch3 extends GettingOff.View
         @ch3_page6.set model.attributes[0]
         @render_question()
 
+    @always_sex.fetch
+      success:(model, response, options) =>
+
+
+    @sometimes_sex.fetch
+      success:(model, response, options) =>
+
+
+    @never_sex.fetch
+      success:(model, response, options) =>
+
+
+    @always_crystal.fetch
+      success:(model, response, options) =>
+
+
+    @sometimes_crystal.fetch
+      success:(model, response, options) =>
+
+
+    @never_crystal.fetch
+      success:(model, response, options) =>
+        
+
     @position()
 
   events:
     'click .button'                     : 'navigate'
     'click .finish-chapter'             : 'ch4'
-    'click .submit'                     : 'validation'
-    'click .arrow.right.crystal'        : 'next_frequency_crystal'
-    'click .arrow.left.crystal'         : 'prev_frequency_crystal'
-    'click .arrow.right.sex'            : 'next_frequency_sex'
-    'click .arrow.left.sex'             : 'prev_frequency_sex'
+    'click .submit'                     : 'update_collection'
     'click .list'                       : 'list_handler'
     'focus .input-value'                : 'focus_handler'
     'focusout .input-value'             : 'focusout_handler'
@@ -76,6 +103,59 @@ class GettingOff.Ch3 extends GettingOff.View
     'click .list.n'                     : 'invalidate'
     'click .save-model'                 : 'save_model'
     'click .points'                     : 'open_navbar'
+    'click .add-button'                 : 'open_input'
+    'click .close'                      : 'close_input'
+
+  determine_collection: ->
+    collection = ""
+    collection = switch @current_select
+      when "always_sex"       then  @always_sex
+      when "sometimes_sex"    then  @sometimes_sex
+      when "never_sex"        then  @never_sex
+      when "always_crystal"   then  @always_crystal
+      when "sometimes_crystal"then  @sometimes_crystal
+      when "never_crystal"    then  @never_crystal
+
+    collection
+
+  update_collection:  ->
+    input = @$('.input-value').val()
+    collection = @determine_collection()
+    model = new GettingOff.Ch3_Page3_4 "scenario" : input
+    collection.create(model)
+    @update_text_display(input)
+
+  update_text_display: (input) ->
+    @$('.text-display').append "<p>#{input}</p>"
+    scrollElement = document.getElementById("trig-display")
+    scrollElement.scrollTop = scrollElement.scrollHeight
+    @$('.input-value').val(" ")
+
+  render_scenarios: ->
+    collection = @determine_collection()
+    @$('.text-display').empty()
+    collection.each( (model) ->
+      @$('.text-display').append "<p>#{model.get('scenario')}</p>"
+      )
+
+  close_input: ->
+    @$('.general-overlay').fadeOut(1000)
+    @$('.input-container').hide 'slide', {direction: 'down'}, 1000
+    @$('.category-overlay').hide 'slide', {direction: 'up'}, 1000
+
+  open_input: (e) ->
+    @$('.general-overlay').fadeIn(1000)
+    frequency = $(e.currentTarget).data('frequency')
+    instruction = $(e.currentTarget).data('subtitle')
+    @$('.instruction-subtitle').text(instruction)
+    @current_select = frequency
+    @render_scenarios()
+    @$('.input-container').show 'slide', {direction: 'down'}, 1000
+    @$('.category-overlay').show 'slide', {direction: 'up'}, 1000
+    @start_scroll_effect()
+
+  start_scroll_effect: ->
+    stroll.bind('.text-display ul')
 
   fastclick: ->
     FastClick.attach(document.body)
@@ -119,7 +199,6 @@ class GettingOff.Ch3 extends GettingOff.View
    
   render_question: ->
     answer = @ch3_page6.get('answer')
-    console.log answer
     @$('.textarea textarea').val(answer)
 
   invalidate: ->
@@ -221,7 +300,6 @@ class GettingOff.Ch3 extends GettingOff.View
        @sex_hash["Always Risk"].push(input)
 
   display_trigger: ->
-    @$('#trig-display').html("")
     element = @$('.triggers-display')
     scrollElement = document.getElementById("trig-display")
     input = @$('.input-value').val()
@@ -230,49 +308,13 @@ class GettingOff.Ch3 extends GettingOff.View
     scrollElement.scrollTop = scrollElement.scrollHeight
     return input
 
-  validation: ->
-    if @$('.input-value').val() == "" 
-      alert 'You must enter a value!'
-    else if @page == 3
-      @add_trigger_crystal()
-    else if @page == 4
-      @add_trigger_sex()
-
-  next_frequency_crystal: ->
-    @empty_triggers()
-    if @crystal_counter >= 2
-      @crystal_counter = 0
-      @append()
-    else 
-      @crystal_counter++
-      @append()
-
-  prev_frequency_crystal: ->
-    @empty_triggers()
-    if @crystal_counter <= 0
-      @crystal_counter = 2
-      @append()
-    else
-      @crystal_counter--
-      @append()
-  
-  next_frequency_sex: ->
-    @empty_triggers()
-    if @sex_counter >= 2
-      @sex_counter = 0
-      @append_sex()
-    else 
-      @sex_counter++
-      @append_sex() 
-
-  prev_frequency_sex: ->
-    @empty_triggers()
-    if @sex_counter <= 0
-      @sex_counter = 2
-      @append_sex()
-    else
-      @sex_counter--
-      @append_sex()
+  # validation: ->
+  #   if @$('.input-value').val() == "" 
+  #     alert 'You must enter a value!'
+  #   else if @page == 3
+  #     @add_trigger_crystal()
+  #   else if @page == 4
+  #     @add_trigger_sex()
   
   append: ->
     @$('.frequency-text').find('p').html("#{@crystal_array[@crystal_counter]}")

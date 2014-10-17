@@ -111,6 +111,24 @@ class GettingOff.Application extends Backbone.Router
     for chapter in table_of_contents
       @table_contents.create(chapter)
 
+  always_crystal: ->
+    @always_crystal_scenario ||= new GettingOff.AlwaysCrystalScenario()
+
+  sometimes_crystal: ->
+    @sometimes_crystal_scenario ||= new GettingOff.SometimesCrystalScenario()
+
+  never_crystal: ->
+    @never_crystal_scenario ||= new GettingOff.NeverCrystalScenario()
+
+  never_sex: ->
+    @never_sex_scenario ||= new GettingOff.NeverSexScenario()
+
+  sometimes_sex: ->
+    @sometimes_sex_scenario ||= new GettingOff.SometimesSexScenario()
+
+  always_sex: ->
+    @always_sex_scenario ||= new GettingOff.AlwaysSexScenario()
+
   ch3_model: ->
     @ch3_page6 ||= new GettingOff.Ch3_Page6 "answer" : " "
 
@@ -149,11 +167,17 @@ class GettingOff.Application extends Backbone.Router
     view = new GettingOff.Ch2 app: @, page: page, table_of_contents: @table_contents, button: @button, calendar_collection: @calendar_collection, cordova : @cordova
 
   ch3: (page) ->
+    @always_sex()
+    @sometimes_sex()
+    @never_sex()
+    @always_crystal()
+    @sometimes_crystal()
+    @never_crystal()
     @create_avatar()
     @ch3_model()
     @render_button()
     @table_of_contents()
-    view = new GettingOff.Ch3 app: @, page: page, table_of_contents: @table_contents, button: @button, ch3_page6: @ch3_page6, avatar: @avatar_model 
+    view = new GettingOff.Ch3 app: @, page: page, table_of_contents: @table_contents, button: @button, ch3_page6: @ch3_page6, avatar: @avatar_model, always_crystal: @always_crystal_scenario, sometimes_crystal: @sometimes_crystal_scenario, never_crystal: @never_crystal_scenario, always_sex: @always_sex_scenario, sometimes_sex: @sometimes_sex_scenario, never_sex: @never_sex_scenario
 
   ch4: (page) ->
     @create_avatar()
