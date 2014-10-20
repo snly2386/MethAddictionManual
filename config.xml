@@ -11,4 +11,7 @@
     <access origin="*" />
     <plugin name="Media" value="org.apache.cordova.AudioHandler" />
     <plugin name="Media" value="CDVSound" />
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
 </widget>

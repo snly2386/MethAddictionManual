@@ -29,6 +29,10 @@
     <feature name="Media">
         <param name="ios-package" value="CDVSound" />
     </feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <preference name="CameraUsesGeolocation" value="false" />
     <name>GettingOff</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

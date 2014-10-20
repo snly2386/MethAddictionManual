@@ -79,7 +79,7 @@ class GettingOff.Pinboard extends GettingOff.View
   close_tooltip: ->
     @$('.message-container').fadeOut(1000)
     @$('.tool-overlay').fadeOut(2000)
-    @$('.menu-options').css("z-index", '9999')
+    @$('.menu-options').css("z-index", '8888')
 
   show_tooltip: ->
     @$('.menu-options').css("z-index", "0")
@@ -156,11 +156,9 @@ class GettingOff.Pinboard extends GettingOff.View
       $('.photos-container').append("<div class='photo-container' style='transform:rotate(#{random}deg)'><img src='#{e.target.result}' class='pinboard-photos' style='left: #{@counter}%'/></div>").hide().fadeIn(2000)      
       $('.pinboard-photos').css('border', '5 px solid rgba(255, 255, 255, 0.38)')
       @save_photo(e.target.result)
-      console.log '4'
 
     reader.readAsDataURL(e.target.files[0])
     @counter += 5
-    console.log '5'
 
   save_photo: (url) ->
 
@@ -191,7 +189,7 @@ class GettingOff.Pinboard extends GettingOff.View
     @$(e.currentTarget).css("z-index", "5")
 
   select_photo: ->
-    @$('.photo').click()
+    # @$('.photo').click()
 
   navigate: ->
     @app.navigate 'avatar', trigger: true
