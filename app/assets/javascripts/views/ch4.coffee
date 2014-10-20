@@ -16,6 +16,7 @@ class GettingOff.Ch4 extends GettingOff.View
     @table_of_contents = options.table_of_contents
     @button = options.button
     @avatar = options.avatar
+    @ch4_model = options.ch4_model
 
     @page_animation()
     @fastclick()
@@ -24,12 +25,12 @@ class GettingOff.Ch4 extends GettingOff.View
       success:(model, response, options) =>
         @update_table_of_contents()
 
-    @model.fetch
+    @ch4_model.fetch
       success: (model, response, options) =>
-        @model.set model.attributes[0]
+        @ch4_model.set model.attributes[0]
         @render()
-        @render_answers()
         @position()
+        
 
     @avatar.fetch
       success: (model, response, options) =>
@@ -117,13 +118,13 @@ class GettingOff.Ch4 extends GettingOff.View
     @app.navigate 'finish_setup', trigger: true
 
   go_to_table_of_contents: ->
-    @app.navigate 'ch2/3', trigger: true
+    @app.navigate 'ch2/4', trigger: true
 
   pinboard: ->
     @app.navigate 'pinboard', trigger: true
 
   calendar: ->
-    @app.navigate 'ch2/2', trigger: true
+    @app.navigate 'ch2/3', trigger: true
 
 
   page_animation: ->
@@ -154,20 +155,23 @@ class GettingOff.Ch4 extends GettingOff.View
 
   save_answers: ->
     counter = 1
-    @$('.textarea').each( =>
-      @model.set("answer_#{counter}", @$(".#{counter}").val())
-      counter++
-      )
-    @model.save()
-
-  render_answers: ->
-    counter = 1
     _this = @
-    @$('.textarea').each( ->
-      model = _this.model.get("answer_#{counter}")
-      $(@).find('textarea').val(model)
+    @$('.textarea').each( =>
+      @ch4_model.set("answer_#{counter}", @$(".#{counter}").val())
       counter++
       )
+    @ch4_model.save()
+    @navigate()
+      
+
+  # render_answers: ->
+  #   counter = 1
+  #   _this = @
+  #   @$('.textarea').each( ->
+  #     model = _this.model.get("answer_#{counter}")
+  #     $(@).find('textarea').val(model)
+  #     counter++
+  #     )
 
   page4_model: ->
     @save_answers()
@@ -180,4 +184,4 @@ class GettingOff.Ch4 extends GettingOff.View
      @app.navigate "ch5/1", trigger: true
 
   render: ->
-    @$el.html @template @model.toJSON()
+    @$el.html @template @ch4_model.toJSON()

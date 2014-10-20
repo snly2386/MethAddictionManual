@@ -28,13 +28,15 @@ class GettingOff.Finish_Setup extends Backbone.View
 
 
   events: 
-    'click #icon-exit'  : 'navigate'
-    'click .calendar'   : 'calendar'
-    'click .table'      : 'go_to_table_of_contents'
-    'click .user'       : 'user'
-    'click .pin'        : 'pinboard'
+    'click .calendar'   : 'icons_disabled'
+    'click .table'      : 'icons_disabled'
+    'click .user'       : 'icons_disabled'
+    'click .pin'        : 'icons_disabled'
     'click .button'     : 'navigate'
     'click .previous'   : 'previous'
+
+  icons_disabled: ->
+    alert 'This navigation button has been disabled for this page.'
 
   fastclick: ->
     FastClick.attach(document.body)
@@ -44,19 +46,20 @@ class GettingOff.Finish_Setup extends Backbone.View
     $('body').css("background-image", "#{@button.get('background')}") 
 
   previous: ->
+    console.log 'hi'
     window.history.go(-1)
 
   user: ->
     @app.navigate 'finish_setup', trigger: true
 
   go_to_table_of_contents: ->
-    @app.navigate 'ch2/3', trigger: true 
+    @app.navigate 'ch2/4', trigger: true 
 
   pinboard: ->
     @app.navigate 'pinboard', trigger: true
 
   calendar: ->
-    @app.navigate 'ch2/2', trigger: true
+    @app.navigate 'ch2/3', trigger: true
 
   render_avatar: ->
     @$('.avatar-container img').attr('src', "#{@avatar.get('image')}")
@@ -66,7 +69,6 @@ class GettingOff.Finish_Setup extends Backbone.View
     $('body').fadeIn(2000)
     
   navigate:  ->
-    console.log 'working'
     @app.navigate 'ch1_cover', trigger: true
 
   render: ->

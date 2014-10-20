@@ -58,13 +58,13 @@ class GettingOff.Avatar extends GettingOff.View
     @app.navigate 'finish_setup', trigger: true
 
   go_to_table_of_contents: ->
-    @app.navigate 'ch2/3', trigger: true 
+    @app.navigate 'ch2/4', trigger: true 
 
   pinboard: ->
     @app.navigate 'pinboard', trigger: true
 
   calendar: ->
-    @app.navigate 'ch2/2', trigger: true
+    @app.navigate 'ch2/3', trigger: true
 
   animate_page: ->
     $('body').css('display', 'none')

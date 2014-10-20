@@ -126,7 +126,8 @@ class GettingOff.Ch3 extends GettingOff.View
     @update_text_display(input)
 
   update_text_display: (input) ->
-    @$('.text-display').append "<p>#{input}</p>"
+    @$('.text-display').append("<p style='display: none'>#{input}</p>")
+    @$('.text-display p').fadeIn(1000)
     scrollElement = document.getElementById("trig-display")
     scrollElement.scrollTop = scrollElement.scrollHeight
     @$('.input-value').val(" ")
@@ -150,9 +151,23 @@ class GettingOff.Ch3 extends GettingOff.View
     @$('.instruction-subtitle').text(instruction)
     @current_select = frequency
     @render_scenarios()
+    @set_category_color()
     @$('.input-container').show 'slide', {direction: 'down'}, 1000
     @$('.category-overlay').show 'slide', {direction: 'up'}, 1000
     @start_scroll_effect()
+
+  set_category_color: ->
+    color = ""
+    color = switch @current_select
+      when "always_sex"       then  '#E25575'
+      when "sometimes_sex"    then  '#9955E2'
+      when "never_sex"        then  '#5577E2'
+      when "always_crystal"   then  '#E25575'
+      when "sometimes_crystal"then  '#9955E2'
+      when "never_crystal"    then  '#5577E2'
+
+    @$('.category-overlay, .text-display').css('background-color', color)
+
 
   start_scroll_effect: ->
     stroll.bind('.text-display ul')
@@ -253,14 +268,14 @@ class GettingOff.Ch3 extends GettingOff.View
     @app.navigate 'new', trigger: true
 
   go_to_table_of_contents: ->
-    @app.navigate 'ch2/3', trigger: true
+    @app.navigate 'ch2/4', trigger: true
     console.log 'work?'
 
   pinboard: ->
     @app.navigate 'pinboard', trigger: true
 
   calendar: ->
-    @app.navigate 'ch2/2', trigger: true
+    @app.navigate 'ch2/3', trigger: true
 
   page_animation: ->
     $('body').css('display', 'none')

@@ -82,9 +82,8 @@ class GettingOff.Pinboard extends GettingOff.View
     @$('.menu-options').css("z-index", '9999')
 
   show_tooltip: ->
-    $('.menu-options').css("z-index", "0")
+    @$('.menu-options').css("z-index", "0")
     @$('.tool-overlay').fadeIn(2000)
-    # @scroll_to_bottom()
     @$('.message-container').fadeIn(1000)
 
   close_canvas: ->
@@ -138,10 +137,10 @@ class GettingOff.Pinboard extends GettingOff.View
     @app.navigate 'finish_setup', trigger: true
 
   table_of_contents: ->
-    @app.navigate 'ch2/3', trigger: true
+    @app.navigate 'ch2/4', trigger: true
 
   calendar: ->
-    @app.navigate 'ch2/2', trigger: true
+    @app.navigate 'ch2/3', trigger: true
 
   remove_button_effect: (e) ->
     $(e.currentTarget).removeClass('shrunk')

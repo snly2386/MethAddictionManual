@@ -93,7 +93,7 @@ class GettingOff.Application extends Backbone.Router
     # please fix me in the future
 
   answers_create: ->
-    @relapse_questions ||= new GettingOff.Relapse_Questions 
+    @relapse_questions ||= new GettingOff.Relapse_Questions "answer_1": "", "answer_2": "", "answer_3": "", "answer_4": "", "answer_5": "", "answer_6": "" 
 
   table_of_contents: ->
     @table_contents ||= new GettingOff.Table_Contents()
@@ -184,7 +184,7 @@ class GettingOff.Application extends Backbone.Router
     @render_button()
     @table_of_contents()
     @answers_create()
-    view = new GettingOff.Ch4 app: @, page: page, model: @relapse_questions, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
+    view = new GettingOff.Ch4 app: @, page: page, ch4_model: @relapse_questions, table_of_contents: @table_contents, button: @button, avatar: @avatar_model
 
   ch5: (page) ->
     @create_avatar()

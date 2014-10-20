@@ -450,17 +450,17 @@ class GettingOff.Ch2 extends GettingOff.View
     @set_day()
 
   set_day: ->
-    days = ["", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+    days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     day = @date.getDay()
-    if day is 1
-      yesterday = 7
-    else
-      yesterday = day - 1
+    # if day is 1
+    #   yesterday = 7
+    # else
+    #   yesterday = day - 1
 
-    if day is 7
-      tomorrow = 1
-    else 
-      tomorrow = day + 1
+    # if day is 7
+    #   tomorrow = 1
+    # else 
+    #   tomorrow = day + 1
     @$(".day .dayofweek-today").html(days[day])
 
   ch3: ->

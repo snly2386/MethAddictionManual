@@ -21,7 +21,15 @@ class GettingOff.Ch1_Cover extends GettingOff.View
     
 
   events: 
-    'click .button' : 'navigate'
+    'click .button'                        : 'navigate'
+    'click .previous'                      : 'previous'
+    'click .user, .table, .calendar, .pin' : 'alert_message'
+
+  alert_message: ->
+    alert 'This navigation tool has been disabled for this page.'
+
+  previous: ->
+    window.history.go(-1)
 
   page_animation: ->
     $('body').css('display', 'none')

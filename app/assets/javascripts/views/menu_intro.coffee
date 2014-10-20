@@ -21,14 +21,14 @@ class GettingOff.Menu_Intro extends GettingOff.View
     @position()
 
   events: ->
-    'click .button'                     : 'navigate'
-    'click .tooltip'                    : 'tooltip'
-    'click .overlay, .message-container': 'close_tooltip'
-    'click .calendarr'                  : 'calendar'
-    'click .table'                      : 'go_to_table_of_contents'
-    'click .user'                       : 'user'
-    'click .pinn'                       : 'pinboard'
-    'click .previous'                   : 'previous'
+    'click .button'                          : 'navigate'
+    'click .tooltip'                         : 'tooltip'
+    'click .overlay, .message-container'     : 'close_tooltip'
+    'click .table, .user, .pinn, .calendarr' : 'icons_disabled'
+    'click .previous'                        : 'previous'
+
+  icons_disabled: ->
+    alert 'This Navigation Button has been disabled for this page'
 
   fastclick: ->
     FastClick.attach(document.body)
@@ -44,13 +44,13 @@ class GettingOff.Menu_Intro extends GettingOff.View
     @app.navigate 'finish_setup', trigger: true
 
   go_to_table_of_contents: ->
-    @app.navigate 'ch2/3', trigger: true
+    @app.navigate 'ch2/4', trigger: true
 
   pinboard: ->
     @app.navigate 'pinboard', trigger: true
 
   calendar: ->
-    @app.navigate 'ch2/2', trigger: true
+    @app.navigate 'ch2/3', trigger: true
 
   close_tooltip: ->
     @$('.overlay').fadeOut(1000)
