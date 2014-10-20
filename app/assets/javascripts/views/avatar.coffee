@@ -30,13 +30,13 @@ class GettingOff.Avatar extends GettingOff.View
     @position()
 
   events: 
-    'click .avatar'   : 'preview_avatar'
-    'click .button'   : 'avatar_model'
-    'click .table'    : 'go_to_table_of_contents'
-    'click .user'     : 'user'
-    'click .pin'      : 'pinboard'
-    'click .calendar' : 'calendar'
-    'click .previous' : 'previous'
+    'click .avatar'                       : 'preview_avatar'
+    'click .button'                       : 'avatar_model'
+    'click .user, .pin, .calendar, .table': 'alert_message'
+    'click .previous'                     : 'previous'
+
+  alert_message: ->
+    alert 'This navigation tool has been disabled for this page.'
 
   render_button: ->
     @$('.button, .finish-chapter').css('background-color',"#{@button.get('color')}")

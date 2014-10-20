@@ -74,10 +74,13 @@
       .icon-container{
         width:20%;
         float: left;
-        img{width:100%;}
+        img{width:100%; opacity: 0.3}
       }
       .icon-container.pin{
         margin-top: -2%;
+      }
+      .previous{
+        img { opacity: 1};
       }
     }
   }
